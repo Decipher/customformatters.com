@@ -1,0 +1,10 @@
+CustomFormatters.com is an online repository of Custom Formatters snippets.
+
+
+Quickstart with Drush Make
+--------------------------------------------------------------------------------
+
+To setup a local copy of CustomFormatters.com simply run the following Drush
+make command:
+
+  drush make http://dl.dropbox.com/u/1804559/makefiles/customformaters-2.x.make
