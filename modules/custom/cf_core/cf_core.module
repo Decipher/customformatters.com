@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CustomFormatters core feature.
+ */
+
+include_once('cf_core.features.inc');

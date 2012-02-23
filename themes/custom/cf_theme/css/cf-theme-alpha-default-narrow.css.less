@@ -1,0 +1,79 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+
+// Varaibles, mixins and other LESS files.
+@import 'variables.less';
+@import 'mixins.less';
+
+//
+body {
+  header {
+    #zone-branding {
+      #region-branding {
+        hgroup {
+          .site-name {
+            font-size: 23px;
+            line-height: 100px;
+          }
+        }
+      }
+
+      #region-menu {
+        #main-menu {
+          li {
+            height: 100px;
+            margin-right: 20px;
+            position: relative;
+            width: 40px;
+
+            &.last {
+              margin-right: 0;
+            }
+
+            a {
+              #font > .rotation(270deg);
+
+              height: 100%;
+              position: absolute;
+              top: 100px;
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    padding-top: 20px;
+
+    #zone-content {
+      overflow: hidden;
+    }
+  }
+
+  aside {
+    &#region-sidebar-first {
+      .boxes-box-content {
+        #font > .rotation(90deg);
+
+        color: @color-grey-light;
+        font-size: 53px;
+        font-weight: bold;
+        left: 54px;
+        line-height: normal;
+        position: absolute;
+        text-transform: uppercase;
+        top: -3px;
+        white-space: pre;
+      }
+    }
+
+    &#region-sidebar-second {
+      #block-boxes-cf-github {
+        .boxes-box-content {
+          background-color: @color-grey-dark;
+        }
+      }
+    }
+  }
+}

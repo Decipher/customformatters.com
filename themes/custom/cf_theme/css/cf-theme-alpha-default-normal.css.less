@@ -1,0 +1,52 @@
+/* This file will hold styles that are loaded using the same media query as the normal grid. */
+
+// Varaibles, mixins and other LESS files.
+@import 'variables.less';
+@import 'mixins.less';
+
+//
+body {
+  header {
+    #zone-branding {
+      #region-branding {
+        hgroup {
+          .site-name {
+            font-size: 30px;
+          }
+        }
+      }
+
+      #region-menu {
+        #main-menu {
+          li {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    #zone-content {
+      .panel-panel {
+        clear: none;
+        margin-right: 20px;
+        width: 300px;
+
+        &.panel-col-last {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  aside {
+    &#region-sidebar-first {
+      .boxes-box-content {
+        font-size: 81px;
+        left: 81px;
+        top: -5px
+      }
+    }
+  }
+}

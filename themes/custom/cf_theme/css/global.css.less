@@ -1,0 +1,130 @@
+/* This file will hold the main styles for your website. */
+
+// Varaibles, mixins and other LESS files.
+@import 'variables.less';
+@import 'mixins.less';
+
+//
+body {
+  #font > .sans-serif;
+
+  background-color: @color-grey-dark;
+
+  header {
+    background-color: @color-white;
+
+    #zone-branding {
+      #region-branding {
+        hgroup {
+          width: 100%;
+
+          .site-name {
+            #font > .sans-serif(bold; @font-size-default);
+
+            margin: 0;
+
+            a {
+              color: @color-grey-dark;
+              font-size: 0.93em;
+              text-transform: uppercase;
+              white-space: pre;
+
+              span {
+                &.site_name-element-1 {
+                  color: @color-orange;
+                  margin-left: -0.35em;
+                }
+              }
+            }
+          }
+
+          h6.site-slogan {
+            #font > .sans-serif;
+
+            color: @color-grey-light;
+            margin-left: 37%;
+            margin-top: -0.5em;
+            text-transform: uppercase;
+            white-space: pre;
+            width: 61%;
+
+            span {
+              display: block;
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+
+      #region-menu {
+        #main-menu {
+          li {
+            display: block;
+            float: left;
+            margin: 0;
+            margin-right: 3.125%;
+            overflow: hidden;
+            padding: 0;
+            width: 31.25%;
+
+            &.last {
+              margin-right: 0;
+            }
+
+            a {
+              #font > .shorthand(bold; @font-size-small; 16px);
+
+              background-color: @color-grey-dark;
+              color: @color-white;
+              display: block;
+              height: 25px;
+              padding-left: 5px;
+              text-transform: uppercase;
+              text-decoration: none;
+              width: 100%;
+
+              &:hover {
+                background-color: @color-grey-light;
+              }
+            }
+
+            &.active {
+              a {
+                background-color: @color-orange;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    background-color: @color-white;
+
+    #zone-content {
+      .panel-panel {
+        clear: both;
+        width: 100%;
+
+        .inside {
+          margin: 0;
+
+          .pane-title {
+            #font > .sans-serif(bold);
+
+            background-color: @color-grey-light;
+            display: block;
+            height: 25px;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    aside {
+      display: none;
+    }
+  }
+}
+

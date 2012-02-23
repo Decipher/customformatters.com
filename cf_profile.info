@@ -1,0 +1,8 @@
+name = CustomFormatters.com
+description = Installation profile for CustomFormatters.com
+version = 2.x-dev
+core = 7.x
+
+; dependencies[] =
+
+files[] = cf_profile.profile
