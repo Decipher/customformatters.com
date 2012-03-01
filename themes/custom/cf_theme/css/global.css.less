@@ -38,20 +38,13 @@ body {
             }
           }
 
-          h6.site-slogan {
+          .site-slogan {
             #font > .sans-serif;
 
             color: @color-grey-light;
-            margin-left: 37%;
-            margin-top: -0.5em;
+            float: right;
             text-transform: uppercase;
             white-space: pre;
-            width: 61%;
-
-            span {
-              display: block;
-              font-size: 0.8em;
-            }
           }
         }
       }
@@ -101,22 +94,96 @@ body {
 
   section {
     background-color: @color-white;
+    padding: 10px 0;
 
     #zone-content {
-      .panel-panel {
-        clear: both;
-        width: 100%;
+      p {
+        text-align: justify;
+      }
 
-        .inside {
-          margin: 0;
+      .grid-8 {
+        .view-mode-full {
+          .field-name-title {
+            h2 {
+              #font > .sans-serif(bold; @font-size-large);
 
-          .pane-title {
-            #font > .sans-serif(bold);
+              color: @color-orange;
+              text-transform: uppercase;
+            }
+          }
+        }
 
-            background-color: @color-grey-light;
-            display: block;
-            height: 25px;
-            text-transform: uppercase;
+        .panel-panel {
+          clear: both;
+          width: 100%;
+
+          .inside {
+            margin: 0;
+
+            .pane-title {
+              #font > .sans-serif(bold);
+
+              background-color: @color-grey-light;
+              display: block;
+              height: 23px;
+              padding: 2px 0 0 5px;
+              text-transform: uppercase;
+            }
+
+            .pane-content {
+              .views-row {
+                border-bottom: 1px solid @color-grey-light;
+                padding: 5px 0;
+
+                &:hover {
+                  background-color: @color-grey-light;
+                }
+
+                .group-left {
+                  margin-right: -50px;
+                  width: 50px;
+
+                  .field-name-post-date {
+                    color: @color-orange;
+                    font-size: 8px;
+                    font-style: italic;
+                  }
+                }
+
+                .group-right {
+                  #font > .shorthand(normal; 11px);
+
+                  margin-left: 50px;
+                  width: 100%;
+
+                  .field-name-title {
+                    float: left;
+
+                    a {
+                      color: @color-grey-dark;
+                      margin-right: 0.35em;
+                      text-decoration: none;
+                    }
+                  }
+
+                  .field-name-field-formatter-field-types {
+                    #font > .shorthand(normal; 9px);
+
+                    clear: left;
+                    margin-top: 3px;
+
+                    a {
+                      color: @color-orange;
+                      text-decoration: none;
+
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

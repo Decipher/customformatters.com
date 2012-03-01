@@ -47,20 +47,25 @@ function cf_core_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'formatter';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'cf_byauthor' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'strong',
         'class' => '',
       ),
     ),
-    'author' => array(
-      'weight' => '1',
+    'post_date' => array(
+      'weight' => '0',
       'label' => 'hidden',
-      'format' => 'author_linked',
+      'format' => 'ds_post_date_cf_stub',
     ),
   );
   $export['node|formatter|teaser'] = $ds_fieldsetting;
@@ -79,6 +84,35 @@ function cf_core_ds_field_settings_info() {
     ),
   );
   $export['node|page|default'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_custom_fields_info().
+ */
+function cf_core_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass;
+  $ds_field->api_version = 1;
+  $ds_field->field = 'cf_byauthor';
+  $ds_field->label = 'by Author';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+$user = user_load($entity->uid);
+?>
+<em>by <?php echo $user->name ?></em>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['cf_byauthor'] = $ds_field;
 
   return $export;
 }
@@ -109,11 +143,7 @@ function cf_core_ds_layout_settings_info() {
       'title' => 'ds_content',
       'body' => 'ds_content',
     ),
-    'classes' => array(
-      'ds_content' => array(
-        'grid-8' => 'grid-8',
-      ),
-    ),
+    'classes' => array(),
   );
   $export['node|blog|default'] = $ds_layout;
 
@@ -137,11 +167,7 @@ function cf_core_ds_layout_settings_info() {
       'title' => 'ds_content',
       'body' => 'ds_content',
     ),
-    'classes' => array(
-      'ds_content' => array(
-        'grid-8' => 'grid-8',
-      ),
-    ),
+    'classes' => array(),
   );
   $export['node|formatter|default'] = $ds_layout;
 
@@ -156,14 +182,20 @@ function cf_core_ds_layout_settings_info() {
     'hide_empty_regions' => 0,
     'hide_sidebars' => 0,
     'regions' => array(
+      'left' => array(
+        0 => 'post_date',
+      ),
       'right' => array(
         0 => 'title',
-        1 => 'author',
+        1 => 'cf_byauthor',
+        2 => 'field_formatter_field_types',
       ),
     ),
     'fields' => array(
+      'post_date' => 'left',
       'title' => 'right',
-      'author' => 'right',
+      'cf_byauthor' => 'right',
+      'field_formatter_field_types' => 'right',
     ),
     'classes' => array(),
   );
@@ -189,11 +221,7 @@ function cf_core_ds_layout_settings_info() {
       'title' => 'ds_content',
       'body' => 'ds_content',
     ),
-    'classes' => array(
-      'ds_content' => array(
-        'grid-8' => 'grid-8',
-      ),
-    ),
+    'classes' => array(),
   );
   $export['node|page|default'] = $ds_layout;
 

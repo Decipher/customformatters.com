@@ -14,6 +14,11 @@ body {
             font-size: 23px;
             line-height: 100px;
           }
+
+          .site-slogan {
+            font-size: 10px;
+            margin-top: -43px;
+          }
         }
       }
 
@@ -44,7 +49,7 @@ body {
   }
 
   section {
-    padding-top: 20px;
+    padding: 20px 0;
 
     #zone-content {
       overflow: hidden;
@@ -69,9 +74,43 @@ body {
     }
 
     &#region-sidebar-second {
+      .block {
+        margin-bottom: 20px;
+
+        h2 {
+          #font > .sans-serif(bold; @font-size-default);
+
+          text-transform: uppercase;
+        }
+      }
+
+      #mini-panel-cf_about {
+        h2 {
+          color: @color-orange;
+        }
+      }
+
       #block-boxes-cf-github {
         .boxes-box-content {
-          background-color: @color-grey-dark;
+          a {
+            #font > .shorthand(bold; @font-size-large);
+
+            background-color: @color-grey-dark;
+            /*background-image: url('../images/logo-github.svg');*/
+            color: @color-white;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            strong {
+              color: @color-orange;
+            }
+
+            &:hover {
+              background-color: @color-grey-light;
+            }
+          }
         }
       }
     }

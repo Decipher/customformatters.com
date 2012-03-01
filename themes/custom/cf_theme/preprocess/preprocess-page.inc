@@ -14,8 +14,9 @@ foreach ($elements as $delta => $element) {
   $elements[$delta] = "<span class='site_name-element-{$delta}'>{$element}</span>";
 }
 $vars['site_name'] = implode(' ', $elements);
-// $vars['site_slogan'] = !empty($vars['site_slogan']) ? "<span>\"{$vars['site_slogan']}\"</span>" : '';
+$vars['site_slogan'] = !empty($vars['site_slogan']) ? "\"{$vars['site_slogan']}\"" : '';
 
-if (isset($vars['page']['content']['content']['content']['system_main']['main']['#markup'])) {
-  $vars['page']['content']['content']['content']['system_main']['main']['#markup'] = "<span class='grid-8'>{$vars['page']['content']['content']['content']['system_main']['main']['#markup']}</span>";
+if (isset($vars['page']['content']['content']['content']['system_main'])) {
+  $vars['page']['content']['content']['content']['system_main']['#prefix'] = "<div class='grid-8'>" . (isset($vars['page']['content']['content']['content']['system_main']['#prefix']) ? $vars['page']['content']['content']['content']['system_main']['#prefix'] : '');
+  $vars['page']['content']['content']['content']['system_main']['#suffix'] = (isset($vars['page']['content']['content']['content']['system_main']['#suffix']) ? $vars['page']['content']['content']['content']['system_main']['#suffix'] : '') . '</div>';
 }

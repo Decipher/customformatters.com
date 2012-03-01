@@ -21,11 +21,17 @@ projects[ctools][version] = '1.0-rc1'
 projects[devel][subdir] = 'contrib'
 projects[devel][version] = '1.2'
 
+projects[diff][subdir] = 'contrib'
+projects[diff][version] = '2.0'
+
 projects[ds][subdir] = 'contrib'
 projects[ds][version] = '1.5'
 
 projects[features][subdir] = 'contrib'
 projects[features][version] = '1.0-beta6'
+
+projects[globalredirect][subdir] = 'contrib'
+projects[globalredirect][version] = '1.4'
 
 projects[less][subdir] = 'contrib'
 projects[less][version] = '2.4'

@@ -19,8 +19,10 @@ function cf_core_default_box() {
   $box->description = 'Custom Formatters: Github';
   $box->options = array(
     'body' => array(
-      'value' => 'GITHUB',
-      'format' => 'plain_text',
+      'value' => '<a href="https://github.com/Decipher/customformatters.com">
+  Steal<br /> this<br /> site<br /> @ <strong>github.com</strong>
+</a>',
+      'format' => 'full_html',
     ),
     'additional_classes' => '',
   );

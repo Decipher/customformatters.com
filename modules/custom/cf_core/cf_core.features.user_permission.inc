@@ -20,5 +20,15 @@ function cf_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: search content
+  $permissions['search content'] = array(
+    'name' => 'search content',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search',
+  );
+
   return $permissions;
 }
