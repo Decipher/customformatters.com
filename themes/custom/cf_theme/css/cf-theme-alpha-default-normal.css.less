@@ -31,9 +31,9 @@ body {
     }
   }
 
-  section {
+  #section-content {
     #zone-content {
-      .grid-8 {
+      #region-content {
         .panel-panel {
           clear: none;
           margin-right: 20px;
@@ -44,15 +44,59 @@ body {
           }
         }
       }
-    }
-  }
 
-  aside {
-    &#region-sidebar-first {
-      .boxes-box-content {
-        font-size: 81px;
-        left: 81px;
-        top: -5px
+      aside {
+        &#region-sidebar-first {
+          .boxes-box-content {
+            font-size: 81px;
+            left: 81px;
+            top: -5px
+          }
+        }
+
+        &#region-sidebar-second {
+          #block-search-form {
+            .form-text {
+              margin-right: 80px;
+            }
+
+            #edit-actions {
+              .form-submit {
+                width: 60px;
+              }
+            }
+          }
+
+          #block-cf-core-download-module {
+            .content {
+              .item-list {
+                ul {
+                  li {
+                    a {
+                      font-size: 14px;
+                      height: 44px;
+                      line-height: 16px;
+                      padding-top: 6px;
+                      width: 100px;
+
+                      strong {
+                        font-size: 26px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          #block-boxes-cf-github {
+            .boxes-box-content {
+              a {
+                font-size: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }

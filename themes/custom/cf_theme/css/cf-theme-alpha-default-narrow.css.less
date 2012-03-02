@@ -48,67 +48,157 @@ body {
     }
   }
 
-  section {
+  #section-content {
     padding: 20px 0;
 
     #zone-content {
       overflow: hidden;
-    }
-  }
 
-  aside {
-    &#region-sidebar-first {
-      .boxes-box-content {
-        #font > .rotation(90deg);
+      aside {
+        display: block;
 
-        color: @color-grey-light;
-        font-size: 53px;
-        font-weight: bold;
-        left: 54px;
-        line-height: normal;
-        position: absolute;
-        text-transform: uppercase;
-        top: -3px;
-        white-space: pre;
-      }
-    }
+        &#region-sidebar-first {
+          height: 20px;
 
-    &#region-sidebar-second {
-      .block {
-        margin-bottom: 20px;
+          .boxes-box-content {
+            #font > .rotation(90deg);
 
-        h2 {
-          #font > .sans-serif(bold; @font-size-default);
-
-          text-transform: uppercase;
-        }
-      }
-
-      #mini-panel-cf_about {
-        h2 {
-          color: @color-orange;
-        }
-      }
-
-      #block-boxes-cf-github {
-        .boxes-box-content {
-          a {
-            #font > .shorthand(bold; @font-size-large);
-
-            background-color: @color-grey-dark;
-            /*background-image: url('../images/logo-github.svg');*/
-            color: @color-white;
-            display: block;
-            padding: 10px;
-            text-decoration: none;
+            color: @color-grey-light;
+            font-size: 53px;
+            font-weight: bold;
+            left: 54px;
+            line-height: normal;
+            position: absolute;
             text-transform: uppercase;
+            top: -3px;
+            white-space: pre;
+          }
+        }
 
-            strong {
+        &#region-sidebar-second {
+          .block {
+            margin-bottom: 20px;
+
+            h2 {
+              #font > .sans-serif(bold; @font-size-default);
+
+              text-transform: uppercase;
+            }
+          }
+
+          #mini-panel-cf_about {
+            h2 {
               color: @color-orange;
             }
+          }
 
-            &:hover {
-              background-color: @color-grey-light;
+          #block-search-form {
+            position: relative;
+
+            .form-text {
+              #font > .sans-serif;
+
+              border: 2px solid @color-grey-dark;
+              height: 40px;
+              padding-left: 10px;
+              padding-right: 60px;
+              width: 100%;
+
+              &:focus {
+                -webkit-box-shadow: none;
+                outline: none;
+              }
+            }
+
+            #edit-actions {
+              position: absolute;
+              right: 0;
+              top: 0;
+
+              .form-submit {
+                #font > .sans-serif(normal; 9px);
+                #border-radius > .simple(0);
+
+                background: none;
+                background-color: @color-grey-dark;
+                border: 0;
+                color: @color-white;
+                height: 40px;
+                text-transform: uppercase;
+                text-shadow: none;
+                margin: 0;
+                padding: 0;
+                width: 40px;
+              }
+            }
+          }
+
+          #block-cf-core-download-module {
+            .content {
+              .item-list {
+                ul {
+                  margin: 0;
+
+                  li {
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+
+                    a {
+                      background-color: @color-orange;
+                      color: @color-white;
+                      display: block;
+                      float: left;
+                      font-size: 10px;
+                      height: 31px;
+                      line-height: 12px;
+                      margin-right: 20px;
+                      padding-top: 4px;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      width: 70px;
+                    }
+
+                    strong {
+                      display: block;
+                      font-size: 18px;
+                      text-transform: none;
+                    }
+
+                    &.last {
+                      a {
+                        background-color: @color-grey-light;
+                        margin-right: 0;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          #block-boxes-cf-github {
+            .boxes-box-content {
+              a {
+                #font > .shorthand(bold);
+
+                background-color: @color-grey-dark;
+                /*background-image: url('../images/logo-github.svg');*/
+                color: @color-white;
+                display: block;
+                font-size: 16px;
+                padding: 10px;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                strong {
+                  color: @color-orange;
+                }
+
+                &:hover {
+                  background-color: @color-grey-light;
+                }
+              }
             }
           }
         }

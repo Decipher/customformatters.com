@@ -4,4 +4,61 @@
  * Code for the CustomFormatters core feature.
  */
 
+/**
+ * Features include.
+ */
 include_once('cf_core.features.inc');
+
+/**
+ * Include additional files.
+ */
+foreach (module_list() as $module) {
+  if (file_exists($file = dirname(__FILE__) . "/includes/{$module}.inc")) {
+    require_once $file;
+  }
+}
+
+/**
+ *
+ */
+function _cf_core_get_releases($versions, $type = 'latest') {
+  $releases = array();
+
+  module_load_include('inc', 'update', 'update.fetch');
+  foreach ($versions as $version) {
+    $cache = cache_get("cf_core:releases:{$version}");
+    if (!$cache) {
+      $xml = drupal_http_request(variable_get('update_fetch_url', UPDATE_DEFAULT_URL) . "/custom_formatters/{$version}");
+      if (!isset($xml->error) && isset($xml->data)) {
+        $data = $xml->data;
+      }
+
+      if (!empty($data)) {
+        $data = update_parse_xml($data);
+        $data = $data['releases'];
+        cache_set("cf_core:releases:{$version}", $data, 'cache', time() + 86400);
+      }
+    }
+    else {
+      $data = $cache->data;
+    }
+
+    foreach (element_children($data) as $release) {
+      switch ($type) {
+        case 'latest':
+          // @TODO
+          break;
+
+        case 'stable':
+          if (preg_match("/^{$version}-\d+.\d+$/", $release)) {
+            $releases[$version][$release] = $data[$release];
+          }
+          break;
+      }
+    }
+
+    unset($data);
+  }
+
+  return $releases;
+}

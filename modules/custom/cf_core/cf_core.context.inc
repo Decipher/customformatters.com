@@ -70,11 +70,17 @@ function cf_core_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'cf_core-download_module' => array(
+          'module' => 'cf_core',
+          'delta' => 'download_module',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
         'boxes-cf_github' => array(
           'module' => 'boxes',
           'delta' => 'cf_github',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),

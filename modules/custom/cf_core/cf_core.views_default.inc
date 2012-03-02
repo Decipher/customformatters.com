@@ -101,7 +101,7 @@ function cf_core_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Recently added';
+  $handler->display->display_options['title'] = 'Most popular';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -136,7 +136,6 @@ function cf_core_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -154,6 +153,25 @@ function cf_core_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Recently added';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Most popular';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Radioactivity (field_formatter_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['id'] = 'field_formatter_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['table'] = 'field_data_field_formatter_radioactivity';
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['field'] = 'field_formatter_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['order'] = 'DESC';
   $export['cf_formatters'] = $view;
 
   return $export;

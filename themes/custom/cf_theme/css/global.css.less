@@ -92,7 +92,7 @@ body {
     }
   }
 
-  section {
+  #section-content {
     background-color: @color-white;
     padding: 10px 0;
 
@@ -101,14 +101,100 @@ body {
         text-align: justify;
       }
 
-      .grid-8 {
-        .view-mode-full {
-          .field-name-title {
-            h2 {
-              #font > .sans-serif(bold; @font-size-large);
+      #region-content {
+        .tabs {
+          .contextual-links {
+            li {
+              display: block;
+            }
+          }
+        }
 
+        .field-name-title {
+          h2 {
+            #font > .sans-serif(bold; @font-size-large);
+
+            color: @color-orange;
+            text-transform: uppercase;
+
+            a {
               color: @color-orange;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .view-mode-teaser {
+          margin-bottom: 20px;
+          position: relative;
+
+          .group-left {
+            .field-name-post-date {
+              #font > .rotation(270deg);
+              #font > .shorthand(bold);
+
+              color: @color-grey-light;
+              position: absolute;
+              top: 60px;
               text-transform: uppercase;
+            }
+          }
+
+          .group-right {
+            #font > .shorthand(normal; 11px);
+
+            width: 100%;
+
+            .field {
+              margin-left: 20px;
+
+              .field-label {
+                font-weight: normal;
+              }
+            }
+
+            .field-name-cf-byauthor {
+              margin-top: 3px;
+            }
+
+            .field-name-field-formatter-field-types {
+              #font > .shorthand(normal; 9px);
+
+              clear: left;
+              margin-top: 3px;
+
+              a {
+                color: @color-orange;
+                text-decoration: none;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+
+            .field-name-body {
+              margin-top: 10px;
+            }
+
+            .field-name-node-link {
+              margin-top: -15px;
+
+              a {
+                #font > .shorthand(normal; @font-size-small);
+
+                color: @color-orange;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
             }
           }
         }
@@ -121,63 +207,56 @@ body {
             margin: 0;
 
             .pane-title {
-              #font > .sans-serif(bold);
+              #font > .sans-serif(bold; 24px);
 
               background-color: @color-grey-light;
+              color: @color-white;
               display: block;
               height: 23px;
+              overflow: hidden;
               padding: 2px 0 0 5px;
               text-transform: uppercase;
             }
 
             .pane-content {
-              .views-row {
-                border-bottom: 1px solid @color-grey-light;
-                padding: 5px 0;
+              .view-mode-teaser {
+                margin-bottom: 10px;
 
                 &:hover {
                   background-color: @color-grey-light;
+
+                  .group-left {
+                    .field-name-post-date {
+                      color: @color-white;
+                    }
+                  }
                 }
 
                 .group-left {
-                  margin-right: -50px;
-                  width: 50px;
-
                   .field-name-post-date {
-                    color: @color-orange;
-                    font-size: 8px;
-                    font-style: italic;
+                    #font > .shorthand(bold; 9px);
+
+                    color: @color-grey-light;
+                    top: 49px;
                   }
                 }
 
                 .group-right {
-                  #font > .shorthand(normal; 11px);
-
-                  margin-left: 50px;
-                  width: 100%;
+                  .field {
+                    margin-left: 15px;
+                  }
 
                   .field-name-title {
                     float: left;
-
                     a {
+                      #font > .shorthand(bold; 14px);
+
                       color: @color-grey-dark;
                       margin-right: 0.35em;
                       text-decoration: none;
-                    }
-                  }
-
-                  .field-name-field-formatter-field-types {
-                    #font > .shorthand(normal; 9px);
-
-                    clear: left;
-                    margin-top: 3px;
-
-                    a {
-                      color: @color-orange;
-                      text-decoration: none;
 
                       &:hover {
-                        text-decoration: underline;
+                        color: @color-orange;
                       }
                     }
                   }
@@ -187,10 +266,10 @@ body {
           }
         }
       }
-    }
 
-    aside {
-      display: none;
+      aside {
+        display: none;
+      }
     }
   }
 }

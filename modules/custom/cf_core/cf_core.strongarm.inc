@@ -202,7 +202,7 @@ function cf_core_strongarm() {
     'alpha_layouts_alpha_default_fluid_weight' => '0',
     'alpha_layouts_alpha_default_fluid_media' => 'all and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)',
     'alpha_primary_alpha_fluid' => 'normal',
-    'alpha_layouts_alpha_fluid_normal_responsive' => 1,
+    'alpha_layouts_alpha_fluid_normal_responsive' => 0,
     'alpha_layouts_alpha_fluid_normal_weight' => '0',
     'alpha_layouts_alpha_fluid_normal_media' => 'all and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)',
     'alpha_libraries' => array(
@@ -224,6 +224,7 @@ function cf_core_strongarm() {
     'alpha_exclude' => array(
       'modules/field/theme/field.css' => 0,
       'modules/node/node.css' => 0,
+      'modules/search/search.css' => 0,
       'modules/user/user.css' => 0,
       'profiles/cf_profile/modules/contrib/views/css/views.css' => 0,
       'misc/vertical-tabs.css' => 0,
@@ -253,7 +254,7 @@ function cf_core_strongarm() {
     ),
     'alpha_debug_block_toggle' => 0,
     'alpha_debug_block_active' => 0,
-    'alpha_debug_grid_toggle' => 1,
+    'alpha_debug_grid_toggle' => 0,
     'alpha_debug_grid_active' => 0,
     'alpha_debug_grid_roles' => array(
       1 => '1',
@@ -265,7 +266,7 @@ function cf_core_strongarm() {
     'alpha_toggle_breadcrumb' => 0,
     'alpha_toggle_page_title' => 1,
     'alpha_toggle_feed_icons' => 1,
-    'alpha_hidden_title' => 0,
+    'alpha_hidden_title' => 1,
     'alpha_hidden_site_name' => 0,
     'alpha_hidden_site_slogan' => 0,
     'alpha_zone_branding_wrapper' => 1,
@@ -315,7 +316,7 @@ function cf_core_strongarm() {
     'alpha_region_content_suffix' => '0',
     'alpha_region_content_weight' => '0',
     'alpha_region_content_position' => '0',
-    'alpha_region_content_css' => 'grid-8',
+    'alpha_region_content_css' => '',
     'alpha_region_content_equal_height_element' => 0,
     'alpha_region_content_equal_height_container' => 0,
     'alpha_region_sidebar_first_force' => 1,

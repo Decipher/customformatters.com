@@ -48,6 +48,7 @@ function cf_core_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
@@ -79,7 +80,7 @@ function cf_core_default_page_manager_pages() {
     $pane->pid = 'new-2';
     $pane->panel = 'right';
     $pane->type = 'block';
-    $pane->subtype = 'views-cf_formatters-block';
+    $pane->subtype = 'views-cf_formatters-block_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -96,7 +97,7 @@ function cf_core_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['right'][0] = 'new-2';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

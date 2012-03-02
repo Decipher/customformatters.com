@@ -58,7 +58,7 @@ function cf_core_field_default_fields() {
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => 0,
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -132,9 +132,12 @@ function cf_core_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '7',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '100',
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -231,6 +234,67 @@ function cf_core_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-formatter-field_formatter_radioactivity'
+  $fields['node-formatter-field_formatter_radioactivity'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_formatter_radioactivity',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'radioactivity',
+    ),
+    'field_instance' => array(
+      'bundle' => 'formatter',
+      'default_value' => array(
+        0 => array(
+          'radioactivity_energy' => '0',
+          'radioactivity_timestamp' => '1330604485',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'radioactivity',
+          'settings' => array(
+            'energy' => 10,
+            'type' => 'none',
+          ),
+          'type' => 'radioactivity_combo_formatter',
+          'weight' => 3,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_formatter_radioactivity',
+      'label' => 'Radioactivity',
+      'required' => 0,
+      'settings' => array(
+        'profile' => 'default',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'radioactivity',
+        'settings' => array(),
+        'type' => 'radioactivity_basic_widget',
+        'weight' => '32',
+      ),
+    ),
+  );
+
   // Exported field: 'node-page-body'
   $fields['node-page-body'] = array(
     'field_config' => array(
@@ -307,6 +371,7 @@ function cf_core_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Field type(s)');
+  t('Radioactivity');
 
   return $fields;
 }

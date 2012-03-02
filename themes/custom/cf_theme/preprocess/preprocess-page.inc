@@ -15,8 +15,3 @@ foreach ($elements as $delta => $element) {
 }
 $vars['site_name'] = implode(' ', $elements);
 $vars['site_slogan'] = !empty($vars['site_slogan']) ? "\"{$vars['site_slogan']}\"" : '';
-
-if (isset($vars['page']['content']['content']['content']['system_main'])) {
-  $vars['page']['content']['content']['content']['system_main']['#prefix'] = "<div class='grid-8'>" . (isset($vars['page']['content']['content']['content']['system_main']['#prefix']) ? $vars['page']['content']['content']['content']['system_main']['#prefix'] : '');
-  $vars['page']['content']['content']['content']['system_main']['#suffix'] = (isset($vars['page']['content']['content']['content']['system_main']['#suffix']) ? $vars['page']['content']['content']['content']['system_main']['#suffix'] : '') . '</div>';
-}
