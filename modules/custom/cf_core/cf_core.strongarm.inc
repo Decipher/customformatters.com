@@ -27,6 +27,13 @@ function cf_core_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_cf_stub';
+  $strongarm->value = 'j-M-y';
+  $export['date_format_cf_stub'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'install_profile';
   $strongarm->value = 'cf_profile';
   $export['install_profile'] = $strongarm;
@@ -46,6 +53,13 @@ function cf_core_strongarm() {
   $strongarm->name = 'menu_parent_formatter';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_formatter'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_secondary_links_source';
+  $strongarm->value = '';
+  $export['menu_secondary_links_source'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -144,7 +158,7 @@ function cf_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'stu@rtclark.net';
+  $strongarm->value = 'info@customformatters.com';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass;

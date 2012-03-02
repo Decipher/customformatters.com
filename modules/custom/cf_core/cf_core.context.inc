@@ -58,6 +58,12 @@ function cf_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'boxes-cf_section' => array(
           'module' => 'boxes',
           'delta' => 'cf_section',

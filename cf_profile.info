@@ -8,4 +8,5 @@ files[] = cf_profile.profile
 dependencies[] = cf_core
 dependencies[] = features
 dependencies[] = panels
+dependencies[] = radioactivity
 dependencies[] = views
