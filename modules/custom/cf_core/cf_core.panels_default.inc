@@ -34,21 +34,18 @@ function cf_core_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass;
-    $pane->pid = 'new-3';
+    $pane->pid = 'new-4';
     $pane->panel = 'middle';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '1',
-      'links' => 1,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'teaser',
-      'link_node_title' => 0,
-      'override_title' => 1,
-      'override_title_text' => 'What is Custom Formatters?',
+      'admin_title' => '',
+      'title' => 'What is Custom Formatters?',
+      'body' => 'Custom Formatters (the website) is a repository for user contributed Custom Formatters (the module) snippets.',
+      'format' => 'plain_text',
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -58,10 +55,10 @@ function cf_core_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['middle'][0] = 'new-3';
+    $display->content['new-4'] = $pane;
+    $display->panels['middle'][0] = 'new-4';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-3';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['cf_about'] = $mini;
 

@@ -53,8 +53,8 @@ function cf_theme_menu_local_tasks(&$vars) {
  * Implements hook_menu_local_task().
  */
 function cf_theme_menu_local_task($vars) {
-  // Remove node view link.
-  if ($vars['element']['#link']['path'] == 'node/%/view') {
+  // Remove entity view links.
+  if (user_access('access contextual links') && preg_match('/\/%\/view/', $vars['element']['#link']['path'])) {
     return false;
   }
 

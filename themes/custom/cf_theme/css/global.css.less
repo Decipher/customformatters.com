@@ -84,6 +84,7 @@ body {
             &.active {
               a {
                 background-color: @color-orange;
+                cursor: default;
               }
             }
           }
@@ -103,6 +104,40 @@ body {
 
       #region-content {
         .tabs {
+          ul.tabs {
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            li {
+              float: left;
+              margin-right: 20px;
+
+              a {
+                background-color: @color-grey-dark;
+                border: 0;
+                color: @color-white;
+                display: block;
+                font-size: 6px;
+                height: 15px;
+                margin: 0;
+                padding: 5px 0 0 5px;
+                text-decoration: none;
+                text-transform: uppercase;
+                width: 95px;
+
+                &:hover {
+                  background-color: @color-grey-light;
+                }
+
+                &.active {
+                  background-color: @color-orange;
+                  cursor: default;
+                }
+              }
+            }
+          }
+
           .contextual-links {
             li {
               display: block;
@@ -199,64 +234,66 @@ body {
           }
         }
 
-        .panel-panel {
-          clear: both;
-          width: 100%;
+        .panel-2col {
+          .panel-panel {
+            clear: both;
+            width: 100%;
 
-          .inside {
-            margin: 0;
+            .inside {
+              margin: 0;
 
-            .pane-title {
-              #font > .sans-serif(bold; 24px);
+              .pane-title {
+                #font > .sans-serif(bold; 24px);
 
-              background-color: @color-grey-light;
-              color: @color-white;
-              display: block;
-              height: 23px;
-              overflow: hidden;
-              padding: 2px 0 0 5px;
-              text-transform: uppercase;
-            }
+                background-color: @color-grey-light;
+                color: @color-white;
+                display: block;
+                height: 23px;
+                overflow: hidden;
+                padding: 2px 0 0 5px;
+                text-transform: uppercase;
+              }
 
-            .pane-content {
-              .view-mode-teaser {
-                margin-bottom: 10px;
+              .pane-content {
+                .view-mode-teaser {
+                  margin-bottom: 10px;
 
-                &:hover {
-                  background-color: @color-grey-light;
+                  &:hover {
+                    background-color: @color-grey-light;
+
+                    .group-left {
+                      .field-name-post-date {
+                        color: @color-white;
+                      }
+                    }
+                  }
 
                   .group-left {
                     .field-name-post-date {
-                      color: @color-white;
+                      #font > .shorthand(bold; 9px);
+
+                      color: @color-grey-light;
+                      top: 49px;
                     }
                   }
-                }
 
-                .group-left {
-                  .field-name-post-date {
-                    #font > .shorthand(bold; 9px);
+                  .group-right {
+                    .field {
+                      margin-left: 15px;
+                    }
 
-                    color: @color-grey-light;
-                    top: 49px;
-                  }
-                }
+                    .field-name-title {
+                      float: left;
+                      a {
+                        #font > .shorthand(bold; 14px);
 
-                .group-right {
-                  .field {
-                    margin-left: 15px;
-                  }
+                        color: @color-grey-dark;
+                        margin-right: 0.35em;
+                        text-decoration: none;
 
-                  .field-name-title {
-                    float: left;
-                    a {
-                      #font > .shorthand(bold; 14px);
-
-                      color: @color-grey-dark;
-                      margin-right: 0.35em;
-                      text-decoration: none;
-
-                      &:hover {
-                        color: @color-orange;
+                        &:hover {
+                          color: @color-orange;
+                        }
                       }
                     }
                   }

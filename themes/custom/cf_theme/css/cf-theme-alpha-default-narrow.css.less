@@ -54,6 +54,20 @@ body {
     #zone-content {
       overflow: hidden;
 
+      #region-content {
+        .tabs {
+          ul.tabs {
+            li {
+              a {
+                font-size: 6px;
+                height: 15px;
+                width: 95px;
+              }
+            }
+          }
+        }
+      }
+
       aside {
         display: block;
 
@@ -110,7 +124,7 @@ body {
               }
             }
 
-            #edit-actions {
+            .form-actions {
               position: absolute;
               right: 0;
               top: 0;
@@ -129,6 +143,18 @@ body {
                 margin: 0;
                 padding: 0;
                 width: 40px;
+              }
+            }
+
+            &:hover {
+              .form-text {
+                border-color: @color-grey-light;
+              }
+
+              .form-actions {
+                .form-submit {
+                  background-color: @color-grey-light;
+                }
               }
             }
           }
@@ -157,6 +183,10 @@ body {
                       text-decoration: none;
                       text-transform: uppercase;
                       width: 70px;
+
+                      &:hover {
+                        background-color: @color-grey-light;
+                      }
                     }
 
                     strong {
@@ -169,6 +199,10 @@ body {
                       a {
                         background-color: @color-grey-light;
                         margin-right: 0;
+
+                        &:hover {
+                          background-color: @color-grey-dark;
+                        }
                       }
                     }
                   }
@@ -183,7 +217,6 @@ body {
                 #font > .shorthand(bold);
 
                 background-color: @color-grey-dark;
-                /*background-image: url('../images/logo-github.svg');*/
                 color: @color-white;
                 display: block;
                 font-size: 16px;

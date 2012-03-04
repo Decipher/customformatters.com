@@ -34,13 +34,27 @@ body {
   #section-content {
     #zone-content {
       #region-content {
-        .panel-panel {
-          clear: none;
-          margin-right: 20px;
-          width: 300px;
+        .tabs {
+          ul.tabs {
+            li {
+              a {
+                font-size: 8px;
+                height: 20px;
+                width: 135px;
+              }
+            }
+          }
+        }
 
-          &.panel-col-last {
-            margin-right: 0;
+        .panel-2col {
+          .panel-panel {
+            clear: none;
+            margin-right: 20px;
+            width: 300px;
+
+            &.panel-col-last {
+              margin-right: 0;
+            }
           }
         }
       }
@@ -60,7 +74,7 @@ body {
               margin-right: 80px;
             }
 
-            #edit-actions {
+            .form-actions {
               .form-submit {
                 width: 60px;
               }
