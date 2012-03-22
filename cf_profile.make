@@ -117,6 +117,6 @@ projects[fittext.js][download][revision] = '6e86634ea751a575bf4631495ba8b19fdc9a
 
 projects[tinymce][type] = 'library'
 projects[tinymce][download][type] = 'file'
-projects[tinymce[download][url] = 'http://www.tinymce.com/track.php?url=http%3A%2F%2Fgithub.com%2Fdownloads%2Ftinymce%2Ftinymce%2Ftinymce_3.4.9.zip'
+projects[tinymce][download][url] = 'http://www.tinymce.com/track.php?url=http%3A%2F%2Fgithub.com%2Fdownloads%2Ftinymce%2Ftinymce%2Ftinymce_3.4.9.zip'
 
 
