@@ -62,3 +62,49 @@ function _cf_core_get_releases($versions, $type = 'latest') {
 
   return $releases;
 }
+
+/**
+ *
+ */
+function _cf_core_process_formatter($data) {
+  libraries_load('grammar_parser');
+  $reader = PGPReader::getInstance();
+  $reader->setSnippet($data);
+  $reader->addTokenNames();
+  $reader->buildGrammar();
+  $statements = $reader->getStatements();
+  $editor = PGPEditor::getInstance();
+
+  // Traverse statement list to gather items.
+  $current = $statements->first();
+  while ($current != NULL) {
+    $statement = $current->data;
+    $type = is_object($statement) ? $statement->type : $statement['type'];
+    if ($type == T_ASSIGNMENT) {
+      switch (TRUE) {
+        case $editor->statementOperandToText($statement) == '$formatter':
+          $formatter = new stdClass();
+          break;
+
+        case preg_match('/\$formatter->(.*)/', $editor->statementOperandToText($statement), $matches):
+          $value = $statement->getValue()->first()->data;
+
+          if (is_array($value) && $value['type'] == T_CONSTANT_ENCAPSED_STRING) {
+            // The key is a simple string.
+            $formatter->{$matches[1]} = trim($value['value'], "'\" ");
+          }
+          elseif ($value instanceof PGPOperand) {
+            // T_STRING values like TRUE.
+            $formatter->{$matches[1]} = $value->toString() == 'TRUE';
+          }
+          elseif (is_numeric($value)) {
+            $formatter->{$matches[1]} = (int) $value;
+          }
+          break;
+      }
+    }
+    $current = $current->next;
+  }
+
+  return $formatter;
+}

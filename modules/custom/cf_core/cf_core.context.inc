@@ -70,23 +70,17 @@ function cf_core_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
         'cf_core-download_module' => array(
           'module' => 'cf_core',
           'delta' => 'download_module',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'boxes-cf_github' => array(
           'module' => 'boxes',
           'delta' => 'cf_github',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
       ),
     ),
@@ -97,6 +91,38 @@ function cf_core_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Custom Formatters');
   $export['layout-global-all'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'layout-not_search-all';
+  $context->description = '';
+  $context->tag = 'Custom Formatters';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~search*' => '~search*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Custom Formatters');
+  $export['layout-not_search-all'] = $context;
 
   return $export;
 }

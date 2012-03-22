@@ -34,6 +34,116 @@ function cf_core_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type';
+  $strongarm->value = 0;
+  $export['ds_search_group_by_type'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type_other';
+  $strongarm->value = 'Other';
+  $export['ds_search_group_by_type_other'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type_other_wrapper';
+  $strongarm->value = 'fieldset';
+  $export['ds_search_group_by_type_other_wrapper'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type_settings';
+  $strongarm->value = array(
+    'page' => array(
+      'status' => 1,
+      'label' => 'Results for basic page',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'blog' => array(
+      'status' => 1,
+      'label' => 'Results for blog',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'formatter' => array(
+      'status' => 1,
+      'label' => 'Results for formatter',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+  );
+  $export['ds_search_group_by_type_settings'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_highlight';
+  $strongarm->value = 1;
+  $export['ds_search_highlight'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_highlight_selector';
+  $strongarm->value = '.view-mode-search_result';
+  $export['ds_search_highlight_selector'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_language';
+  $strongarm->value = 0;
+  $export['ds_search_language'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_node_form_alter';
+  $strongarm->value = 0;
+  $export['ds_search_node_form_alter'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_show_title';
+  $strongarm->value = 1;
+  $export['ds_search_show_title'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_type';
+  $strongarm->value = 'node';
+  $export['ds_search_type'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_variables';
+  $strongarm->value = 'search_totals';
+  $export['ds_search_variables'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_view_mode';
+  $strongarm->value = 'search_result';
+  $export['ds_search_view_mode'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_user_override_search_page';
+  $strongarm->value = 0;
+  $export['ds_user_override_search_page'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'install_profile';
   $strongarm->value = 'cf_profile';
   $export['install_profile'] = $strongarm;
@@ -60,6 +170,54 @@ function cf_core_strongarm() {
   $strongarm->name = 'menu_secondary_links_source';
   $strongarm->value = '';
   $export['menu_secondary_links_source'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nodeformscols_field_placements_formatter_default';
+  $strongarm->value = array(
+    'title' => array(
+      'region' => 'main',
+      'weight' => '0',
+      'has_required' => TRUE,
+      'title' => 'Title',
+    ),
+    'additional_settings' => array(
+      'region' => 'main',
+      'weight' => '3',
+      'has_required' => FALSE,
+      'title' => 'Vertical tabs',
+      'hidden' => 0,
+    ),
+    'actions' => array(
+      'region' => 'main',
+      'weight' => '4',
+      'has_required' => FALSE,
+      'title' => 'Save',
+      'hidden' => 0,
+    ),
+    'body' => array(
+      'region' => 'main',
+      'weight' => '1',
+      'has_required' => FALSE,
+      'title' => 'Body',
+      'hidden' => 0,
+    ),
+    'field_formatter_field_types' => array(
+      'region' => 'right',
+      'weight' => '5',
+      'has_required' => TRUE,
+      'title' => 'Field type(s)',
+    ),
+    'field_formatter_radioactivity' => array(
+      'region' => 'main',
+      'weight' => '2',
+      'has_required' => FALSE,
+      'title' => 'Radioactivity',
+      'hidden' => 1,
+    ),
+  );
+  $export['nodeformscols_field_placements_formatter_default'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -146,6 +304,24 @@ function cf_core_strongarm() {
   $strongarm->name = 'pathauto_node_formatter_pattern';
   $strongarm->value = 'formatters/[node:nid]';
   $export['pathauto_node_formatter_pattern'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_active_modules';
+  $strongarm->value = array(
+    'node' => 'node',
+    'ds_search' => 'ds_search',
+    'user' => 'user',
+  );
+  $export['search_active_modules'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_default_module';
+  $strongarm->value = 'ds_search';
+  $export['search_default_module'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

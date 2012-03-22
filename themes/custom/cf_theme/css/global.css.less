@@ -5,6 +5,10 @@
 @import 'mixins.less';
 
 //
+@import 'global-typography.less';
+@import 'global-pages.less';
+
+//
 body {
   #font > .sans-serif;
 
@@ -98,8 +102,9 @@ body {
     padding: 10px 0;
 
     #zone-content {
-      p {
-        text-align: justify;
+      .messages {
+        border-width: 2px;
+        margin: 0 0 20px;
       }
 
       #region-content {
@@ -147,19 +152,7 @@ body {
 
         .field-name-title {
           h2 {
-            #font > .sans-serif(bold; @font-size-large);
 
-            color: @color-orange;
-            text-transform: uppercase;
-
-            a {
-              color: @color-orange;
-              text-decoration: none;
-
-              &:hover {
-                text-decoration: underline;
-              }
-            }
           }
         }
 
@@ -217,7 +210,7 @@ body {
             }
 
             .field-name-node-link {
-              margin-top: -15px;
+              clear: left;
 
               a {
                 #font > .shorthand(normal; @font-size-small);
@@ -257,6 +250,7 @@ body {
               .pane-content {
                 .view-mode-teaser {
                   margin-bottom: 10px;
+                  min-height: 50px;
 
                   &:hover {
                     background-color: @color-grey-light;

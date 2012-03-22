@@ -106,8 +106,13 @@ body {
             }
           }
 
+          // @TODO - Merge with Search page styles.
           #block-search-form {
             position: relative;
+
+            label {
+              display: none;
+            }
 
             .form-text {
               #font > .sans-serif;
@@ -124,26 +129,25 @@ body {
               }
             }
 
-            .form-actions {
+            .form-submit {
+              #font > .sans-serif(normal; 9px);
+              #border-radius > .simple(0);
+
               position: absolute;
               right: 0;
               top: 0;
 
-              .form-submit {
-                #font > .sans-serif(normal; 9px);
-                #border-radius > .simple(0);
 
-                background: none;
-                background-color: @color-grey-dark;
-                border: 0;
-                color: @color-white;
-                height: 40px;
-                text-transform: uppercase;
-                text-shadow: none;
-                margin: 0;
-                padding: 0;
-                width: 40px;
-              }
+              background: none;
+              background-color: @color-grey-dark;
+              border: 0;
+              color: @color-white;
+              height: 40px;
+              text-transform: uppercase;
+              text-shadow: none;
+              margin: 0;
+              padding: 0;
+              width: 40px;
             }
 
             &:hover {
@@ -151,10 +155,8 @@ body {
                 border-color: @color-grey-light;
               }
 
-              .form-actions {
-                .form-submit {
-                  background-color: @color-grey-light;
-                }
+              .form-submit {
+                background-color: @color-grey-light;
               }
             }
           }
