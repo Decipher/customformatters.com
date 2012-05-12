@@ -114,39 +114,14 @@ body {
               display: none;
             }
 
-            .form-text {
-              #font > .sans-serif;
-
-              border: 2px solid @color-grey-dark;
-              height: 40px;
-              padding-left: 10px;
-              padding-right: 60px;
-              width: 100%;
-
-              &:focus {
-                -webkit-box-shadow: none;
-                outline: none;
-              }
-            }
-
             .form-submit {
               #font > .sans-serif(normal; 9px);
               #border-radius > .simple(0);
 
+              background-color: @color-grey-dark;
               position: absolute;
               right: 0;
               top: 0;
-
-
-              background: none;
-              background-color: @color-grey-dark;
-              border: 0;
-              color: @color-white;
-              height: 40px;
-              text-transform: uppercase;
-              text-shadow: none;
-              margin: 0;
-              padding: 0;
               width: 40px;
             }
 
@@ -238,6 +213,38 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+form {
+  .form-item {
+    label {
+      width: 100px;
+    }
+  }
+
+  .form-submit {
+    width: 100px;
+  }
+}
+
+.page-user {
+  &.not-logged-in {
+    div.tabs {
+      float: left;
+      width: 0px;
+
+      ul.tabs {
+        li {
+          clear: left;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    #block-system-main {
+      margin-left: 120px;
     }
   }
 }

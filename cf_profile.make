@@ -4,13 +4,16 @@ api = 2
 
 ; Modules - Contrib
 projects[admin_menu][subdir] = 'contrib'
-projects[admin_menu][version] = '3.0-rc1'
+projects[admin_menu][version] = '3.0-rc2'
 
 projects[boxes][subdir] = 'contrib'
-projects[boxes][version] = '1.0-beta7'
+projects[boxes][version] = '1.0'
 
 projects[coder][subdir] = 'contrib'
 projects[coder][version] = '1.0'
+
+projects[coffee][subdir] = 'contrib'
+projects[coffee][version] = '1.0'
 
 projects[context][subdir] = 'contrib'
 projects[context][version] = '3.0-beta2'
@@ -19,7 +22,7 @@ projects[context_admin][subdir] = 'contrib'
 projects[context_admin][version] = '1.1'
 
 projects[ctools][subdir] = 'contrib'
-projects[ctools][version] = '1.0-rc1'
+projects[ctools][version] = '1.0'
 
 projects[devel][subdir] = 'contrib'
 projects[devel][version] = '1.2'
@@ -31,7 +34,7 @@ projects[ds][subdir] = 'contrib'
 projects[ds][version] = '1.5'
 
 projects[entity][subdir] = 'contrib'
-projects[entity][version] = '1.0-rc1'
+projects[entity][version] = '1.0-rc2'
 
 projects[features][subdir] = 'contrib'
 projects[features][version] = '1.0-beta6'
@@ -43,8 +46,7 @@ projects[grammar_parser][subdir] = 'contrib'
 projects[grammar_parser][version] = '1.2'
 
 projects[less][subdir] = 'contrib'
-projects[less][version] = '2.4'
-; projects[less][patch][] = 'http://drupal.org/files/recursive_mixins_inehritence-1286754-3.patch'
+projects[less][version] = '2.5'
 
 projects[libraries][subdir] = 'contrib'
 projects[libraries][version] = '2.0-alpha2'
@@ -63,7 +65,7 @@ projects[omega_tools][subdir] = 'contrib'
 projects[omega_tools][version] = '3.0-rc4'
 
 projects[page_title][subdir] = 'contrib'
-projects[page_title][version] = '2.5'
+projects[page_title][version] = '2.7'
 
 projects[panels][subdir] = 'contrib'
 projects[panels][version] = '3.0'
@@ -78,7 +80,7 @@ projects[radioactivity][subdir] = 'contrib'
 projects[radioactivity][version] = '2.3'
 
 projects[rules][subdir] = 'contrib'
-projects[rules][version] = '2.0'
+projects[rules][version] = '2.1'
 
 projects[strongarm][subdir] = 'contrib'
 projects[strongarm][version] = '2.0-beta5'
@@ -90,7 +92,7 @@ projects[token][subdir] = 'contrib'
 projects[token][version] = '1.0-rc1'
 
 projects[views][subdir] = 'contrib'
-projects[views][version] = '3.1'
+projects[views][version] = '3.3'
 
 projects[wysiwyg][subdir] = 'contrib'
 projects[wysiwyg][version] = '2.1'

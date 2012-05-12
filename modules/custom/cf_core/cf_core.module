@@ -67,7 +67,9 @@ function _cf_core_get_releases($versions, $type = 'latest') {
  *
  */
 function _cf_core_process_formatter($data) {
-  libraries_load('grammar_parser');
+  $formatter = NULL;
+
+  // Initialise Grammar Parser.
   $reader = PGPReader::getInstance();
   $reader->setSnippet($data);
   $reader->addTokenNames();

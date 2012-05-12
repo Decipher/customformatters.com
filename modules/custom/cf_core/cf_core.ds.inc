@@ -63,7 +63,7 @@ function cf_core_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -259,11 +259,13 @@ function cf_core_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'body',
+        0 => 'field_formatter_radioactivity',
+        1 => 'title',
+        2 => 'body',
       ),
     ),
     'fields' => array(
+      'field_formatter_radioactivity' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
     ),

@@ -124,7 +124,7 @@ function cf_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_variables';
-  $strongarm->value = 'search_totals';
+  $strongarm->value = 'search_totals_from_to_end';
   $export['ds_search_variables'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -205,7 +205,7 @@ function cf_core_strongarm() {
     ),
     'field_formatter_field_types' => array(
       'region' => 'right',
-      'weight' => '5',
+      'weight' => '1',
       'has_required' => TRUE,
       'title' => 'Field type(s)',
     ),
@@ -215,6 +215,19 @@ function cf_core_strongarm() {
       'has_required' => FALSE,
       'title' => 'Radioactivity',
       'hidden' => 1,
+    ),
+    'field_formatter_import' => array(
+      'region' => 'main',
+      'weight' => '1',
+      'has_required' => FALSE,
+      'title' => 'Import',
+      'hidden' => 0,
+    ),
+    'field_formatter_api_version' => array(
+      'region' => 'right',
+      'weight' => '0',
+      'has_required' => TRUE,
+      'title' => 'API version',
     ),
   );
   $export['nodeformscols_field_placements_formatter_default'] = $strongarm;
