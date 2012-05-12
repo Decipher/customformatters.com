@@ -3,10 +3,20 @@ description = Installation profile for CustomFormatters.com
 version = 2.x-dev
 core = 7.x
 
+; Files
 files[] = cf_profile.profile
 
+; Dependencies
 dependencies[] = cf_core
+dependencies[] = devel_generate
 dependencies[] = features
 dependencies[] = panels
 dependencies[] = radioactivity
 dependencies[] = views
+
+; Profiler - Devel generate
+devel-generate[content][type] = content
+devel-generate[content][node_types][] = blog
+devel-generate[content][node_types][] = formatter
+devel-generate[content][num_nodes] = 50
+devel-generate[content][title_length] = 6
