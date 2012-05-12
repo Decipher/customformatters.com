@@ -24,14 +24,26 @@ projects[context_admin][version] = '1.1'
 projects[ctools][subdir] = 'contrib'
 projects[ctools][version] = '1.0'
 
-projects[devel][subdir] = 'contrib'
-projects[devel][version] = '1.2'
+projects[devel][type] = "module"
+projects[devel][download][type] = "git"
+projects[devel][download][url] = "http://git.drupal.org/project/devel.git"
+projects[devel][download][revision] = "17527131583b1870392d18a59741d4a2b0e07dde"
+projects[devel][subdir] = "contrib"
+
+projects[devel_image_provider][type] = "module"
+projects[devel_image_provider][download][type] = "git"
+projects[devel_image_provider][download][url] = "http://git.drupal.org/project/devel_image_provider.git"
+projects[devel_image_provider][download][revision] = "418a9d8b4ff9ff6434e416eaabbf1ad4ddeb9725"
+projects[devel_image_provider][subdir] = "contrib"
+projects[devel_image_provider][patch][] = "http://drupal.org/files/resolution-1516854-7.patch"
+projects[devel_image_provider][patch][] = "http://drupal.org/files/array_rand_error-1539208-2.patch"
 
 projects[diff][subdir] = 'contrib'
 projects[diff][version] = '2.0'
 
 projects[ds][subdir] = 'contrib'
 projects[ds][version] = '1.5'
+projects[ds][patch][] = 'http://drupal.org/files/hide_tokens-1462544-1.patch'
 
 projects[entity][subdir] = 'contrib'
 projects[entity][version] = '1.0-rc2'
@@ -116,6 +128,17 @@ projects[fittext.js][type] = 'library'
 projects[fittext.js][download][type] = 'git'
 projects[fittext.js][download][url] = 'https://github.com/davatron5000/FitText.js.git'
 projects[fittext.js][download][revision] = '6e86634ea751a575bf4631495ba8b19fdc9a6273'
+
+projects[lessphp][type] = 'library'
+projects[lessphp][download][type] = 'file'
+projects[lessphp][download][url] = 'http://leafo.net/lessphp/src/lessphp-0.3.4-2.tar.gz'
+
+projects[profiler][type] = "library"
+projects[profiler][download][type] = "git"
+projects[profiler][download][url] = "http://git.drupal.org/project/profiler.git"
+projects[profiler][download][revision] = "d0137cb42bc7a4e9ce0a0431f875806285d09758"
+projects[profiler][patch][] = "http://drupal.org/files/beta1_merge-1539070-1.patch"
+projects[profiler][patch][] = "http://drupal.org/files/devel_generate-1420344-8.patch"
 
 projects[tinymce][type] = 'library'
 projects[tinymce][download][type] = 'file'
