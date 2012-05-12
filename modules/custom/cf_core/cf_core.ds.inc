@@ -10,7 +10,7 @@
 function cf_core_ds_field_settings_info() {
   $export = array();
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|blog|default';
   $ds_fieldsetting->entity_type = 'node';
@@ -25,7 +25,7 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|blog|default'] = $ds_fieldsetting;
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|blog|teaser';
   $ds_fieldsetting->entity_type = 'node';
@@ -55,7 +55,7 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|blog|teaser'] = $ds_fieldsetting;
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|formatter|default';
   $ds_fieldsetting->entity_type = 'node';
@@ -70,7 +70,7 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|formatter|default'] = $ds_fieldsetting;
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|formatter|search_index';
   $ds_fieldsetting->entity_type = 'node';
@@ -85,7 +85,7 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|formatter|search_index'] = $ds_fieldsetting;
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|formatter|search_result';
   $ds_fieldsetting->entity_type = 'node';
@@ -105,7 +105,7 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|formatter|search_result'] = $ds_fieldsetting;
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|formatter|teaser';
   $ds_fieldsetting->entity_type = 'node';
@@ -140,7 +140,7 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|formatter|teaser'] = $ds_fieldsetting;
 
-  $ds_fieldsetting = new stdClass;
+  $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|page|default';
   $ds_fieldsetting->entity_type = 'node';
@@ -164,7 +164,7 @@ function cf_core_ds_field_settings_info() {
 function cf_core_ds_custom_fields_info() {
   $export = array();
 
-  $ds_field = new stdClass;
+  $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'cf_byauthor';
   $ds_field->label = 'by Author';
@@ -193,7 +193,7 @@ $user = user_load($entity->uid);
 function cf_core_ds_layout_settings_info() {
   $export = array();
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|blog|default';
   $ds_layout->entity_type = 'node';
@@ -217,7 +217,7 @@ function cf_core_ds_layout_settings_info() {
   );
   $export['node|blog|default'] = $ds_layout;
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|blog|teaser';
   $ds_layout->entity_type = 'node';
@@ -247,7 +247,7 @@ function cf_core_ds_layout_settings_info() {
   );
   $export['node|blog|teaser'] = $ds_layout;
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|formatter|default';
   $ds_layout->entity_type = 'node';
@@ -273,7 +273,7 @@ function cf_core_ds_layout_settings_info() {
   );
   $export['node|formatter|default'] = $ds_layout;
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|formatter|search_index';
   $ds_layout->entity_type = 'node';
@@ -297,7 +297,7 @@ function cf_core_ds_layout_settings_info() {
   );
   $export['node|formatter|search_index'] = $ds_layout;
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|formatter|search_result';
   $ds_layout->entity_type = 'node';
@@ -321,7 +321,7 @@ function cf_core_ds_layout_settings_info() {
   );
   $export['node|formatter|search_result'] = $ds_layout;
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|formatter|teaser';
   $ds_layout->entity_type = 'node';
@@ -355,7 +355,7 @@ function cf_core_ds_layout_settings_info() {
   );
   $export['node|formatter|teaser'] = $ds_layout;
 
-  $ds_layout = new stdClass;
+  $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
   $ds_layout->id = 'node|page|default';
   $ds_layout->entity_type = 'node';

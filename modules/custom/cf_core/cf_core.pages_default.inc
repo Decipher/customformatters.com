@@ -8,7 +8,7 @@
  * Implements hook_default_page_manager_pages().
  */
 function cf_core_default_page_manager_pages() {
-  $page = new stdClass;
+  $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'cf_about';
@@ -34,7 +34,7 @@ function cf_core_default_page_manager_pages() {
     'admin_paths' => FALSE,
   );
   $page->default_handlers = array();
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'page_cf_about_panel_context';
@@ -51,7 +51,7 @@ function cf_core_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -64,7 +64,7 @@ function cf_core_default_page_manager_pages() {
   $display->title = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'middle';
     $pane->type = 'custom';
@@ -89,12 +89,12 @@ function cf_core_default_page_manager_pages() {
     $display->content['new-1'] = $pane;
     $display->panels['middle'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_PANE;
-  $display->title_pane = '0';
+  $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['cf_about'] = $page;
 
-  $page = new stdClass;
+  $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'cf_frontpage';
@@ -109,7 +109,7 @@ function cf_core_default_page_manager_pages() {
     'admin_paths' => FALSE,
   );
   $page->default_handlers = array();
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'page_cf_frontpage_panel_context';
@@ -126,7 +126,7 @@ function cf_core_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = 'twocol';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -141,7 +141,7 @@ function cf_core_default_page_manager_pages() {
   $display->title = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-2';
     $pane->panel = 'left';
     $pane->type = 'block';
@@ -162,7 +162,7 @@ function cf_core_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['left'][0] = 'new-2';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'right';
     $pane->type = 'block';
@@ -189,6 +189,6 @@ function cf_core_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['cf_frontpage'] = $page;
 
- return $pages;
+  return $pages;
 
 }

@@ -10,7 +10,7 @@
 function cf_core_field_group_info() {
   $export = array();
 
-  $field_group = new stdClass;
+  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_formatter_basic|node|formatter|form';
@@ -18,10 +18,10 @@ function cf_core_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'formatter';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_multistep_edit';
+  $field_group->parent_name = 'group_formatter_formatter';
   $field_group->data = array(
     'label' => 'Basic information',
-    'weight' => '8',
+    'weight' => '16',
     'children' => array(
       0 => 'field_formatter_description',
       1 => 'field_formatter_mode',
@@ -40,7 +40,38 @@ function cf_core_field_group_info() {
   );
   $export['group_formatter_basic|node|formatter|form'] = $field_group;
 
-  $field_group = new stdClass;
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_formatter|node|formatter|form';
+  $field_group->group_name = 'group_formatter_formatter';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_multistep_edit';
+  $field_group->data = array(
+    'label' => 'Formatter',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_formatter_field_types',
+      1 => 'field_formatter_code',
+      2 => 'field_formatter_fapi',
+      3 => 'group_formatter_basic',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Formatter',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_formatter_formatter|node|formatter|form'] = $field_group;
+
+  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_multistep_details|node|formatter|form';
@@ -62,7 +93,7 @@ function cf_core_field_group_info() {
   );
   $export['group_multistep_details|node|formatter|form'] = $field_group;
 
-  $field_group = new stdClass;
+  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_multistep_edit|node|formatter|form';
@@ -72,22 +103,20 @@ function cf_core_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Formatter',
+    'label' => 'Details',
     'weight' => '1',
     'children' => array(
-      0 => 'field_formatter_field_types',
-      1 => 'field_formatter_code',
-      2 => 'field_formatter_fapi',
-      3 => 'group_formatter_basic',
+      0 => 'body',
+      1 => 'group_formatter_formatter',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
-      'label' => 'Formatter',
+      'label' => 'Details',
     ),
   );
   $export['group_multistep_edit|node|formatter|form'] = $field_group;
 
-  $field_group = new stdClass;
+  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_multistep_import|node|formatter|form';

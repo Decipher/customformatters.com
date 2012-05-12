@@ -6,9 +6,6 @@ api = 2
 projects[admin_menu][subdir] = 'contrib'
 projects[admin_menu][version] = '3.0-rc2'
 
-projects[boxes][subdir] = 'contrib'
-projects[boxes][version] = '1.0'
-
 projects[coder][subdir] = 'contrib'
 projects[coder][version] = '1.0'
 
@@ -49,7 +46,7 @@ projects[entity][subdir] = 'contrib'
 projects[entity][version] = '1.0-rc2'
 
 projects[features][subdir] = 'contrib'
-projects[features][version] = '1.0-beta6'
+projects[features][version] = '1.0-rc2'
 
 projects[globalredirect][subdir] = 'contrib'
 projects[globalredirect][version] = '1.4'
@@ -80,7 +77,7 @@ projects[page_title][subdir] = 'contrib'
 projects[page_title][version] = '2.7'
 
 projects[panels][subdir] = 'contrib'
-projects[panels][version] = '3.0'
+projects[panels][version] = '3.2'
 
 projects[pathauto][subdir] = 'contrib'
 projects[pathauto][version] = '1.0'
@@ -89,19 +86,19 @@ projects[pathauto][subdir] = 'contrib'
 projects[pathauto][version] = '1.0'
 
 projects[radioactivity][subdir] = 'contrib'
-projects[radioactivity][version] = '2.3'
+projects[radioactivity][version] = '2.5'
 
 projects[rules][subdir] = 'contrib'
 projects[rules][version] = '2.1'
 
 projects[strongarm][subdir] = 'contrib'
-projects[strongarm][version] = '2.0-beta5'
+projects[strongarm][version] = '2.0-rc1'
 
 projects[subpathauto][subdir] = 'contrib'
 projects[subpathauto][version] = '1.2'
 
 projects[token][subdir] = 'contrib'
-projects[token][version] = '1.0-rc1'
+projects[token][version] = '1.0'
 
 projects[views][subdir] = 'contrib'
 projects[views][version] = '3.3'

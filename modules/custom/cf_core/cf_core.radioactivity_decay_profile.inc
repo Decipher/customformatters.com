@@ -10,7 +10,7 @@
 function cf_core_default_radioactivity_decay_profile() {
   $export = array();
 
-  $radioactivity_decay_profile = new stdClass;
+  $radioactivity_decay_profile = new stdClass();
   $radioactivity_decay_profile->disabled = FALSE; /* Edit this to true to make a default radioactivity_decay_profile disabled initially */
   $radioactivity_decay_profile->api_version = 1;
   $radioactivity_decay_profile->machine_name = 'default';

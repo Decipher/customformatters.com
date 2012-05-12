@@ -10,7 +10,7 @@
 function cf_core_context_default_contexts() {
   $export = array();
 
-  $context = new stdClass;
+  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'layout-front-all';
@@ -42,7 +42,7 @@ function cf_core_context_default_contexts() {
   t('Custom Formatters');
   $export['layout-front-all'] = $context;
 
-  $context = new stdClass;
+  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'layout-global-all';
@@ -64,8 +64,8 @@ function cf_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'boxes-cf_section' => array(
-          'module' => 'boxes',
+        'panels_mini-cf_section' => array(
+          'module' => 'panels_mini',
           'delta' => 'cf_section',
           'region' => 'sidebar_first',
           'weight' => '-10',
@@ -76,8 +76,8 @@ function cf_core_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'boxes-cf_github' => array(
-          'module' => 'boxes',
+        'panels_mini-cf_github' => array(
+          'module' => 'panels_mini',
           'delta' => 'cf_github',
           'region' => 'sidebar_second',
           'weight' => '-7',
@@ -92,7 +92,7 @@ function cf_core_context_default_contexts() {
   t('Custom Formatters');
   $export['layout-global-all'] = $context;
 
-  $context = new stdClass;
+  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'layout-not_search-all';

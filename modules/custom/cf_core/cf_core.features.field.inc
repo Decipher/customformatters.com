@@ -117,11 +117,11 @@ function cf_core_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 16,
+          'weight' => '16',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -136,10 +136,13 @@ function cf_core_field_default_fields() {
           'weight' => 0,
         ),
         'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '100',
+          ),
+          'type' => 'text_trimmed',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -159,7 +162,7 @@ function cf_core_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '6',
+        'weight' => '16',
       ),
     ),
   );
@@ -198,10 +201,9 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 13,
+          'type' => 'hidden',
+          'weight' => '13',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -219,7 +221,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '10',
         ),
       ),
       'entity_type' => 'node',
@@ -237,7 +239,7 @@ function cf_core_field_default_fields() {
           'rows' => '10',
         ),
         'type' => 'text_textarea',
-        'weight' => '10',
+        'weight' => '18',
       ),
     ),
   );
@@ -276,10 +278,9 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 11,
+          'type' => 'hidden',
+          'weight' => '11',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -297,7 +298,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '13',
         ),
       ),
       'entity_type' => 'node',
@@ -354,10 +355,9 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 14,
+          'type' => 'hidden',
+          'weight' => '14',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -375,7 +375,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '9',
         ),
       ),
       'entity_type' => 'node',
@@ -393,7 +393,7 @@ function cf_core_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '11',
+        'weight' => '19',
       ),
     ),
   );
@@ -480,7 +480,7 @@ function cf_core_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '9',
+        'weight' => '17',
       ),
     ),
   );
@@ -519,10 +519,9 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 9,
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -540,7 +539,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '11',
         ),
       ),
       'entity_type' => 'node',
@@ -608,10 +607,9 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => 12,
+          'type' => 'hidden',
+          'weight' => '12',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -629,7 +627,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '14',
         ),
       ),
       'entity_type' => 'node',
@@ -685,10 +683,9 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 15,
+          'type' => 'hidden',
+          'weight' => '15',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -706,7 +703,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '6',
         ),
       ),
       'entity_type' => 'node',
@@ -781,7 +778,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '12',
         ),
       ),
       'entity_type' => 'node',
