@@ -141,6 +141,10 @@ projects[fittext.js][download][type] = 'git'
 projects[fittext.js][download][url] = 'https://github.com/davatron5000/FitText.js.git'
 projects[fittext.js][download][revision] = '6e86634ea751a575bf4631495ba8b19fdc9a6273'
 
+projects[jquery.snippet][type] = 'library'
+projects[jquery.snippet][download][type] = 'file'
+projects[jquery.snippet][download][url] = 'http://www.steamdev.com/snippet/js/jquery.snippet.js'
+
 projects[lessphp][type] = 'library'
 projects[lessphp][download][type] = 'file'
 projects[lessphp][download][url] = 'http://leafo.net/lessphp/src/lessphp-0.3.4-2.tar.gz'
