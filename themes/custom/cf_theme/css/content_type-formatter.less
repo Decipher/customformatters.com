@@ -1,36 +1,82 @@
 .node-type-formatter {
   #section-content {
     #region-content {
-      .field-name-field-formatter-import {
-        .field-item {
-          #font > .monospace;
+      .group-formatter-group {
+        .horizontal-tabs {
+          border: none;
 
-          background-color: @color-grey-dark;
-          color: @color-white;
-          padding: 10px;
+          .horizontal-tabs-list {
+            background-color: transparent;
+            border: none;
+            float: right;
+            width: inherit;
 
-          .snippet-container {
-            overflow-x: scroll;
-            overflow-y: hidden;
+            li {
+              background-color: @color-grey-dark;
+              border: none;
+              margin: 0 0 5px 5px;
+              padding: 0;
 
-            pre, ol {
-              margin-bottom: 0;
+              &.selected {
+                background-color: @color-orange;
 
-              li {
-                margin: 0 0 .2em 1.5em;
-
-                .sh_comment {
-                  color: lighten(@color-grey-dark, 25%);
-                }
-
-                .sh_keyword, .sh_symbol {
-                  color: @color-orange;
-                }
-
-                .sh_string {
-                  color: @color-grey-light;
+                a:hover {
+                  background-color: transparent;
+                  cursor: default;
                 }
               }
+
+              a, strong {
+                color: @color-white;
+              }
+
+              a:hover {
+                background-color: @color-grey-light;
+                text-decoration: none;
+              }
+            }
+          }
+
+          fieldset {
+            padding: 0;
+
+            .field-name-field-formatter-import {
+              .field-item {
+                #font > .monospace;
+
+                background-color: @color-grey-dark;
+                color: @color-white;
+                padding: 10px;
+
+                .snippet-container {
+                  overflow-x: auto;
+                  overflow-y: hidden;
+
+                  pre, ol {
+                    margin-bottom: 0;
+
+                    li {
+                      margin: 0 0 .2em 1.5em;
+
+                      .sh_comment {
+                        color: lighten(@color-grey-dark, 25%);
+                      }
+
+                      .sh_keyword, .sh_symbol {
+                        color: @color-orange;
+                      }
+
+                      .sh_string {
+                        color: @color-grey-light;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .field-name-field-formatter-code {
+              .field-name-field-formatter-import;
             }
           }
         }

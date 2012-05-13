@@ -86,9 +86,8 @@ function cf_core_node_process_import_submit($form, &$form_state) {
       }
 
       // Formatter.
-      // @TODO - Un-escape quotes.
-      $form_state['values']['field_formatter_code'][LANGUAGE_NONE][0]['value'] = $formatter->code;
-      $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = $formatter->fapi;
+      $form_state['values']['field_formatter_code'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->code);
+      $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->fapi);
 
       // Details.
       $form_state['values']['body'][LANGUAGE_NONE][0]['value'] = $formatter->description;
