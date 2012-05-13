@@ -262,12 +262,14 @@ function cf_core_ds_layout_settings_info() {
         0 => 'field_formatter_radioactivity',
         1 => 'title',
         2 => 'body',
+        3 => 'field_formatter_import',
       ),
     ),
     'fields' => array(
       'field_formatter_radioactivity' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
+      'field_formatter_import' => 'ds_content',
     ),
     'classes' => array(),
   );

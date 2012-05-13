@@ -121,7 +121,7 @@ function cf_core_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '16',
+          'weight' => '2',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -203,7 +203,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '13',
+          'weight' => '4',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -357,7 +357,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '13',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -441,7 +441,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '10',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -519,9 +519,10 @@ function cf_core_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
+          'module' => 'custom_formatters',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '9',
+          'type' => 'custom_formatters_jquery_snippet',
+          'weight' => '3',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -685,7 +686,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '14',
         ),
         'search_index' => array(
           'label' => 'above',

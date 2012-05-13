@@ -10,7 +10,7 @@
 function cf_core_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access content
+  // Exported permission: access content.
   $permissions['access content'] = array(
     'name' => 'access content',
     'roles' => array(
@@ -20,7 +20,7 @@ function cf_core_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: search content
+  // Exported permission: search content.
   $permissions['search content'] = array(
     'name' => 'search content',
     'roles' => array(

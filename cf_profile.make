@@ -2,6 +2,12 @@ core = 7.x
 api = 2
 
 
+
+; Includes
+includes[custom_formatters] = 'http://dl.dropbox.com/u/1804559/makefiles/custom_formatters-7.x.make'
+
+
+
 ; Modules - Contrib
 projects[admin_menu][subdir] = 'contrib'
 projects[admin_menu][version] = '3.0-rc2'
