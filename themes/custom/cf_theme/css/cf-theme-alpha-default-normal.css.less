@@ -39,7 +39,6 @@ body {
             li {
               a {
                 font-size: 8px;
-                height: 20px;
                 width: 135px;
               }
             }
@@ -128,24 +127,38 @@ form {
   }
 }
 
-.page-user {
-  &.not-logged-in {
-    #block-system-main {
-      margin-left: 160px;
+.page-about {
+  #zone-content {
+    min-height: 284px;
+
+    #mini-panel-cf_section {
+      .pane-content {
+        margin-top: 6px;
+      }
     }
   }
 }
 
-.node-type-formatter {
-  #section-content {
-    #region-content {
-      .group-formatter-group {
-        .horizontal-tabs {
-          fieldset {
-            width: 620px;
-          }
-        }
-      }
+.node-type-formatter, .page-formatters {
+  #zone-content {
+    min-height: 558px;
+  }
+}
+
+.page-search-content {
+  #zone-content {
+    min-height: 396px;
+  }
+}
+
+.page-user {
+  #zone-content {
+    min-height: 223px;
+  }
+
+  &.not-logged-in {
+    #block-system-main {
+      margin-left: 160px;
     }
   }
 }

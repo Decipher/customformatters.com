@@ -121,25 +121,38 @@ form {
   }
 }
 
+.page-about {
+  #zone-content {
+    min-height: 385px;
+
+    #mini-panel-cf_section {
+      .pane-content {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.node-type-formatter, .page-formatters {
+  #zone-content {
+    min-height: 758px;
+  }
+}
+
+.page-search-content {
+  #zone-content {
+    min-height: 516px;
+  }
+}
+
 .page-user {
+  #zone-content {
+    min-height: 302px;
+  }
+
   &.not-logged-in {
     #block-system-main {
       margin-left: 200px;
     }
   }
 }
-
-.node-type-formatter {
-  #section-content {
-    #region-content {
-      .group-formatter-group {
-        .horizontal-tabs {
-          fieldset {
-            width: 780px;
-          }
-        }
-      }
-    }
-  }
-}
-

@@ -43,6 +43,33 @@ function cf_core_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_code|node|formatter|default';
+  $field_group->group_name = 'group_formatter_code';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_formatter_group';
+  $field_group->data = array(
+    'label' => 'Code',
+    'weight' => '19',
+    'children' => array(
+      0 => 'field_formatter_code',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'label' => 'Code',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_formatter_code|node|formatter|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_formatter_formatter|node|formatter|form';
   $field_group->group_name = 'group_formatter_formatter';
   $field_group->entity_type = 'node';
@@ -70,6 +97,59 @@ function cf_core_field_group_info() {
     ),
   );
   $export['group_formatter_formatter|node|formatter|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_group|node|formatter|default';
+  $field_group->group_name = 'group_formatter_group';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Formatter',
+    'weight' => '4',
+    'children' => array(
+      0 => 'group_formatter_object',
+      1 => 'group_formatter_code',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_formatter_group|node|formatter|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_object|node|formatter|default';
+  $field_group->group_name = 'group_formatter_object';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_formatter_group';
+  $field_group->data = array(
+    'label' => 'Exportable',
+    'weight' => '20',
+    'children' => array(
+      0 => 'field_formatter_import',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'label' => 'Exportable',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_formatter_object|node|formatter|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

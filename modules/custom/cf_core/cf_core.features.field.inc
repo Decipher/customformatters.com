@@ -54,10 +54,8 @@ function cf_core_field_default_fields() {
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(
-            'trim_length' => 600,
-          ),
-          'type' => 'text_summary_or_trimmed',
+          'settings' => array(),
+          'type' => 'text_default',
           'weight' => '2',
         ),
       ),
@@ -137,12 +135,9 @@ function cf_core_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'trim_length' => '100',
-          ),
-          'type' => 'text_trimmed',
-          'weight' => '4',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
         ),
       ),
       'entity_type' => 'node',
@@ -200,10 +195,11 @@ function cf_core_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'custom_formatters',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '4',
+          'type' => 'custom_formatters_jquery_snippet',
+          'weight' => '10',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -280,7 +276,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => '12',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -357,7 +353,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '13',
+          'weight' => '14',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -441,7 +437,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '10',
+          'weight' => '11',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -458,11 +454,11 @@ function cf_core_field_default_fields() {
           'weight' => '1',
         ),
         'teaser' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '3',
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'node',
@@ -518,7 +514,7 @@ function cf_core_field_default_fields() {
       'description' => 'Need help text here to explain how to retrieved exportable object.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'custom_formatters',
           'settings' => array(),
           'type' => 'custom_formatters_jquery_snippet',
@@ -610,7 +606,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => '13',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -686,7 +682,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '15',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -704,7 +700,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '8',
         ),
       ),
       'entity_type' => 'node',

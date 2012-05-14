@@ -43,8 +43,11 @@ function cf_core_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'What is Custom Formatters?',
-      'body' => 'Custom Formatters (the website) is a repository for user contributed Custom Formatters (the module) snippets.',
-      'format' => 'plain_text',
+      'body' => '<p>
+  Custom Formatters (the website) is a repository for user contributed Custom Formatters (the module) snippets.
+</p>
+<a href="/about" class="more">Read more</a>',
+      'format' => 'full_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();

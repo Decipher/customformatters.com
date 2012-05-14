@@ -60,7 +60,7 @@ body {
             li {
               a {
                 font-size: 6px;
-                height: 15px;
+                height: 35px;
                 width: 95px;
               }
             }
@@ -103,6 +103,11 @@ body {
           #mini-panel-cf_about {
             h2 {
               color: @color-orange;
+            }
+
+            a.more {
+              float: right;
+              text-transform: uppercase;
             }
           }
 
@@ -229,7 +234,35 @@ form {
   }
 }
 
+.page-about {
+  #zone-content {
+    min-height: 185px;
+
+    #mini-panel-cf_section {
+      .pane-content {
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.node-type-formatter, .page-formatters {
+  #zone-content {
+    min-height: 364px;
+  }
+}
+
+.page-search-content {
+  #zone-content {
+    min-height: 278px;
+  }
+}
+
 .page-user {
+  #zone-content {
+    min-height: 145px;
+  }
+
   &.not-logged-in {
     div.tabs {
       float: left;
@@ -245,20 +278,6 @@ form {
 
     #block-system-main {
       margin-left: 120px;
-    }
-  }
-}
-
-.node-type-formatter {
-  #section-content {
-    #region-content {
-      .group-formatter-group {
-        .horizontal-tabs {
-          fieldset {
-            width: 460px;
-          }
-        }
-      }
     }
   }
 }

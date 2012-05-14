@@ -37,15 +37,10 @@ function cf_core_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '1',
+        'link' => '0',
         'wrapper' => 'h2',
         'class' => '',
       ),
-    ),
-    'node_link' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
     ),
     'post_date' => array(
       'weight' => '0',
@@ -112,13 +107,8 @@ function cf_core_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'formatter';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'cf_byauthor' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -126,16 +116,6 @@ function cf_core_ds_field_settings_info() {
         'wrapper' => 'strong',
         'class' => '',
       ),
-    ),
-    'node_link' => array(
-      'weight' => '5',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'post_date' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'ds_post_date_cf_stub',
     ),
   );
   $export['node|formatter|teaser'] = $ds_fieldsetting;
@@ -234,14 +214,12 @@ function cf_core_ds_layout_settings_info() {
       'right' => array(
         0 => 'title',
         1 => 'body',
-        2 => 'node_link',
       ),
     ),
     'fields' => array(
       'post_date' => 'left',
       'title' => 'right',
       'body' => 'right',
-      'node_link' => 'right',
     ),
     'classes' => array(),
   );
@@ -263,6 +241,10 @@ function cf_core_ds_layout_settings_info() {
         1 => 'title',
         2 => 'body',
         3 => 'field_formatter_import',
+        4 => 'group_formatter_group',
+        5 => 'field_formatter_code',
+        6 => 'group_formatter_code',
+        7 => 'group_formatter_object',
       ),
     ),
     'fields' => array(
@@ -270,6 +252,10 @@ function cf_core_ds_layout_settings_info() {
       'title' => 'ds_content',
       'body' => 'ds_content',
       'field_formatter_import' => 'ds_content',
+      'group_formatter_group' => 'ds_content',
+      'field_formatter_code' => 'ds_content',
+      'group_formatter_code' => 'ds_content',
+      'group_formatter_object' => 'ds_content',
     ),
     'classes' => array(),
   );
@@ -329,29 +315,19 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'formatter';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'hide_empty_regions' => 0,
     'hide_sidebars' => 0,
     'regions' => array(
-      'left' => array(
-        0 => 'post_date',
-      ),
-      'right' => array(
+      'ds_content' => array(
         0 => 'title',
-        1 => 'cf_byauthor',
-        2 => 'field_formatter_field_types',
-        3 => 'body',
-        4 => 'node_link',
+        1 => 'field_formatter_field_types',
       ),
     ),
     'fields' => array(
-      'post_date' => 'left',
-      'title' => 'right',
-      'cf_byauthor' => 'right',
-      'field_formatter_field_types' => 'right',
-      'body' => 'right',
-      'node_link' => 'right',
+      'title' => 'ds_content',
+      'field_formatter_field_types' => 'ds_content',
     ),
     'classes' => array(),
   );

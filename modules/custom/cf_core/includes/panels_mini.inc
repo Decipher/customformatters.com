@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Block module inegration.
+ * Mini panels module inegration.
  */
 
 /**

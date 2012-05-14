@@ -77,3 +77,15 @@ function cf_theme_menu_local_task($vars) {
 
   return '<li' . (!empty($vars['element']['#active']) ? ' class="active"' : '') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>";
 }
+
+/**
+ * Links theme.
+ */
+function cf_theme_link($variables) {
+  $uri_args = explode('/', ltrim(request_uri(), '/'));
+  if ($uri_args[0] == drupal_strtolower($variables['text'])) {
+    $variables['options']['attributes']['class'] = isset($variables['options']['attributes']['class']) ? $variables['options']['attributes']['class'] : array();
+    $variables['options']['attributes']['class'][] = 'active';
+  }
+  return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>' . ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+}

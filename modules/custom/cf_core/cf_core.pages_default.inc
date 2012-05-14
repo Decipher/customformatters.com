@@ -74,8 +74,22 @@ function cf_core_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'About',
-      'body' => 'Custom Formatters (the website) is a repository for user contributed Custom Formatters (the module) snippets.',
-      'format' => 'plain_text',
+      'body' => '<p>
+  Custom Formatters (the website) is a repository for user contributed Custom Formatters (the module) snippets.
+</p>
+<p>
+  <h4>But what are formatters?</h4>
+  A Formatter is the theme layer for a Field; an Image field contains a file reference, a Formatter is used to render that file as an Image.
+</p>
+<p>
+  <h4>So what is a custom formatter?</h4>
+  A custom formatter is a Formatter created by a user/developer for the purpose of rendering a field as necessary, it is made up of two core Drupal API hooks, <a href="http://api.drupal.org/api/drupal/modules%21field%21field.api.php/function/hook_field_formatter_info/7">hook_field_formatter_info()</a> and <a href="http://api.drupal.org/api/drupal/modules%21field%21field.api.php/function/hook_field_formatter_view/7">hook_field_formatter_view()</a>.
+</p>
+<p>
+  <h4>Then what is Custom Formatters (the module)?</h4>
+  Custom Formatters (the module) is a utility to create custom formatters, both in a <a href="http://drupal.org/project/ctools">CTools</a>/<a href="http://drupal.org/project/features">Features</a> exportable method and in a Drupal API based version. 
+</p>',
+      'format' => 'full_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();

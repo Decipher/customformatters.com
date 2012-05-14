@@ -87,6 +87,11 @@ body {
               &:hover {
                 background-color: @color-grey-light;
               }
+
+              &.active {
+                background-color: @color-orange;
+                cursor: default;
+              }
             }
 
             &.active {
@@ -120,7 +125,9 @@ body {
 
             li {
               float: left;
+              margin-left: 0;
               margin-right: 20px;
+              padding: 0;
 
               a {
                 background-color: @color-grey-dark;
@@ -171,7 +178,7 @@ body {
 
               color: @color-grey-light;
               position: absolute;
-              top: 60px;
+              top: 70px;
               text-transform: uppercase;
             }
           }
@@ -253,47 +260,44 @@ body {
 
               .pane-content {
                 .view-mode-teaser {
+                  border-bottom: 1px dotted @color-grey-light;
+                  height: 40px;
                   margin-bottom: 10px;
-                  min-height: 50px;
+                  overflow: hidden;
 
-                  &:hover {
-                    background-color: @color-grey-light;
+                  .field-name-title {
+                    float: left;
+                    text-transform: uppercase;
 
-                    .group-left {
-                      .field-name-post-date {
-                        color: @color-white;
+                    a {
+                      #font > .shorthand(bold, 14px);
+
+                      color: @color-grey-dark;
+                      margin-right: 0.35em;
+                      text-decoration: none;
+
+                      &:hover {
+                        color: @color-orange;
                       }
                     }
                   }
 
-                  .group-left {
-                    .field-name-post-date {
-                      #font > .shorthand(bold, 9px);
+                  .field-type-taxonomy-term-reference {
+                    .field-item {
+                      background-color: @color-grey-light;
+                      color: @color-white;
+                      display: inline;
+                      font-size: 9px;
+                      margin-right: 0.5em;
+                      padding: 0 2px;
+                      text-transform: uppercase;
 
-                      color: @color-grey-light;
-                      top: 49px;
-                    }
-                  }
-
-                  .group-right {
-                    .field {
-                      margin-left: 15px;
-                    }
-
-                    .field-name-title {
-                      float: left;
-                      a {
-                        #font > .shorthand(bold, 14px);
-
-                        color: @color-grey-dark;
-                        margin-right: 0.35em;
-                        text-decoration: none;
-
-                        &:hover {
-                          color: @color-orange;
-                        }
+                      &:hover {
+                        background-color: @color-orange;
                       }
                     }
+
+                    clear: left;
                   }
                 }
               }

@@ -42,7 +42,7 @@ function cf_core_custom_formatters_defaults() {
         $element[] = array(
           \'#attached\' => array(
             \'js\' => array(
-              "jQuery(document).ready(function() { jQuery(\'#{$id}\').snippet(\'php\'); })" => array(
+              "jQuery(document).ready(function() { jQuery(\'#{$id}\').snippet(\'php\', { menu: false }); })" => array(
                 \'type\' => \'inline\',
               ) 
             ),
