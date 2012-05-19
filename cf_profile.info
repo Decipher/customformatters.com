@@ -15,6 +15,12 @@ dependencies[] = radioactivity
 dependencies[] = views
 
 ; Profiler - Devel generate
+devel-generate[taxonomy][type] = taxonomy
+devel-generate[taxonomy][vids][] = 1
+devel-generate[taxonomy][vids][] = 2
+devel-generate[taxonomy][num_terms] = 10
+devel-generate[taxonomy][title_length] = 6
+
 devel-generate[content][type] = content
 devel-generate[content][node_types][] = blog
 devel-generate[content][node_types][] = formatter

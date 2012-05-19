@@ -153,8 +153,7 @@ projects[profiler][type] = "library"
 projects[profiler][download][type] = "git"
 projects[profiler][download][url] = "http://git.drupal.org/project/profiler.git"
 projects[profiler][download][revision] = "d0137cb42bc7a4e9ce0a0431f875806285d09758"
-projects[profiler][patch][] = "http://drupal.org/files/beta1_merge-1539070-1.patch"
-projects[profiler][patch][] = "http://drupal.org/files/devel_generate-1420344-8.patch"
+projects[profiler][patch][] = "http://drupal.org/files/beta_and_devel-1420344-9.patch"
 
 projects[tinymce][type] = 'library'
 projects[tinymce][download][type] = 'file'

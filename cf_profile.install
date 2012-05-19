@@ -1,4 +1,15 @@
 <?php
 /**
  * @file
+ * Install, update and uninstall functions for the CustomFormatters.com install
+ * profile.
  */
+
+/**
+ * Implements hook_install().
+ */
+function cf_profile_install() {
+  features_get_components(NULL, NULL, TRUE);
+  features_include_defaults(NULL, TRUE);
+  features_revert();
+}
