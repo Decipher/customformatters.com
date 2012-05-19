@@ -2,10 +2,3 @@
 /**
  * @file
  */
-
-/**
- * Implements hook_install().
- */
-function cf_profile_install() {
-  variable_features_revert('cf_profile');
-}
