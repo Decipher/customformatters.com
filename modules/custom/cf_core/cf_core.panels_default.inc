@@ -157,18 +157,25 @@ $section = \'\';
 
 switch (arg(0)) {
   case \'node\':
-    $node = menu_get_object();
-    switch ($node->type) {
-      case \'formatter\':
-        $section = \'formatters\';
-        break;
-
-      case \'page\':
-        $section = $node->title;
+    switch (arg(1)) {
+      case \'add\':
+        // @TODO
         break;
 
       default:
-        $section = $node->type;
+        $node = menu_get_object();
+        switch ($node->type) {
+          case \'formatter\':
+            $section = \'formatters\';
+            break;
+
+          case \'page\':
+            $section = $node->title;
+            break;
+
+          default:
+            $section = $node->type;
+        }
     }
     break;
 

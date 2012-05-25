@@ -72,12 +72,6 @@ projects[libraries][version] = '2.0-alpha2'
 projects[module_filter][subdir] = 'contrib'
 projects[module_filter][version] = '1.6'
 
-projects[multistep][subdir] = 'contrib'
-projects[multistep][type] = 'module'
-projects[multistep][download][type] = 'git'
-projects[multistep][download][url] = 'http://git.drupal.org/project/multistep.git'
-projects[multistep][download][revision] = '3b0d40a76f7c0d185da320900f651e4dad5be312'
-
 projects[nodeformcols][subdir] = 'contrib'
 projects[nodeformcols][type] = 'module'
 projects[nodeformcols][download][type] = 'git'

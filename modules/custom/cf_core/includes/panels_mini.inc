@@ -23,7 +23,7 @@ function cf_core_block_info() {
  */
 function cf_core_block_view($delta = '') {
   if (function_exists($function = "cf_core_block_{$delta}_view")) {
-    return $function();
+    // return $function();
   }
 }
 
@@ -42,11 +42,11 @@ function cf_core_block_download_module_view() {
       'data' => l(t('download !version', array('!version' => '<strong>' . key($version) . '</strong>')), $version[key($version)]['download_link'], array('html' => TRUE)),
       'class' => array("download-{$count}"),
     );
-    if ($count == 0) {
+    if (0 == $count) {
       $items[$count]['class'][] = 'first';
     }
     $count++;
-    if ($count == count($versions)) {
+    if (count($versions) == $count) {
       $items[$count - 1]['class'][] = 'last';
     }
   }

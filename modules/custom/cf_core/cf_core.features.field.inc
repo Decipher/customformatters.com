@@ -464,7 +464,7 @@ function cf_core_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_formatter_field_types',
       'label' => 'Field type(s)',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -594,11 +594,7 @@ function cf_core_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'formatter',
-      'default_value' => array(
-        0 => array(
-          'tid' => '17',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -630,7 +626,7 @@ function cf_core_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_formatter_mode',
       'label' => 'Format',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -706,7 +702,7 @@ function cf_core_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_formatter_name',
       'label' => 'Machine name',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -732,7 +728,11 @@ function cf_core_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_formatter_radioactivity',
       'foreign keys' => array(),
-      'indexes' => array(),
+      'indexes' => array(
+        'energy' => array(
+          0 => 'radioactivity_energy',
+        ),
+      ),
       'module' => 'radioactivity',
       'settings' => array(),
       'translatable' => '0',
@@ -791,7 +791,7 @@ function cf_core_field_default_fields() {
         'module' => 'radioactivity',
         'settings' => array(),
         'type' => 'radioactivity_basic_widget',
-        'weight' => '4',
+        'weight' => '2',
       ),
     ),
   );

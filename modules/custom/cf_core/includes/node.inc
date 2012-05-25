@@ -8,33 +8,11 @@
  * Implements hook_node_insert().
  */
 function cf_core_form_alter(&$form, $form_state, $form_id) {
-  if ($form_id == 'formatter_node_form') {
-    if (!empty($form['nid']['#value']) && !isset($_GET['step'])) {
-      $form['#multistep']['previous'] = 'group_multistep_import';
-      $form['#multistep']['current'] = 'group_multistep_edit';
-      $form['#multistep']['next'] = FALSE;
-      $form['actions']['previous'] = array_merge(
-        $form['actions']['next'],
-        array(
-          '#value' => t('< Previous'),
-          '#weight' => -999,
-        )
-      );
-      unset($form['actions']['next']);
-    }
+  if ('formatter_node_form' == $form_id) {
+    $form['title']['#required'] = FALSE;
 
-    switch ($form['#multistep']['current']) {
-      case 'group_multistep_import':
-        $form['#submit'][] = 'cf_core_node_process_import_submit';
-        $form['#validate'][] = 'cf_core_node_process_import_validate';
-        $form['actions']['next']['#value'] = t('Import');
-        unset($form['actions']['save']);
-        break;
-
-      case 'group_multistep_edit':
-        $form['actions']['previous']['#value'] = t('Re-import');
-        break;
-    }
+    $form['#submit'][] = 'cf_core_node_process_import_submit';
+    $form['#validate'][] = 'cf_core_node_process_import_validate';
   }
 }
 
@@ -69,8 +47,7 @@ function cf_core_node_process_import_submit($form, &$form_state) {
       $form_state['values']['field_formatter_description'][LANGUAGE_NONE][0]['value'] = $formatter->description;
 
       // Taxonomy terms (Format and Field types(s)).
-      // @TODO - Re-number vocabularies.
-      $vocabularies = array(1 => 'field_types', 3 => 'mode');
+      $vocabularies = array(1 => 'field_types', 2 => 'mode');
       foreach ($vocabularies as $vid => $vocab) {
         foreach (explode(',', $formatter->{$vocab}) as $term_name) {
           $term = taxonomy_get_term_by_name($term_name);
@@ -90,7 +67,9 @@ function cf_core_node_process_import_submit($form, &$form_state) {
       $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->fapi);
 
       // Details.
-      $form_state['values']['body'][LANGUAGE_NONE][0]['value'] = $formatter->description;
+      $form_state['values']['body'][LANGUAGE_NONE][0]['value'] = !isset($form_state['values']['body'][LANGUAGE_NONE][0]['value'])
+        ? $formatter->description
+        : $form_state['values']['body'][LANGUAGE_NONE][0]['value'];
     }
   }
 }

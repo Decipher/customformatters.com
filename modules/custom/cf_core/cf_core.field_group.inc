@@ -75,14 +75,14 @@ function cf_core_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'formatter';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_multistep_edit';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Formatter',
-    'weight' => '15',
+    'weight' => '0',
     'children' => array(
-      0 => 'field_formatter_field_types',
-      1 => 'field_formatter_code',
-      2 => 'field_formatter_fapi',
+      0 => 'field_formatter_code',
+      1 => 'field_formatter_fapi',
+      2 => 'field_formatter_field_types',
       3 => 'group_formatter_basic',
     ),
     'format_type' => 'fieldset',
@@ -150,6 +150,90 @@ function cf_core_field_group_info() {
     ),
   );
   $export['group_formatter_object|node|formatter|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_steps_details|node|formatter|form';
+  $field_group->group_name = 'group_formatter_steps_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_formatter_steps';
+  $field_group->data = array(
+    'label' => 'Details',
+    'weight' => '34',
+    'children' => array(
+      0 => 'body',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_formatter_steps_details|node|formatter|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_steps_import|node|formatter|form';
+  $field_group->group_name = 'group_formatter_steps_import';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_formatter_steps';
+  $field_group->data = array(
+    'label' => 'Import',
+    'weight' => '33',
+    'children' => array(
+      0 => 'field_formatter_import',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_formatter_steps_import|node|formatter|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_formatter_steps|node|formatter|form';
+  $field_group->group_name = 'group_formatter_steps';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'formatter';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Steps',
+    'weight' => '1',
+    'children' => array(
+      0 => 'group_formatter_steps_import',
+      1 => 'group_formatter_steps_details',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'label' => 'Steps',
+      'instance_settings' => array(
+        'classes' => '',
+        'page_header' => 3,
+        'page_counter' => 1,
+        'move_button' => 0,
+        'move_additional' => 1,
+      ),
+    ),
+  );
+  $export['group_formatter_steps|node|formatter|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

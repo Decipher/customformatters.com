@@ -82,22 +82,22 @@ function _cf_core_process_formatter($data) {
   while ($current != NULL) {
     $statement = $current->data;
     $type = is_object($statement) ? $statement->type : $statement['type'];
-    if ($type == T_ASSIGNMENT) {
+    if (T_ASSIGNMENT == $type) {
       switch (TRUE) {
-        case $editor->statementOperandToText($statement) == '$formatter':
+        case '$formatter' == $editor->statementOperandToText($statement):
           $formatter = new stdClass();
           break;
 
         case preg_match('/\$formatter->(.*)/', $editor->statementOperandToText($statement), $matches):
           $value = $statement->getValue()->first()->data;
 
-          if (is_array($value) && $value['type'] == T_CONSTANT_ENCAPSED_STRING) {
+          if (is_array($value) && T_CONSTANT_ENCAPSED_STRING == $value['type']) {
             // The key is a simple string.
             $formatter->{$matches[1]} = trim($value['value'], "'\" ");
           }
           elseif ($value instanceof PGPOperand) {
             // T_STRING values like TRUE.
-            $formatter->{$matches[1]} = $value->toString() == 'TRUE';
+            $formatter->{$matches[1]} = 'TRUE' == $value->toString();
           }
           elseif (is_numeric($value)) {
             $formatter->{$matches[1]} = (int) $value;
