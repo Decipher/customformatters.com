@@ -101,15 +101,19 @@ function cf_core_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Most popular';
+  $handler->display->display_options['title'] = 'Formatters';
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['alternating'] = 0;
@@ -137,6 +141,14 @@ function cf_core_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
+  /* Sort criterion: Content: Radioactivity (field_formatter_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['id'] = 'field_formatter_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['table'] = 'field_data_field_formatter_radioactivity';
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['field'] = 'field_formatter_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['expose']['label'] = 'Radioactivity (field_formatter_radioactivity:radioactivity_energy)';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -152,10 +164,19 @@ function cf_core_views_default_views() {
     'formatter' => 'formatter',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Page: Formatters */
+  $handler = $view->new_display('page', 'Page: Formatters', 'page_1');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['path'] = 'formatters';
+
+  /* Display: Block: Recently added */
+  $handler = $view->new_display('block', 'Block: Recently added', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recently added';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -163,10 +184,14 @@ function cf_core_views_default_views() {
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: Block: Most popular */
+  $handler = $view->new_display('block', 'Block: Most popular', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Most popular';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Radioactivity (field_formatter_radioactivity:radioactivity_energy) */
   $handler->display->display_options['sorts']['field_formatter_radioactivity_radioactivity_energy']['id'] = 'field_formatter_radioactivity_radioactivity_energy';

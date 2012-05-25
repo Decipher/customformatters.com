@@ -13,6 +13,38 @@ function cf_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-formatters-all';
+  $context->description = '';
+  $context->tag = 'Custom Formatters';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'cf_formatters:page_1' => 'cf_formatters:page_1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-cf_formatters-page_1' => array(
+          'module' => 'views',
+          'delta' => '-exp-cf_formatters-page_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Custom Formatters');
+  $export['layout-formatters-all'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-front-all';
   $context->description = '';
   $context->tag = 'Custom Formatters';

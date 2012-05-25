@@ -115,7 +115,7 @@ function cf_core_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Frontpage';
   $page->admin_description = '';
-  $page->path = 'formatters';
+  $page->path = 'frontpage';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();

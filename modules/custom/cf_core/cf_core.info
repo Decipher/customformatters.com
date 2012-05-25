@@ -39,6 +39,7 @@ dependencies[] = taxonomy
 dependencies[] = token
 dependencies[] = views
 dependencies[] = views_ui
+features[context][] = layout-formatters-all
 features[context][] = layout-front-all
 features[context][] = layout-global-all
 features[context][] = layout-not_search-all
