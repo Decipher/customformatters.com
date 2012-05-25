@@ -23,7 +23,7 @@ function cf_core_block_info() {
  */
 function cf_core_block_view($delta = '') {
   if (function_exists($function = "cf_core_block_{$delta}_view")) {
-    // return $function();
+    return $function();
   }
 }
 
