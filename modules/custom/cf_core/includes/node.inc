@@ -49,6 +49,7 @@ function cf_core_node_process_import_submit($form, &$form_state) {
       // Taxonomy terms (Format and Field types(s)).
       $vocabularies = array(1 => 'field_types', 2 => 'mode');
       foreach ($vocabularies as $vid => $vocab) {
+        $form_state['values']["field_formatter_{$vocab}"][LANGUAGE_NONE] = array();
         foreach (explode(',', $formatter->{$vocab}) as $term_name) {
           $term = taxonomy_get_term_by_name($term_name);
           if (empty($term)) {

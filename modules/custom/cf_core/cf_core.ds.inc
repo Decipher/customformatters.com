@@ -322,11 +322,13 @@ function cf_core_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_formatter_field_types',
+        1 => 'field_formatter_mode',
+        2 => 'field_formatter_field_types',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'field_formatter_mode' => 'ds_content',
       'field_formatter_field_types' => 'ds_content',
     ),
     'classes' => array(),

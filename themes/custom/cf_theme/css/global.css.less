@@ -259,46 +259,69 @@ body {
               }
 
               .pane-content {
-                .view-mode-teaser {
+                .views-row {
                   border-bottom: 1px dotted @color-grey-light;
-                  height: 40px;
                   margin-bottom: 10px;
-                  overflow: hidden;
+                  padding-bottom: 10px;
 
-                  .field-name-title {
-                    float: left;
-                    text-transform: uppercase;
+                  .view-mode-teaser {
+                    margin: 0;
+                    overflow: hidden;
 
-                    a {
-                      #font > .shorthand(bold, 14px);
-
-                      color: @color-grey-dark;
-                      margin-right: 0.35em;
-                      text-decoration: none;
-
-                      &:hover {
-                        color: @color-orange;
-                      }
-                    }
-                  }
-
-                  .field-type-taxonomy-term-reference {
-                    .field-item {
-                      background-color: @color-grey-light;
-                      color: @color-white;
-                      display: inline;
-                      font-size: 9px;
-                      margin-right: 0.5em;
-                      padding: 0 2px;
+                    .field-name-title {
+                      overflow: hidden;
                       text-transform: uppercase;
+                      white-space: nowrap;
 
-                      &:hover {
-                        background-color: @color-orange;
+                      a {
+                        #font > .shorthand(bold, 14px);
+
+                        color: @color-grey-dark;
+                        margin-right: 0.35em;
+                        text-decoration: none;
+
+                        &:hover {
+                          color: @color-orange;
+                        }
                       }
                     }
 
-                    clear: left;
+                    .field-type-taxonomy-term-reference {
+                      display: inline;
+                      float: left;
+
+                      &.field-name-field-formatter-mode {
+                        .field-item {
+                          background-color: @color-grey-dark;
+                        }
+                      }
+
+                      .field-item {
+                        background-color: @color-grey-light;
+                        color: @color-white;
+                        display: inline;
+                        font-size: 9px;
+                        margin-right: 0.5em;
+                        padding: 0 2px;
+                        text-transform: uppercase;
+
+                        &:hover {
+                          background-color: @color-orange;
+                        }
+                      }
+                    }
+
+                    &:hover {
+                      border-left: 4px solid @color-orange;
+                      padding-left: 4px;
+                    }
                   }
+                }
+              }
+
+              &:hover {
+                .pane-title {
+                  background-color: @color-orange;
                 }
               }
             }

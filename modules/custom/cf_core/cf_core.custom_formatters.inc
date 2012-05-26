@@ -38,6 +38,9 @@ function cf_core_custom_formatters_defaults() {
       ));
       
       foreach ($variables[\'#items\'] as $delta => $item) {
+        $item[\'value\'] = str_replace(\'<\', \'&lt;\', $item[\'value\']);
+        $item[\'value\'] = str_replace(\'>\', \'&gt;\', $item[\'value\']);
+      
         $id = "{$variables[\'#field\'][\'field_name\']}-jquery_snippet-{$delta}";
         $element[] = array(
           \'#attached\' => array(
