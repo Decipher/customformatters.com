@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Flush cache and revert features.
+ */
+function cf_core_update_7100() {
+  drupal_flush_all_caches();
+  features_revert();
+}
