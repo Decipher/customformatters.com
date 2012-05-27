@@ -10,6 +10,24 @@
           $('.group-formatter-group fieldset').css('width', $('.group-formatter-group').css('width'));
         }).trigger('resize');
       }
+
+      // Replace checkboxes with custom, themable div element.
+      $('.form-checkboxes .form-item input:not(.processed)').each(function() {
+        $(this).siblings('label').bind('click', function() {
+          $(this).siblings('.checkbox-wrapper').trigger('click');
+        });
+        $(this).addClass('processed').wrap('<div class="checkbox-wrapper"><div class="inside">')
+          .parents('.checkbox-wrapper').bind('click', function() {
+            $(this).find('input').attr('checked')
+              ? $(this).parent().removeClass('checked')
+              : $(this).parent().addClass('checked');
+            $(this).find('input').attr('checked', !$(this).find('input').attr('checked')).trigger('change');
+          });
+        $(this).attr('checked')
+          ? $(this).parents('.checkbox-wrapper').parent().addClass('checked')
+          : $(this).parents('.checkbox-wrapper').parent().removeClass('checked');
+      });
     }
   }
 })(jQuery);
+
