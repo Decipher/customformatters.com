@@ -12,6 +12,9 @@ includes[custom_formatters] = 'http://dl.dropbox.com/u/1804559/makefiles/custom_
 projects[admin_menu][subdir] = 'contrib'
 projects[admin_menu][version] = '3.0-rc2'
 
+projects[better_exposed_filters][subdir] = 'contrib'
+projects[better_exposed_filters][version] = '3.0-beta1'
+
 projects[coder][subdir] = 'contrib'
 projects[coder][version] = '1.0'
 

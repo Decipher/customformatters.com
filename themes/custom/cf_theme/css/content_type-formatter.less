@@ -1,87 +1,162 @@
-.node-type-formatter {
-  #section-content {
-    #region-content {
-      .group-formatter-group {
-        margin-top: 20px;
+#node-formatter-elements {
+  .taxonomy-terms {
+    display: inline;
+    float: left;
 
-        .horizontal-tabs {
+    &.field-name-field-formatter-mode {
+      .field-item {
+        background-color: @color-grey-dark;
+      }
+    }
+
+    .field-item {
+      background-color: @color-grey-light;
+      color: @color-white;
+      display: inline;
+      font-size: 9px;
+      margin-right: 0.5em;
+      padding: 0 2px;
+      text-transform: uppercase;
+
+      a {
+        color: @color-white !important;
+      }
+
+      &:hover {
+        background-color: @color-orange;
+
+        a {
+          text-decoration: none !important;
+        }
+      }
+    }
+  }
+}
+
+.node-formatter {
+  &.view-mode-cf_core_block {
+    overflow: hidden;
+    position: relative;
+
+    .field-name-title {
+      overflow: hidden;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      a {
+        #font > .shorthand(bold, 14px);
+
+        color: @color-grey-dark;
+        margin-right: 0.35em;
+        text-decoration: none;
+
+        &:hover {
+          color: @color-orange;
+        }
+      }
+    }
+
+    .field-type-taxonomy-term-reference {
+      #node-formatter-elements > .taxonomy-terms;
+    }
+
+    &:hover {
+      border-left: 4px solid @color-orange;
+      padding-left: 4px;
+    }
+  }
+
+  &.view-mode-teaser {
+    .field-type-taxonomy-term-reference {
+      #node-formatter-elements > .taxonomy-terms;
+    }
+
+    .field-name-body {
+      clear: left;
+    }
+  }
+
+  &.view-mode-full {
+    .group-formatter-group {
+      margin-top: 20px;
+
+      .horizontal-tabs {
+        border: none;
+
+        .horizontal-tabs-list {
+          background-color: transparent;
           border: none;
+          float: right;
+          width: inherit;
 
-          .horizontal-tabs-list {
-            background-color: transparent;
+          li {
+            background-color: @color-grey-dark;
             border: none;
-            float: right;
-            width: inherit;
+            margin: 0 0 5px 5px;
+            padding: 0;
+            text-transform: uppercase;
 
-            li {
-              background-color: @color-grey-dark;
-              border: none;
-              margin: 0 0 5px 5px;
-              padding: 0;
-              text-transform: uppercase;
-
-              &.selected {
-                background-color: @color-orange;
-
-                a:hover {
-                  background-color: transparent;
-                  cursor: default;
-                }
-              }
-
-              a, strong {
-                color: @color-white;
-              }
+            &.selected {
+              background-color: @color-orange;
 
               a:hover {
-                background-color: @color-grey-light;
-                text-decoration: none;
+                background-color: transparent;
+                cursor: default;
               }
             }
+
+            a, strong {
+              color: @color-white;
+            }
+
+            a:hover {
+              background-color: @color-grey-light;
+              text-decoration: none;
+            }
           }
+        }
 
-          fieldset {
-            padding: 0;
+        fieldset {
+          padding: 0;
 
-            .field-name-field-formatter-import {
-              .field-item {
-                #font > .monospace;
+          .field-name-field-formatter-import {
+            .field-item {
+              #font > .monospace;
 
-                background-color: @color-grey-dark;
-                color: @color-white;
-                padding: 10px;
+              background-color: @color-grey-dark;
+              color: @color-white;
+              padding: 10px;
 
-                .snippet-container {
-                  overflow-x: auto;
-                  overflow-y: hidden;
-                  padding: 10px 0;
+              .snippet-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: 10px 0;
 
-                  pre, ol {
-                    margin-bottom: 0;
+                pre, ol {
+                  margin-bottom: 0;
 
-                    li {
-                      margin: 0 0 .2em 1.5em;
+                  li {
+                    margin: 0 0 .2em 1.5em;
 
-                      .sh_comment {
-                        color: lighten(@color-grey-dark, 25%);
-                      }
+                    .sh_comment {
+                      color: lighten(@color-grey-dark, 25%);
+                    }
 
-                      .sh_keyword, .sh_symbol {
-                        color: @color-orange;
-                      }
+                    .sh_keyword, .sh_symbol {
+                      color: @color-orange;
+                    }
 
-                      .sh_string {
-                        color: @color-grey-light;
-                      }
+                    .sh_string {
+                      color: @color-grey-light;
                     }
                   }
                 }
               }
             }
+          }
 
-            .field-name-field-formatter-code {
-              .field-name-field-formatter-import;
-            }
+          .field-name-field-formatter-code {
+            .field-name-field-formatter-import;
           }
         }
       }

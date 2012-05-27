@@ -78,5 +78,42 @@ return \'\';';
   $formatter->fapi = '';
   $export['jquery_snippet'] = $formatter;
 
+  $formatter = new stdClass();
+  $formatter->disabled = FALSE; /* Edit this to true to make a default formatter disabled initially */
+  $formatter->api_version = 2;
+  $formatter->name = 'term_view_filter';
+  $formatter->label = 'Term: View filter';
+  $formatter->description = '';
+  $formatter->mode = 'php';
+  $formatter->field_types = 'taxonomy_term_reference';
+  $formatter->code = '$element = array();
+
+$identifiers = array(
+  \'field_formatter_field_types\' => \'field\',
+  \'field_formatter_mode\' => \'format\',
+);
+
+foreach($variables[\'#items\'] as $delta => $item) {
+  $term = taxonomy_term_load($item[\'tid\']);
+  $element[$delta] = array(
+    \'#type\' => \'link\',
+    \'#href\' => \'formatters\',
+    \'#title\' => $term->name,
+    \'#options\' => array(
+      \'query\' => array(
+        "{$identifiers[$variables[\'#field\'][\'field_name\']]}[]" => $item[\'tid\'],
+      ),
+      \'attributes\' => array(
+        \'class\' => array(\'item\'),
+      ),
+    ),
+    \'#suffix\' => $delta < count($variables[\'#items\']) - 1 ? \'</div><div class="field-item">\' : \'\',
+  );
+}
+
+return $element;';
+  $formatter->fapi = '';
+  $export['term_view_filter'] = $formatter;
+
   return $export;
 }

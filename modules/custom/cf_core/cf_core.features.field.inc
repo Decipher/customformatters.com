@@ -44,6 +44,15 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '1',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -114,6 +123,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -135,9 +150,12 @@ function cf_core_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '8',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -194,6 +212,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'custom_formatters',
@@ -272,6 +296,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '12',
+        ),
         'default' => array(
           'label' => 'above',
           'settings' => array(),
@@ -349,6 +379,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
+        ),
         'default' => array(
           'label' => 'above',
           'settings' => array(),
@@ -433,6 +469,13 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'hidden',
+          'module' => 'custom_formatters',
+          'settings' => array(),
+          'type' => 'custom_formatters_term_view_filter',
+          'weight' => '2',
+        ),
         'default' => array(
           'label' => 'above',
           'settings' => array(),
@@ -458,7 +501,7 @@ function cf_core_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'node',
@@ -513,6 +556,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => 'Need help text here to explain how to retrieved exportable object.',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'custom_formatters',
@@ -598,6 +647,13 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'hidden',
+          'module' => 'custom_formatters',
+          'settings' => array(),
+          'type' => 'custom_formatters_term_view_filter',
+          'weight' => '1',
+        ),
         'default' => array(
           'label' => 'above',
           'settings' => array(),
@@ -621,7 +677,7 @@ function cf_core_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -675,6 +731,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
+        ),
         'default' => array(
           'label' => 'above',
           'settings' => array(),
@@ -750,6 +812,12 @@ function cf_core_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'radioactivity',

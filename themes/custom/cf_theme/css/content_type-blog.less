@@ -1,0 +1,72 @@
+.node-blog {
+  &.view-mode-teaser {
+    margin-bottom: 20px;
+    position: relative;
+
+    .group-left {
+      .field-name-post-date {
+        #font > .rotation(270deg);
+        #font > .shorthand(bold);
+
+        color: @color-grey-light;
+        position: absolute;
+        top: 70px;
+        text-transform: uppercase;
+      }
+    }
+
+    .group-right {
+      #font > .shorthand(normal, 11px);
+
+      width: 100%;
+
+      .field {
+        margin-left: 20px;
+
+        .field-label {
+          font-weight: normal;
+        }
+      }
+
+      .field-name-cf-byauthor {
+        margin-top: 3px;
+      }
+
+      .field-name-field-formatter-field-types {
+        #font > .shorthand(normal, 9px);
+
+        clear: left;
+        margin-top: 3px;
+
+        a {
+          color: @color-orange;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .field-name-body {
+        margin-top: 10px;
+      }
+
+      .field-name-node-link {
+        clear: left;
+
+        a {
+          #font > .shorthand(normal, @font-size-small);
+
+          color: @color-orange;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

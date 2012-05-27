@@ -6,13 +6,15 @@
 
 //
 @import 'global-typography.less';
+@import 'global-blocks.less';
 @import 'global-forms.less';
 @import 'global-pages.less';
 
-//
+// Global Content Type styles.
+@import 'content_type-blog.less';
 @import 'content_type-formatter.less';
 
-//
+// Global layout styles.
 body {
   #font > .sans-serif;
 
@@ -161,167 +163,65 @@ body {
           }
         }
 
-        .field-name-title {
-          h2 {
+        .panel-2col-stacked {
+          .panel-panel {
+            margin-bottom: 50px;
 
-          }
-        }
+            .pane-title {
+              #font > .sans-serif(bold, 24px);
 
-        .view-mode-teaser {
-          margin-bottom: 20px;
-          position: relative;
-
-          .group-left {
-            .field-name-post-date {
-              #font > .rotation(270deg);
-              #font > .shorthand(bold);
-
-              color: @color-grey-light;
-              position: absolute;
-              top: 70px;
+              background-color: @color-grey-light;
+              color: @color-white;
+              display: block;
+              height: 23px;
+              overflow: hidden;
+              padding: 2px 0 0 5px;
               text-transform: uppercase;
             }
-          }
 
-          .group-right {
-            #font > .shorthand(normal, 11px);
+            .pane-content {
+              .more-link {
+                a {
+                  background-color: @color-grey-light;
+                  color: @color-white;
+                  display: block;
+                  text-align: center;
+                  width: 100%;
 
-            width: 100%;
-
-            .field {
-              margin-left: 20px;
-
-              .field-label {
-                font-weight: normal;
-              }
-            }
-
-            .field-name-cf-byauthor {
-              margin-top: 3px;
-            }
-
-            .field-name-field-formatter-field-types {
-              #font > .shorthand(normal, 9px);
-
-              clear: left;
-              margin-top: 3px;
-
-              a {
-                color: @color-orange;
-                text-decoration: none;
-
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
-            }
-
-            .field-name-body {
-              margin-top: 10px;
-            }
-
-            .field-name-node-link {
-              clear: left;
-
-              a {
-                #font > .shorthand(normal, @font-size-small);
-
-                color: @color-orange;
-                text-decoration: none;
-                text-transform: uppercase;
-
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
-            }
-          }
-        }
-
-        .panel-2col {
-          .panel-panel {
-            clear: both;
-            width: 100%;
-
-            .inside {
-              margin: 0;
-
-              .pane-title {
-                #font > .sans-serif(bold, 24px);
-
-                background-color: @color-grey-light;
-                color: @color-white;
-                display: block;
-                height: 23px;
-                overflow: hidden;
-                padding: 2px 0 0 5px;
-                text-transform: uppercase;
-              }
-
-              .pane-content {
-                .views-row {
-                  border-bottom: 1px dotted @color-grey-light;
-                  margin-bottom: 10px;
-                  padding-bottom: 10px;
-
-                  .view-mode-teaser {
-                    margin: 0;
-                    overflow: hidden;
-
-                    .field-name-title {
-                      overflow: hidden;
-                      text-transform: uppercase;
-                      white-space: nowrap;
-
-                      a {
-                        #font > .shorthand(bold, 14px);
-
-                        color: @color-grey-dark;
-                        margin-right: 0.35em;
-                        text-decoration: none;
-
-                        &:hover {
-                          color: @color-orange;
-                        }
-                      }
-                    }
-
-                    .field-type-taxonomy-term-reference {
-                      display: inline;
-                      float: left;
-
-                      &.field-name-field-formatter-mode {
-                        .field-item {
-                          background-color: @color-grey-dark;
-                        }
-                      }
-
-                      .field-item {
-                        background-color: @color-grey-light;
-                        color: @color-white;
-                        display: inline;
-                        font-size: 9px;
-                        margin-right: 0.5em;
-                        padding: 0 2px;
-                        text-transform: uppercase;
-
-                        &:hover {
-                          background-color: @color-orange;
-                        }
-                      }
-                    }
-
-                    &:hover {
-                      border-left: 4px solid @color-orange;
-                      padding-left: 4px;
-                    }
+                  &:hover {
+                    background-color: @color-orange;
+                    text-decoration: none;
                   }
                 }
               }
+            }
 
-              &:hover {
-                .pane-title {
-                  background-color: @color-orange;
+            &:hover {
+              .pane-title {
+                background-color: @color-orange;
+              }
+            }
+          }
+
+          .center-wrapper {
+            .panel-panel {
+              clear: both;
+              width: 100%;
+
+              .inside {
+                margin: 0;
+
+                .pane-content {
+                  .views-row {
+                    border-bottom: 1px dotted @color-grey-light;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+
+                    &.views-row-last {
+                      border-bottom: 0;
+                      margin: 0;
+                    }
+                  }
                 }
               }
             }

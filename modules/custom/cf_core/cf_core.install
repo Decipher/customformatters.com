@@ -10,3 +10,10 @@ function cf_core_update_7100() {
   drupal_flush_all_caches();
   features_revert();
 }
+
+/**
+ * Remove old Frontpage menu item.
+ */
+function cf_core_update_7101() {
+  menu_link_delete('176');
+}

@@ -35,6 +35,57 @@ form {
       }
     }
 
+    .form-checkboxes {
+      .form-item {
+        clear: both;
+
+        .checkbox-wrapper {
+          border: 2px solid @color-grey-dark;
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+
+          .inside {
+            border: 2px solid @color-white;
+            display: block;
+            height: 6px;
+            width: 6px;
+          }
+
+          input {
+            display: none;
+          }
+        }
+
+        label {
+          background-color: inherit;
+          color: @color-grey-dark;
+          font-size: 11px;
+          /*font-weight: bold;*/
+          line-height: normal;
+          position: inherit;
+        }
+
+        &:hover {
+          .checkbox-wrapper {
+            .inside {
+              background-color: @color-grey-light;
+            }
+          }
+
+          label {
+            background-color: @color-white;
+          }
+        }
+
+        &.checked {
+          .inside {
+            background-color: @color-orange;
+          }
+        }
+      }
+    }
+
     .description {
       display: none;
     }

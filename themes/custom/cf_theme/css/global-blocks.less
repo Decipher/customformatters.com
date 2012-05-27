@@ -1,0 +1,53 @@
+#block-views-exp-cf-formatters-page-1 {
+  .views-exposed-widget {
+    width: 100%;
+
+    label {
+      color: @color-grey-dark;
+    }
+
+    .form-checkboxes {
+      .form-item {
+        clear: none;
+        float: left;
+
+        .checkbox-wrapper {
+          display: none;
+        }
+
+        label {
+          #node-formatter-elements > .taxonomy-terms > .field-item;
+        }
+
+        &.checked {
+          label {
+            background-color: @color-orange;
+          }
+        }
+      }
+    }
+
+    .ajax-progress {
+      .opacity(90);
+
+      background-color: @color-white;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+
+      .throbber {
+        background-image: url('../images/ajax-loader.gif');
+        background-position: center;
+        height: 100%;
+        left: 50%;
+        margin-left: -30px;
+        margin-top: -3px;
+        position: absolute;
+        width: 54px;
+      }
+    }
+  }
+}
