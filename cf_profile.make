@@ -60,6 +60,9 @@ projects[field_group][version] = '1.1'
 projects[globalredirect][subdir] = 'contrib'
 projects[globalredirect][version] = '1.4'
 
+projects[google_analytics][subdir] = 'contrib'
+projects[google_analytics][version] = '1.2'
+
 projects[grammar_parser][subdir] = 'contrib'
 projects[grammar_parser][version] = '1.2'
 
