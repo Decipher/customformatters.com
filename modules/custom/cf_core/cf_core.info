@@ -17,6 +17,7 @@ dependencies[] = ds
 dependencies[] = ds_search
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = googleanalytics
 dependencies[] = grammar_parser
 dependencies[] = less
 dependencies[] = libraries
