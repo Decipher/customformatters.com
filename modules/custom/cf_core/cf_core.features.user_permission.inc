@@ -20,6 +20,16 @@ function cf_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: access environment indicator.
+  $permissions['access environment indicator'] = array(
+    'name' => 'access environment indicator',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'environment_indicator',
+  );
+
   // Exported permission: search content.
   $permissions['search content'] = array(
     'name' => 'search content',

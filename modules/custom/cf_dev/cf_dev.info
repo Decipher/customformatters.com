@@ -1,0 +1,15 @@
+name = CustomFormatters dev
+description = Dev feature for CustomFormatters.com
+core = 7.x
+package = " CustomFormatters.com"
+php = 5.2.4
+dependencies[] = context_ui
+dependencies[] = dblog
+dependencies[] = devel
+dependencies[] = features
+dependencies[] = field_ui
+dependencies[] = module_filter
+dependencies[] = overlay
+dependencies[] = views_ui
+features[features_api][] = api:1
+features[user_permission][] = access devel information

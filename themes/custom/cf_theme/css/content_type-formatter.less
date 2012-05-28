@@ -1,4 +1,22 @@
 #node-formatter-elements {
+  .title {
+    overflow: hidden;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    a {
+      #font > .shorthand(bold, 14px);
+
+      color: @color-grey-dark;
+      margin-right: 0.35em;
+      text-decoration: none;
+
+      &:hover {
+        color: @color-orange;
+      }
+    }
+  }
+
   .taxonomy-terms {
     display: inline;
     float: left;
@@ -40,21 +58,7 @@
       position: relative;
 
       .field-name-title {
-        overflow: hidden;
-        text-transform: uppercase;
-        white-space: nowrap;
-
-        a {
-          #font > .shorthand(bold, 14px);
-
-          color: @color-grey-dark;
-          margin-right: 0.35em;
-          text-decoration: none;
-
-          &:hover {
-            color: @color-orange;
-          }
-        }
+        #node-formatter-elements > .title;
       }
 
       .field-type-taxonomy-term-reference {
@@ -68,12 +72,21 @@
     }
 
     &.view-mode-teaser {
+      border-bottom: 1px dotted @color-grey-light;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+
+      .field-name-title {
+        #node-formatter-elements > .title;
+      }
+
       .field-type-taxonomy-term-reference {
         #node-formatter-elements > .taxonomy-terms;
       }
 
       .field-name-body {
         clear: left;
+        padding: 10px 0;
       }
     }
 

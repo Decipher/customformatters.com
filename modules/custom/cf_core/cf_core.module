@@ -19,11 +19,22 @@ foreach (module_list() as $module) {
 }
 
 /**
- * Returns Boolean flag based on production status, uses server URL to determine
- * state and therefore can be spoofed with /etc/hosts for testing purposes.
+ * Check the site status and return a Boolean value based on the comparison
+ * state provided.
  */
-function cf_core_is_production() {
-  return $GLOBALS['base_url'] == 'http://customformatters.com';
+function cf_core_is_state($state) {
+  // Production state.
+  if ($GLOBALS['base_url'] == 'http://customformatters.com') {
+    return $state == 'prod';
+  }
+
+  // Testing state.
+  if (preg_match('/test.*?\.customformatters\.com/', $GLOBALS['base_url'])) {
+    return $state == 'test';
+  }
+
+  // Development state.
+  return $state == 'dev';
 }
 
 /**
