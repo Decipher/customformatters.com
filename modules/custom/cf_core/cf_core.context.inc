@@ -114,6 +114,12 @@ function cf_core_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),
+        'panels_mini-cf_sponsors' => array(
+          'module' => 'panels_mini',
+          'delta' => 'cf_sponsors',
+          'region' => 'footer_first',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

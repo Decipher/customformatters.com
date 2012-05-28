@@ -19,6 +19,14 @@ foreach (module_list() as $module) {
 }
 
 /**
+ * Returns Boolean flag based on production status, uses server URL to determine
+ * state and therefore can be spoofed with /etc/hosts for testing purposes.
+ */
+function cf_core_is_production() {
+  return $GLOBALS['base_url'] == 'http://customformatters.com';
+}
+
+/**
  *
  */
 function _cf_core_get_releases($versions, $type = 'latest') {

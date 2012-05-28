@@ -1,0 +1,15 @@
+#mini-panel-cf_sponsors .realityloop {
+  background-image: url('../images/logo-realityloop.svg');
+  color: #FFF;
+  display: block;
+  height: 34px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 9px 0 0 51px;
+  width: 159px;
+}
+
+#mini-panel-cf_sponsors .realityloop span {
+  color: transparent;
+  text-indent: -9999em;
+}

@@ -15,11 +15,15 @@ dependencies[] = radioactivity
 dependencies[] = views
 
 ; Profiler - Devel generate
-devel-generate[taxonomy][type] = taxonomy
-devel-generate[taxonomy][vids][] = 1
-devel-generate[taxonomy][vids][] = 2
-devel-generate[taxonomy][num_terms] = 10
-devel-generate[taxonomy][title_length] = 6
+devel-generate[taxonomy-fields][type] = taxonomy
+devel-generate[taxonomy-fields][vids][] = 1
+devel-generate[taxonomy-fields][num_terms] = 20
+devel-generate[taxonomy-fields][title_length] = 6
+
+devel-generate[taxonomy-format][type] = taxonomy
+devel-generate[taxonomy-format][vids][] = 2
+devel-generate[taxonomy-format][num_terms] = 2
+devel-generate[taxonomy-format][title_length] = 6
 
 devel-generate[content][type] = content
 devel-generate[content][node_types][] = blog
