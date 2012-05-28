@@ -1,3 +1,11 @@
+.responsive-layout-mobile #mini-panel-cf_sponsors .realityloop {
+  background-size: 105px 21px;
+  font-size: 7px;
+  height: 18px;
+  padding: 3px 0 0 26px;
+  width: 79px;
+}
+
 #mini-panel-cf_sponsors .realityloop {
   background-image: url('../images/logo-realityloop.svg');
   color: #FFF;

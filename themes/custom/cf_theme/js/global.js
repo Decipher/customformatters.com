@@ -7,7 +7,7 @@
       // not to have to do this, but it's working for the moment.
       if ($('.group-formatter-group').length > 0) {
         $(window).bind('resize', function() {
-          $('.group-formatter-group fieldset').css('width', $('.group-formatter-group').css('width'));
+          $('.group-formatter-group .fieldset-wrapper').css('width', $('.group-formatter-group').css('width'));
         }).trigger('resize');
       }
 
