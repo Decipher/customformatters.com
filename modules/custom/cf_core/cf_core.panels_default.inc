@@ -68,9 +68,9 @@ function cf_core_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
-  $mini->name = 'cf_sponsors';
+  $mini->name = 'cf_feedback';
   $mini->category = 'Custom Formatters';
-  $mini->admin_title = 'Sponsors';
+  $mini->admin_title = 'Feedback';
   $mini->admin_description = '';
   $mini->requiredcontexts = array();
   $mini->contexts = array();
@@ -96,9 +96,9 @@ function cf_core_default_panels_mini() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Realityloop',
+      'admin_title' => '',
       'title' => '',
-      'body' => '<a href="http://realityloop.com" alt="Hosting by Realityloop" title="Hosting by Realityloop" class="realityloop">Hosting by <span>Realityloop.com</span></a>',
+      'body' => '<a href="https://github.com/Decipher/customformatters.com/issues">Feedback / Support</a>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -112,10 +112,10 @@ function cf_core_default_panels_mini() {
     $pane->locks = array();
     $display->content['new-6'] = $pane;
     $display->panels['middle'][0] = 'new-6';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-6';
   $mini->display = $display;
-  $export['cf_sponsors'] = $mini;
+  $export['cf_feedback'] = $mini;
 
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
@@ -254,6 +254,58 @@ echo $section;
   $display->title_pane = 'new-8';
   $mini->display = $display;
   $export['cf_section'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'cf_sponsors';
+  $mini->category = 'Custom Formatters';
+  $mini->admin_title = 'Sponsors';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Realityloop',
+      'title' => '',
+      'body' => '<a href="http://realityloop.com" alt="Hosting by Realityloop" title="Hosting by Realityloop" class="realityloop">Hosting by <span>Realityloop.com</span></a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['middle'][0] = 'new-9';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-9';
+  $mini->display = $display;
+  $export['cf_sponsors'] = $mini;
 
   return $export;
 }

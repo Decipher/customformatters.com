@@ -1,3 +1,42 @@
+#section-content {
+  #zone-content {
+    aside#region-sidebar-first {
+      #block-panels-mini-cf-feedback {
+        background-color: @color-grey-dark;
+        height: 124px;
+        position: fixed;
+        left: 0;
+        top: 100px;
+        width: 16px;
+
+        .pane-content {
+          font-size: 10px;
+          left: 14px;
+          top: 0;
+
+          a {
+            color: @color-white;
+            padding: 2px 6px 10px;
+          }
+        }
+
+        &:hover {
+          background-color: @color-orange;
+          width: 22px;
+
+          .pane-content {
+            left: 20px;
+
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 #block-views-exp-cf-formatters-page-1 {
   .views-exposed-widget {
     width: 100%;

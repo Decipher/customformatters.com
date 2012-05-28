@@ -108,6 +108,7 @@ features[node][] = page
 features[page_manager_pages][] = cf_about
 features[page_manager_pages][] = cf_frontpage
 features[panels_mini][] = cf_about
+features[panels_mini][] = cf_feedback
 features[panels_mini][] = cf_github
 features[panels_mini][] = cf_section
 features[panels_mini][] = cf_sponsors

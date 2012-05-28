@@ -102,6 +102,12 @@ function cf_core_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
+        'panels_mini-cf_feedback' => array(
+          'module' => 'panels_mini',
+          'delta' => 'cf_feedback',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
         'cf_core-download_module' => array(
           'module' => 'cf_core',
           'delta' => 'download_module',
