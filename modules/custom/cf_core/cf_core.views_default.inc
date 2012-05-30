@@ -312,7 +312,6 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Format';
   $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['identifier'] = 'format';
-  $handler->display->display_options['filters']['tid_1']['expose']['remember'] = 1;
   $handler->display->display_options['filters']['tid_1']['expose']['multiple'] = 1;
   $handler->display->display_options['filters']['tid_1']['expose']['reduce'] = 0;
   $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = 1;
@@ -330,7 +329,6 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid']['expose']['label'] = 'Fields';
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'field';
-  $handler->display->display_options['filters']['tid']['expose']['remember'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['multiple'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['reduce'] = 0;
   $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 1;
