@@ -21,5 +21,6 @@ function cf_core_cf_core_init() {
       array('cf_dev'),
       array_diff($cf_dev_info['dependencies'], $cf_core_info['dependencies'])
     ));
+    drupal_flush_all_caches();
   }
 }

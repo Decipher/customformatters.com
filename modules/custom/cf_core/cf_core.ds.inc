@@ -97,6 +97,26 @@ function cf_core_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|formatter|cf_core_overview';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'formatter';
+  $ds_fieldsetting->view_mode = 'cf_core_overview';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'inline',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'strong',
+        'class' => '',
+      ),
+    ),
+  );
+  $export['node|formatter|cf_core_overview'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|formatter|default';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'formatter';
@@ -324,6 +344,38 @@ function cf_core_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|formatter|cf_core_overview';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'formatter';
+  $ds_layout->view_mode = 'cf_core_overview';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_formatter_name',
+        2 => 'group_formatter_details',
+        3 => 'field_formatter_mode',
+        4 => 'field_formatter_field_types',
+        5 => 'field_formatter_description',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_formatter_name' => 'ds_content',
+      'group_formatter_details' => 'ds_content',
+      'field_formatter_mode' => 'ds_content',
+      'field_formatter_field_types' => 'ds_content',
+      'field_formatter_description' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|formatter|cf_core_overview'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|formatter|default';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'formatter';
@@ -336,19 +388,25 @@ function cf_core_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_formatter_radioactivity',
         1 => 'title',
-        2 => 'body',
-        3 => 'field_formatter_import',
-        4 => 'group_formatter_group',
-        5 => 'field_formatter_code',
-        6 => 'group_formatter_code',
-        7 => 'group_formatter_object',
+        2 => 'field_formatter_name',
+        3 => 'field_formatter_mode',
+        4 => 'field_formatter_import',
+        5 => 'field_formatter_field_types',
+        6 => 'body',
+        7 => 'group_formatter_group',
+        8 => 'field_formatter_code',
+        9 => 'group_formatter_code',
+        10 => 'group_formatter_object',
       ),
     ),
     'fields' => array(
       'field_formatter_radioactivity' => 'ds_content',
       'title' => 'ds_content',
-      'body' => 'ds_content',
+      'field_formatter_name' => 'ds_content',
+      'field_formatter_mode' => 'ds_content',
       'field_formatter_import' => 'ds_content',
+      'field_formatter_field_types' => 'ds_content',
+      'body' => 'ds_content',
       'group_formatter_group' => 'ds_content',
       'field_formatter_code' => 'ds_content',
       'group_formatter_code' => 'ds_content',
@@ -421,14 +479,14 @@ function cf_core_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_formatter_mode',
         2 => 'field_formatter_field_types',
-        3 => 'body',
+        3 => 'field_formatter_description',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_formatter_mode' => 'ds_content',
       'field_formatter_field_types' => 'ds_content',
-      'body' => 'ds_content',
+      'field_formatter_description' => 'ds_content',
     ),
     'classes' => array(),
   );
@@ -475,6 +533,15 @@ function cf_core_ds_view_modes_info() {
     'node' => 'node',
   );
   $export['cf_core_block'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'cf_core_overview';
+  $ds_view_mode->label = 'Overview';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['cf_core_overview'] = $ds_view_mode;
 
   return $export;
 }

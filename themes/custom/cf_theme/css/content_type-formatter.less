@@ -22,6 +22,8 @@
     float: left;
 
     &.field-name-field-formatter-mode {
+      clear: left;
+
       .field-item {
         background-color: @color-grey-dark;
       }
@@ -54,7 +56,6 @@
 #section-content {
   .node-formatter {
     &.view-mode-cf_core_block {
-      overflow: hidden;
       position: relative;
 
       .field-name-title {
@@ -71,6 +72,54 @@
       }
     }
 
+    &.view-mode-cf_core_overview {
+      .field {
+        .field-label {
+          text-transform: uppercase;
+          width: 130px;
+        }
+
+        .field-items {
+
+        }
+      }
+
+      .field-name-title {
+        float: left;
+        margin-right: 0.5em;
+      }
+
+      .field-name-field-formatter-name {
+        .field-item {
+          color: @color-grey-light;
+          font-style: italic;
+          margin-top: 1px;
+
+          &:before {
+            content: '[';
+          }
+
+          &:after {
+            content: ']';
+          }
+        }
+      }
+
+      .group-formatter-details {
+        clear: both;
+
+        .field-name-field-formatter-field-types {
+          .field-item {
+            margin-right: 0.5em;
+
+            &:after {
+              content: ',';
+            }
+          }
+        }
+      }
+    }
+
     &.view-mode-teaser {
       border-bottom: 1px dotted @color-grey-light;
       margin-bottom: 20px;
@@ -84,13 +133,36 @@
         #node-formatter-elements > .taxonomy-terms;
       }
 
-      .field-name-body {
+      .field-name-field-formatter-description {
         clear: left;
-        padding: 10px 0;
+        padding: 10px 0 0;
       }
     }
 
     &.view-mode-full {
+      .field-name-title {
+        h2 {
+          margin-bottom: 0;
+        }
+      }
+
+      .field-name-field-formatter-name {
+        text-transform: uppercase;
+
+        .field-item {
+          line-height: 17px;
+        }
+      }
+
+      .field-type-taxonomy-term-reference {
+        #node-formatter-elements > .taxonomy-terms;
+      }
+
+      .field-name-body {
+        clear: both;
+        padding-top: 20px;
+      }
+
       .group-formatter-group {
         margin-top: 20px;
 

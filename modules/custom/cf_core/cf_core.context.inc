@@ -45,6 +45,46 @@ function cf_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-formatters-node-edit';
+  $context->description = '';
+  $context->tag = 'Custom Formatters';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'formatter' => 'formatter',
+      ),
+      'options' => array(
+        'node_form' => '2',
+      ),
+    ),
+    'path' => array(
+      'values' => array(
+        'node/*/edit' => 'node/*/edit',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-cf_formatter-block' => array(
+          'module' => 'views',
+          'delta' => 'cf_formatter-block',
+          'region' => 'content',
+          'weight' => '-16',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Custom Formatters');
+  $export['layout-formatters-node-edit'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-front-all';
   $context->description = '';
   $context->tag = 'Custom Formatters';
