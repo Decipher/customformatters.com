@@ -10,6 +10,7 @@
 function cf_core_cf_core_init() {
   if (cf_core_is_state('dev') && !module_exists('cf_dev')) {
     module_enable(array('cf_dev'));
+    drupal_flush_all_caches();
   }
 
   elseif (!cf_core_is_state('dev') && module_exists('cf_dev')) {

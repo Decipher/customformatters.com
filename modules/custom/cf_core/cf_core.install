@@ -7,13 +7,31 @@
  * Flush cache and revert features.
  */
 function cf_core_update_7100() {
-  drupal_flush_all_caches();
-  features_revert();
+  _cf_core_flush_revert();
 }
 
 /**
- * Remove old Frontpage menu item.
+ * Enable modules, flush cache and revert features and remove old Frontpage menu
+ * item.
  */
 function cf_core_update_7101() {
+  // Enable modules.
+  module_enable(array(
+    'better_exposed_filters',
+    'environment_indicator')
+  );
+
+  // Flush cache and revert features.
+  _cf_core_flush_revert();
+
+  // Remove old Frontpage menu item.
   menu_link_delete('176');
+}
+
+/**
+ * Helper function; Flush caches and revert features.
+ */
+function _cf_core_flush_revert() {
+  drupal_flush_all_caches();
+  features_revert();
 }

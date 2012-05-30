@@ -237,6 +237,14 @@ function cf_core_views_default_views() {
   $handler->display->display_options['row_options']['advanced'] = 0;
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = FALSE;
+  $handler->display->display_options['empty']['area']['content'] = 'Unfortunately no results matched your chosen criteria, more Formatters are being added all the time so please try again later.';
+  $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  $handler->display->display_options['empty']['area']['tokenize'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -295,9 +303,8 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
   $handler->display->display_options['filters']['tid_1']['ui_name'] = 'Format';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    3 => '3',
-    2 => '2',
+  $handler->display->display_options['filters']['tid_1']['value'] = drupal_map_assoc(
+    array_keys(taxonomy_term_load_multiple(array(), array('vid' => 2)))
   );
   $handler->display->display_options['filters']['tid_1']['group'] = 1;
   $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
@@ -332,6 +339,11 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['tid']['error_message'] = 1;
   $handler->display->display_options['path'] = 'formatters';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Formatters';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Block: Recently added */
   $handler = $view->new_display('block', 'Block: Recently added', 'block');
