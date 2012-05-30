@@ -88,6 +88,9 @@ projects[nodeformcols][download][url] = 'http://git.drupal.org/project/nodeformc
 projects[nodeformcols][download][revision] = '0120682a82fa03d7387cc215ab0cce6d3ae96a45'
 projects[nodeformcols][pathces][] = 'http://drupal.org/files/context_admin_support-1411060-1.patch'
 
+projects[oauth][subdir] = 'contrib'
+projects[oauth][version] = '3.0'
+
 projects[omega_tools][subdir] = 'contrib'
 projects[omega_tools][version] = '3.0-rc4'
 
@@ -117,6 +120,9 @@ projects[subpathauto][version] = '1.2'
 
 projects[token][subdir] = 'contrib'
 projects[token][version] = '1.0'
+
+projects[twitter][subdir] = 'contrib'
+projects[twitter][version] = '3.0-beta4'
 
 projects[views][subdir] = 'contrib'
 projects[views][version] = '3.3'

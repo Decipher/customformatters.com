@@ -894,5 +894,30 @@ user/*/*';
   );
   $export['theme_settings'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'twitter_consumer_key';
+  $strongarm->value = 'CfUZrAhTOTxJ1kJbWY6Qw';
+  $export['twitter_consumer_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'twitter_post_default_format';
+  $strongarm->value = '!title !tinyurl #CustomFormatters #Drupal';
+  $export['twitter_post_default_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'twitter_post_types';
+  $strongarm->value = array(
+    'blog' => 'blog',
+    'page' => 0,
+    'formatter' => 0,
+  );
+  $export['twitter_post_types'] = $strongarm;
+
   return $export;
 }
