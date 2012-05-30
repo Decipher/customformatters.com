@@ -20,6 +20,18 @@ function cf_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'custom_formatters_settings';
+  $strongarm->value = array(
+    'label_prefix' => 1,
+    'label_prefix_value' => 'Custom',
+    'contextual' => '1',
+    'contextual_list' => 'term_view_filter',
+  );
+  $export['custom_formatters_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_cf_stub';
   $strongarm->value = 'j-M-y';
   $export['date_format_cf_stub'] = $strongarm;
@@ -918,6 +930,15 @@ user/*/*';
     'formatter' => 0,
   );
   $export['twitter_post_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'update_notify_emails';
+  $strongarm->value = array(
+    0 => 'info@customformatters.com',
+  );
+  $export['update_notify_emails'] = $strongarm;
 
   return $export;
 }
