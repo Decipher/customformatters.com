@@ -115,6 +115,10 @@ projects[rules][version] = '2.1'
 projects[strongarm][subdir] = 'contrib'
 projects[strongarm][version] = '2.0-rc1'
 
+projects[site_verify][subdir] = 'contrib'
+projects[site_verify][version] = '1.0'
+projects[site_verify][patch][] = 'http://drupal.org/files/exportables-1230956-4.patch'
+
 projects[subpathauto][subdir] = 'contrib'
 projects[subpathauto][version] = '1.2'
 
