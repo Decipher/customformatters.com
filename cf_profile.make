@@ -115,8 +115,11 @@ projects[rules][version] = '2.1'
 projects[strongarm][subdir] = 'contrib'
 projects[strongarm][version] = '2.0-rc1'
 
-projects[site_verify][subdir] = 'contrib'
-projects[site_verify][version] = '1.0'
+projects[site_verify][type] = "module"
+projects[site_verify][download][type] = "git"
+projects[site_verify][download][url] = "http://git.drupal.org/project/site_verify.git"
+projects[site_verify][download][revision] = "6b4662210b333561a23ca498df3f91c060eabbd7"
+projects[site_verify][subdir] = "contrib"
 projects[site_verify][patch][] = 'http://drupal.org/files/exportables-1230956-4.patch'
 
 projects[subpathauto][subdir] = 'contrib'
