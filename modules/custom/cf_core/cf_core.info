@@ -197,6 +197,7 @@ features[variable][] = update_notify_emails
 features[variable][] = xmlsitemap_engines_custom_urls
 features[variable][] = xmlsitemap_engines_engines
 features[variable][] = xmlsitemap_engines_minimum_lifetime
+features[variable][] = xmlsitemap_settings_node_formatter
 features[views_view][] = cf_blog
 features[views_view][] = cf_formatter
 features[views_view][] = cf_formatters

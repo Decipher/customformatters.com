@@ -29,6 +29,13 @@ function cf_core_update_7101() {
 }
 
 /**
+ * Flush cache and revert features.
+ */
+function cf_core_update_7102() {
+  _cf_core_flush_revert();
+}
+
+/**
  * Helper function; Flush caches and revert features.
  */
 function _cf_core_flush_revert() {
