@@ -137,6 +137,9 @@ projects[views][version] = '3.3'
 projects[wysiwyg][subdir] = 'contrib'
 projects[wysiwyg][version] = '2.1'
 
+projects[xmlsitemap][subdir] = 'contrib'
+projects[xmlsitemap][version] = '2.0-rc1'
+
 
 
 ; Themes - Contrib
