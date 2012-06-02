@@ -218,10 +218,7 @@ function cf_core_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '6',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
@@ -543,20 +540,6 @@ user/*/*';
       'title' => 'Machine name',
       'hidden' => 1,
     ),
-    'field_formatter_image_before' => array(
-      'region' => 'main',
-      'weight' => '2.9',
-      'has_required' => FALSE,
-      'title' => 'Example: Before',
-      'hidden' => 0,
-    ),
-    'field_formatter_image_after' => array(
-      'region' => 'main',
-      'weight' => '2.9',
-      'has_required' => FALSE,
-      'title' => 'Example: After',
-      'hidden' => 0,
-    ),
   );
   $export['nodeformscols_field_placements_formatter_default'] = $strongarm;
 
@@ -645,20 +628,6 @@ user/*/*';
   $strongarm->name = 'pathauto_node_formatter_pattern';
   $strongarm->value = 'formatters/[node:nid]/[node:field_formatter_name]';
   $export['pathauto_node_formatter_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'resp_img_default_suffix';
-  $strongarm->value = '_mobile';
-  $export['resp_img_default_suffix'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'resp_img_forceresize';
-  $strongarm->value = '1';
-  $export['resp_img_forceresize'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

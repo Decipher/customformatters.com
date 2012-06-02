@@ -27,11 +27,6 @@
           ? $(this).parents('.checkbox-wrapper').parent().addClass('checked')
           : $(this).parents('.checkbox-wrapper').parent().removeClass('checked');
       });
-
-      // Replace file inputs with custom, themeable element.
-      $('input[type="file"]:not(.processed)').each(function() {
-        $(this).addClass('processed').customFileInput();
-      });
     }
   }
 })(jQuery);
