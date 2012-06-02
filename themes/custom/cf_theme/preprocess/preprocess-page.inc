@@ -4,8 +4,13 @@
  */
 
 // Additional Javascript.
-if (module_exists('libraries') && in_array('fittext.js', element_children(libraries_get_libraries()))) {
-  drupal_add_js(libraries_get_path('fittext.js') . '/jquery.fittext.js');
+if (module_exists('libraries')) {
+  if (in_array('fittext.js', element_children(libraries_get_libraries()))) {
+    drupal_add_js(libraries_get_path('fittext.js') . '/jquery.fittext.js');
+  }
+  if (in_array('jquery.fileinput', element_children(libraries_get_libraries()))) {
+    drupal_add_js(libraries_get_path('jquery.fileinput') . '/js/jQuery.fileinput.js');
+  }
 }
 
 // Site name modifications.

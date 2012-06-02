@@ -109,6 +109,9 @@ projects[pathauto][version] = '1.0'
 projects[radioactivity][subdir] = 'contrib'
 projects[radioactivity][version] = '2.5'
 
+projects[resp_img][subdir] = "contrib"
+projects[resp_img][version] = "1.2"
+
 projects[rules][subdir] = 'contrib'
 projects[rules][version] = '2.1'
 
@@ -159,6 +162,11 @@ projects[fittext.js][type] = 'library'
 projects[fittext.js][download][type] = 'git'
 projects[fittext.js][download][url] = 'https://github.com/davatron5000/FitText.js.git'
 projects[fittext.js][download][revision] = '6e86634ea751a575bf4631495ba8b19fdc9a6273'
+
+projects[jquery.fileinput][type] = 'library'
+projects[jquery.fileinput][download][type] = 'git'
+projects[jquery.fileinput][download][url] = 'https://github.com/Decipher/jQuery-Custom-File-Input.git'
+projects[jquery.fileinput][download][revision] = '520f11afaaa37541dde9a51db57b99faa5c252ec'
 
 projects[jquery.snippet][type] = 'library'
 projects[jquery.snippet][download][type] = 'file'

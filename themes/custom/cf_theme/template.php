@@ -89,3 +89,15 @@ function cf_theme_link($variables) {
   }
   return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>' . ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
 }
+
+/**
+ *
+ */
+function cf_theme_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'formatter_node_form') {
+    $form['field_formatter_image_before']['#attributes']['class'][] = 'grid-4';
+    $form['field_formatter_image_before']['#attributes']['class'][] = 'alpha';
+    $form['field_formatter_image_after']['#attributes']['class'][] = 'grid-4';
+    $form['field_formatter_image_after']['#attributes']['class'][] = 'omega';
+  }
+}
