@@ -224,6 +224,14 @@ function cf_core_views_default_views() {
         'bef_filter_description' => '',
       ),
     ),
+    'field_formatter_image_output_fid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'bef_filter_description' => '',
+      ),
+    ),
   );
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
@@ -336,6 +344,17 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'cf_d7fields';
   $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['tid']['error_message'] = 1;
+  /* Filter criterion: Content: Example: Output (field_formatter_image_output:fid) */
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['id'] = 'field_formatter_image_output_fid';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['table'] = 'field_data_field_formatter_image_output';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['field'] = 'field_formatter_image_output_fid';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['operator_id'] = 'field_formatter_image_output_fid_op';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['label'] = 'Has image';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['operator'] = 'field_formatter_image_output_fid_op';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['identifier'] = 'has_image';
+  $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['multiple'] = FALSE;
   $handler->display->display_options['path'] = 'formatters';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Formatters';

@@ -14,6 +14,7 @@ projects[admin_menu][version] = '3.0-rc2'
 
 projects[better_exposed_filters][subdir] = 'contrib'
 projects[better_exposed_filters][version] = '3.0-beta1'
+projects[better_exposed_filters][patch][] = 'http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-950312-4.patch'
 
 projects[coder][subdir] = 'contrib'
 projects[coder][version] = '1.0'
@@ -62,6 +63,12 @@ projects[features][version] = '1.0-rc2'
 
 projects[field_group][subdir] = 'contrib'
 projects[field_group][version] = '1.1'
+
+projects[filefield_paths][type] = "module"
+projects[filefield_paths][download][type] = "git"
+projects[filefield_paths][download][url] = "http://git.drupal.org/project/filefield_paths.git"
+projects[filefield_paths][download][revision] = "84fb63726b5745d2775078f7e31fc72f50d9fb60"
+projects[filefield_paths][subdir] = "contrib"
 
 projects[globalredirect][subdir] = 'contrib'
 projects[globalredirect][version] = '1.4'
@@ -136,6 +143,7 @@ projects[twitter][version] = '3.0-beta4'
 
 projects[views][subdir] = 'contrib'
 projects[views][version] = '3.3'
+projects[views][patch][] = 'http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-477984-60.patch'
 
 projects[wysiwyg][subdir] = 'contrib'
 projects[wysiwyg][version] = '2.1'

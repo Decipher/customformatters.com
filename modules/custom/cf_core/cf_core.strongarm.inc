@@ -142,6 +142,15 @@ function cf_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_styles_regions';
+  $strongarm->value = 'grid-4
+alpha
+omega';
+  $export['ds_styles_regions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ds_user_override_search_page';
   $strongarm->value = 0;
   $export['ds_user_override_search_page'] = $strongarm;
@@ -467,15 +476,15 @@ user/*/*';
       'hidden' => 1,
     ),
     'additional_settings' => array(
-      'region' => 'footer',
-      'weight' => '8',
+      'region' => 'main',
+      'weight' => '4',
       'has_required' => FALSE,
       'title' => 'Vertical tabs',
-      'hidden' => 1,
+      'hidden' => 0,
     ),
     'actions' => array(
       'region' => 'main',
-      'weight' => '3',
+      'weight' => '5',
       'has_required' => FALSE,
       'title' => 'Save',
       'hidden' => 0,
@@ -543,18 +552,18 @@ user/*/*';
       'title' => 'Machine name',
       'hidden' => 1,
     ),
-    'field_formatter_image_before' => array(
+    'field_formatter_image_input' => array(
       'region' => 'main',
-      'weight' => '2.9',
+      'weight' => '2',
       'has_required' => FALSE,
-      'title' => 'Example: Before',
+      'title' => 'Example: Input',
       'hidden' => 0,
     ),
-    'field_formatter_image_after' => array(
+    'field_formatter_image_output' => array(
       'region' => 'main',
-      'weight' => '2.9',
+      'weight' => '3',
       'has_required' => FALSE,
-      'title' => 'Example: After',
+      'title' => 'Example: Output',
       'hidden' => 0,
     ),
   );

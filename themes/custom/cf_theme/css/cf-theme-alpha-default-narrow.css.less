@@ -76,6 +76,41 @@ body {
             }
           }
         }
+
+        .node-formatter {
+          &.view-mode-full {
+            .grid-4 {
+              .field-type-image {
+                .field-item {
+                  border: inherit;
+                  margin: 20px 0;
+
+                  img {
+                    border: 2px solid @color-grey-dark;
+                    height: auto;
+                    width: auto;
+                  }
+                }
+              }
+
+              &.group-left {
+                padding-right: 10px;
+
+                .field-type-image {
+                  padding-right: 0;
+                }
+              }
+
+              &.group-right {
+                padding-left: 10px;
+
+                .field-type-image {
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
       }
 
       aside {
@@ -236,6 +271,12 @@ form {
   .form-item {
     label {
       width: 100px;
+    }
+
+    .form-managed-file {
+      .customfile {
+        height: 92px;
+      }
     }
   }
 

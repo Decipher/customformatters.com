@@ -380,39 +380,58 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'formatter';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col_stacked';
   $ds_layout->settings = array(
     'hide_empty_regions' => 0,
     'hide_sidebars' => 0,
     'regions' => array(
-      'ds_content' => array(
+      'header' => array(
         0 => 'field_formatter_radioactivity',
         1 => 'title',
         2 => 'field_formatter_name',
         3 => 'field_formatter_mode',
-        4 => 'field_formatter_import',
-        5 => 'field_formatter_field_types',
-        6 => 'body',
-        7 => 'group_formatter_group',
-        8 => 'field_formatter_code',
-        9 => 'group_formatter_code',
-        10 => 'group_formatter_object',
+        4 => 'field_formatter_field_types',
+        5 => 'body',
+      ),
+      'footer' => array(
+        0 => 'field_formatter_import',
+        1 => 'group_formatter_group',
+        2 => 'field_formatter_code',
+        3 => 'group_formatter_code',
+        4 => 'group_formatter_object',
+      ),
+      'left' => array(
+        0 => 'field_formatter_image_input',
+      ),
+      'right' => array(
+        0 => 'field_formatter_image_output',
       ),
     ),
     'fields' => array(
-      'field_formatter_radioactivity' => 'ds_content',
-      'title' => 'ds_content',
-      'field_formatter_name' => 'ds_content',
-      'field_formatter_mode' => 'ds_content',
-      'field_formatter_import' => 'ds_content',
-      'field_formatter_field_types' => 'ds_content',
-      'body' => 'ds_content',
-      'group_formatter_group' => 'ds_content',
-      'field_formatter_code' => 'ds_content',
-      'group_formatter_code' => 'ds_content',
-      'group_formatter_object' => 'ds_content',
+      'field_formatter_radioactivity' => 'header',
+      'title' => 'header',
+      'field_formatter_name' => 'header',
+      'field_formatter_import' => 'footer',
+      'field_formatter_mode' => 'header',
+      'field_formatter_field_types' => 'header',
+      'body' => 'header',
+      'field_formatter_image_input' => 'left',
+      'field_formatter_image_output' => 'right',
+      'group_formatter_group' => 'footer',
+      'field_formatter_code' => 'footer',
+      'group_formatter_code' => 'footer',
+      'group_formatter_object' => 'footer',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'left' => array(
+        'grid-4' => 'grid-4',
+        'alpha' => 'alpha',
+      ),
+      'right' => array(
+        'grid-4' => 'grid-4',
+        'omega' => 'omega',
+      ),
+    ),
   );
   $export['node|formatter|default'] = $ds_layout;
 

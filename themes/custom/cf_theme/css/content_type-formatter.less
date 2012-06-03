@@ -140,110 +140,142 @@
     }
 
     &.view-mode-full {
-      .field-name-title {
-        h2 {
-          margin-bottom: 0;
+      .group-header {
+        .field-name-title {
+          h2 {
+            margin-bottom: 0;
+          }
+        }
+
+        .field-name-field-formatter-name {
+          text-transform: uppercase;
+
+          .field-item {
+            line-height: 17px;
+          }
+        }
+
+        .field-type-taxonomy-term-reference {
+          #node-formatter-elements > .taxonomy-terms;
+        }
+
+        .field-name-body {
+          clear: both;
+          padding-top: 20px;
         }
       }
 
-      .field-name-field-formatter-name {
-        text-transform: uppercase;
+      .grid-4 {
+        margin: 0;
 
-        .field-item {
-          line-height: 17px;
-        }
-      }
+        .field-type-image {
+          .field-item {
+            border: 2px solid @color-grey-dark;
+            margin: 20px 0;
 
-      .field-type-taxonomy-term-reference {
-        #node-formatter-elements > .taxonomy-terms;
-      }
-
-      .field-name-body {
-        clear: both;
-        padding-top: 20px;
-      }
-
-      .group-formatter-group {
-        margin-top: 20px;
-
-        .horizontal-tabs {
-          border: none;
-
-          .horizontal-tabs-list {
-            background-color: transparent;
-            border: none;
-            float: right;
-            width: inherit;
-
-            li {
-              background-color: @color-grey-dark;
-              border: none;
-              margin: 0 0 5px 5px;
-              padding: 0;
-              text-transform: uppercase;
-
-              &.selected {
-                background-color: @color-orange;
-
-                a:hover {
-                  background-color: transparent;
-                  cursor: default;
-                }
-              }
-
-              a, strong {
-                color: @color-white;
-              }
-
-              a:hover {
-                background-color: @color-grey-light;
-                text-decoration: none;
-              }
+            img {
+              height: auto;
+              width: 100%;
             }
           }
+        }
 
-          fieldset {
-            clear: both;
-            padding: 0;
+        &.group-left {
+          .field-type-image {
+            padding-right: 5px;
+          }
+        }
 
-            .field-name-field-formatter-import {
-              .field-item {
-                #font > .monospace;
+        &.group-right {
+          .field-type-image {
+            padding-left: 5px;
+          }
+        }
+      }
 
-                background-color: @color-grey-dark;
-                color: @color-white;
-                padding: 10px;
+      .group-footer {
+        .group-formatter-group {
+          margin-top: 20px;
 
-                .snippet-container {
-                  overflow-x: auto;
-                  overflow-y: hidden;
-                  padding: 10px 0;
+          .horizontal-tabs {
+            border: none;
 
-                  pre, ol {
-                    margin-bottom: 0;
+            .horizontal-tabs-list {
+              background-color: transparent;
+              border: none;
+              float: right;
+              width: inherit;
 
-                    li {
-                      margin: 0 0 .2em 1.5em;
+              li {
+                background-color: @color-grey-light;
+                border: none;
+                margin: 0 0 0 10px;
+                padding: 0;
+                text-transform: uppercase;
 
-                      .sh_comment {
-                        color: lighten(@color-grey-dark, 25%);
-                      }
+                &.selected {
+                  background-color: @color-grey-dark;
 
-                      .sh_keyword, .sh_symbol {
-                        color: @color-orange;
-                      }
+                  a:hover {
+                    background-color: transparent;
+                    cursor: default;
+                  }
+                }
 
-                      .sh_string {
-                        color: @color-grey-light;
+                a, strong {
+                  color: @color-white;
+                }
+
+                a:hover {
+                  background-color: @color-grey-light;
+                  text-decoration: none;
+                }
+              }
+            }
+
+            fieldset {
+              clear: both;
+              padding: 0;
+
+              .field-name-field-formatter-import {
+                .field-item {
+                  #font > .monospace;
+
+                  background-color: @color-grey-dark;
+                  color: @color-white;
+                  padding: 10px;
+
+                  .snippet-container {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    padding: 10px 0;
+
+                    pre, ol {
+                      margin-bottom: 0;
+
+                      li {
+                        margin: 0 0 .2em 1.5em;
+
+                        .sh_comment {
+                          color: lighten(@color-grey-dark, 25%);
+                        }
+
+                        .sh_keyword, .sh_symbol {
+                          color: @color-orange;
+                        }
+
+                        .sh_string {
+                          color: @color-grey-light;
+                        }
                       }
                     }
                   }
                 }
               }
-            }
 
-            .field-name-field-formatter-code {
-              .field-name-field-formatter-import;
+              .field-name-field-formatter-code {
+                .field-name-field-formatter-import;
+              }
             }
           }
         }

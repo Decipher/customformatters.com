@@ -66,13 +66,45 @@ function cf_core_image_default_styles() {
   // Exported image style: formatter_example_preview_mobile
   $styles['formatter_example_preview_mobile'] = array(
     'name' => 'formatter_example_preview_mobile',
-    'effects' => array(),
+    'effects' => array(
+      4 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '226',
+          'height' => '93',
+        ),
+        'weight' => '1',
+      ),
+    ),
   );
 
   // Exported image style: formatter_example_preview_narrow
   $styles['formatter_example_preview_narrow'] = array(
     'name' => 'formatter_example_preview_narrow',
-    'effects' => array(),
+    'effects' => array(
+      3 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '216',
+          'height' => '88',
+        ),
+        'weight' => '1',
+      ),
+    ),
   );
 
   // Exported image style: formatter_example_preview_normal
@@ -89,8 +121,8 @@ function cf_core_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '300',
-          'height' => '79',
+          'width' => '296',
+          'height' => '122',
         ),
         'weight' => '1',
       ),
@@ -111,8 +143,8 @@ function cf_core_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '300',
-          'height' => '100',
+          'width' => '376',
+          'height' => '156',
         ),
         'weight' => '1',
       ),

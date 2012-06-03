@@ -11,7 +11,7 @@ function cf_core_update_7100() {
 }
 
 /**
- * Enable modules, flush cache and revert features and remove old Frontpage menu
+ * Enable modules, flush cache, revert features and remove old Frontpage menu
  * item.
  */
 function cf_core_update_7101() {
@@ -32,6 +32,17 @@ function cf_core_update_7101() {
  * Flush cache and revert features.
  */
 function cf_core_update_7102() {
+  _cf_core_flush_revert();
+}
+
+/**
+ * Enable Image module, flush cache and revert features.
+ */
+function cf_core_update_7103() {
+  // Enable Image module.
+  module_enable(array('image'));
+
+  // Flush cache and revert features.
   _cf_core_flush_revert();
 }
 

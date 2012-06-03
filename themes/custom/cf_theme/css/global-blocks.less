@@ -78,26 +78,21 @@ body {
       }
     }
 
-    .ajax-progress {
-      .opacity(90);
+    &#edit-has-image-wrapper {
+      label {
+        #node-formatter-elements > .taxonomy-terms > .field-item;
 
-      background-color: @color-white;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      width: 100%;
+        font-weight: normal;
+      }
 
-      .throbber {
-        background-image: url('../images/ajax-loader.gif');
-        background-position: center;
-        height: 100%;
-        left: 50%;
-        margin-left: -30px;
-        margin-top: -3px;
-        position: absolute;
-        width: 54px;
+      &.checked {
+        label {
+          background-color: @color-orange;
+        }
+      }
+
+      .views-widget {
+        display: none;
       }
     }
   }
