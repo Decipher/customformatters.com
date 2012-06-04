@@ -273,14 +273,14 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_description'
-  $fields['node-formatter-field_formatter_description'] = array(
+  // Exported field: 'node-formatter-field_formatter_dapi'
+  $fields['node-formatter-field_formatter_dapi'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_formatter_description',
+      'field_name' => 'field_formatter_dapi',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -309,6 +309,86 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'cf_core_overview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'custom_formatters',
+          'settings' => array(),
+          'type' => 'custom_formatters_jquery_snippet',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_formatter_dapi',
+      'label' => 'Drupal API',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '20',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-formatter-field_formatter_description'
+  $fields['node-formatter-field_formatter_description'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_formatter_description',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'formatter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '12',
         ),
         'cf_core_overview' => array(
@@ -322,7 +402,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '15',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -356,9 +436,9 @@ function cf_core_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '5',
+          'size' => '60',
         ),
-        'type' => 'text_textarea',
+        'type' => 'text_textfield',
         'weight' => '11',
       ),
     ),
@@ -412,7 +492,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -609,7 +689,7 @@ function cf_core_field_default_fields() {
             'image_style' => 'formatter_example_preview_mobile',
           ),
           'type' => 'image',
-          'weight' => '19',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -641,7 +721,7 @@ function cf_core_field_default_fields() {
               'pathauto' => 1,
               'transliterate' => 0,
             ),
-            'value' => 'formatters/[node:nid]/[node:title]',
+            'value' => 'formatters/[node:nid]/[node:field_formatter_name]',
           ),
           'retroactive_update' => 1,
         ),
@@ -718,7 +798,7 @@ function cf_core_field_default_fields() {
             'image_style' => 'formatter_example_preview_mobile',
           ),
           'type' => 'image',
-          'weight' => '27',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -750,7 +830,7 @@ function cf_core_field_default_fields() {
               'pathauto' => 1,
               'transliterate' => 0,
             ),
-            'value' => 'formatters/[node:nid]/[node:title]',
+            'value' => 'formatters/[node:nid]/[node:field_formatter_name]',
           ),
           'retroactive_update' => 1,
         ),
@@ -983,7 +1063,7 @@ function cf_core_field_default_fields() {
       ),
       'module' => 'text',
       'settings' => array(
-        'max_length' => '255',
+        'max_length' => '64',
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -1220,6 +1300,7 @@ function cf_core_field_default_fields() {
   t('Code');
   t('Description');
   t('Details');
+  t('Drupal API');
   t('Example: Input');
   t('Example: Output');
   t('Field type(s)');

@@ -237,44 +237,38 @@
               clear: both;
               padding: 0;
 
-              .field-name-field-formatter-import {
-                .field-item {
-                  #font > .monospace;
+              .field-item {
+                #font > .monospace;
 
-                  background-color: @color-grey-dark;
-                  color: @color-white;
-                  padding: 10px;
+                background-color: @color-grey-dark;
+                color: @color-white;
+                padding: 10px;
 
-                  .snippet-container {
-                    overflow-x: auto;
-                    overflow-y: hidden;
-                    padding: 10px 0;
+                .snippet-container {
+                  overflow-x: auto;
+                  overflow-y: hidden;
+                  padding: 10px 0;
 
-                    pre, ol {
-                      margin-bottom: 0;
+                  pre, ol {
+                    margin-bottom: 0;
 
-                      li {
-                        margin: 0 0 .2em 1.5em;
+                    li {
+                      margin: 0 0 .2em 1.5em;
 
-                        .sh_comment {
-                          color: lighten(@color-grey-dark, 25%);
-                        }
+                      .sh_comment {
+                        color: lighten(@color-grey-dark, 25%);
+                      }
 
-                        .sh_keyword, .sh_symbol {
-                          color: @color-orange;
-                        }
+                      .sh_keyword, .sh_symbol {
+                        color: @color-orange;
+                      }
 
-                        .sh_string {
-                          color: @color-grey-light;
-                        }
+                      .sh_string {
+                        color: @color-grey-light;
                       }
                     }
                   }
                 }
-              }
-
-              .field-name-field-formatter-code {
-                .field-name-field-formatter-import;
               }
             }
           }

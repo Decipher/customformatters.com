@@ -1,6 +1,7 @@
 <?php
 /**
  * @file
+ * Install, update and uninstall functions for the CustomFormatters core module.
  */
 
 /**
@@ -36,14 +37,71 @@ function cf_core_update_7102() {
 }
 
 /**
- * Enable Image module, flush cache and revert features.
+ * Update 'field_formatter_description' and 'field_formatter_name' field
+ * schemas, enable Image module, flush cache, revert features and pdate existing
+ * Formatter nodes.
  */
 function cf_core_update_7103() {
+  // Update 'field_formatter_description' schema.
+  // We have to modify the database layer manually to circumvent the Field API
+  // measures to prevent schema schanges while data is present. Not to be
+  // repeated if possible.
+  $field = field_read_field('field_formatter_description');
+  $field['settings']['max_length'] = '255';
+  db_update('field_config')
+    ->condition('field_name', 'field_formatter_description')
+    ->fields(array(
+      'type' => 'text',
+      'data' => serialize($field),
+    ))
+    ->execute();
+  db_change_field('field_data_field_formatter_description', 'field_formatter_description_value', 'field_formatter_description_value', array(
+    'type' => 'varchar',
+    'length' => 255,
+  ));
+  db_change_field('field_revision_field_formatter_description', 'field_formatter_description_value', 'field_formatter_description_value', array(
+    'type' => 'varchar',
+    'length' => 255,
+  ));
+
+  // Update 'field_formatter_name' schema.
+  // We have to modify the database layer manually to circumvent the Field API
+  // measures to prevent schema schanges while data is present. Not to be
+  // repeated if possible.
+  $field = field_read_field('field_formatter_name');
+  $field['settings']['max_length'] = '64';
+  db_update('field_config')
+    ->condition('field_name', 'field_formatter_name')
+    ->fields(array(
+      'type' => 'text',
+      'data' => serialize($field),
+    ))
+    ->execute();
+  db_change_field('field_data_field_formatter_name', 'field_formatter_name_value', 'field_formatter_name_value', array(
+    'type' => 'varchar',
+    'length' => 64,
+  ));
+  db_change_field('field_revision_field_formatter_name', 'field_formatter_name_value', 'field_formatter_name_value', array(
+    'type' => 'varchar',
+    'length' => 64,
+  ));
+
   // Enable Image module.
   module_enable(array('image'));
 
   // Flush cache and revert features.
   _cf_core_flush_revert();
+
+  // Update existing Formatter nodes.
+  // This forces all Formatter nodes to be passed through the import submit
+  // handler to populate the new 'field_formatter_dapi' field.
+  $nodes = node_load_multiple(array(), array('type' => 'formatter'));
+  foreach ($nodes as $node) {
+    $form_state['values'] = (array) $node;
+    cf_core_node_process_import_submit(array(), $form_state);
+    $node->field_formatter_dapi[LANGUAGE_NONE][0]['value'] = $form_state['values']['field_formatter_dapi'][LANGUAGE_NONE][0]['value'];
+    node_save($node);
+  }
 }
 
 /**

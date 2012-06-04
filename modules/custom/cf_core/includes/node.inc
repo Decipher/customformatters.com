@@ -64,8 +64,11 @@ function cf_core_node_process_import_submit($form, &$form_state) {
       }
 
       // Formatter.
-      $form_state['values']['field_formatter_code'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->code);
-      $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->fapi);
+      $formatter->code = stripslashes($formatter->code);
+      $form_state['values']['field_formatter_code'][LANGUAGE_NONE][0]['value'] = $formatter->code;
+      $formatter->fapi = stripslashes($formatter->fapi);
+      $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = $formatter->fapi;
+      $form_state['values']['field_formatter_dapi'][LANGUAGE_NONE][0]['value'] = theme("custom_formatters_{$formatter->mode}_export", array('item' => $formatter, 'module' => 'cf_core'));
 
       // Details.
       $form_state['values']['body'][LANGUAGE_NONE][0]['value'] = !isset($form_state['values']['body'][LANGUAGE_NONE][0]['value'])

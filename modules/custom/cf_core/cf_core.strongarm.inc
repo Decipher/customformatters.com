@@ -505,7 +505,7 @@ user/*/*';
     ),
     'field_formatter_radioactivity' => array(
       'region' => 'footer',
-      'weight' => '7',
+      'weight' => '8',
       'has_required' => FALSE,
       'title' => 'Radioactivity',
       'hidden' => 1,
@@ -565,6 +565,13 @@ user/*/*';
       'has_required' => FALSE,
       'title' => 'Example: Output',
       'hidden' => 0,
+    ),
+    'field_formatter_dapi' => array(
+      'region' => 'footer',
+      'weight' => '7',
+      'has_required' => FALSE,
+      'title' => 'Drupal API',
+      'hidden' => 1,
     ),
   );
   $export['nodeformscols_field_placements_formatter_default'] = $strongarm;
