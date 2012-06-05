@@ -186,7 +186,56 @@ body {
             }
           }
 
+          #block-panels-mini-cf-share {
+            float: left;
+
+            .pane-content {
+              a {
+                background-color: @color-grey-light;
+                background-image: url('../images/icon-share.svg');
+                background-position: 3px -5px;
+                background-repeat: no-repeat;
+                background-size: auto 35px;
+                display: block;
+                height: 35px;
+
+                &:hover {
+                  background-color: @color-orange;
+                }
+              }
+            }
+          }
+
+          #block-panels-mini-cf-beta-signup {
+            float: left;
+
+            .pane-content {
+              a {
+                background-color: @color-grey-dark;
+                color: @color-white;
+                display: block;
+                font-size: 9px;
+                line-height: 14px;
+                padding: 5px 7px 2px;
+                text-transform: uppercase;
+
+                strong {
+                  display: block;
+                  font-size: 17px;
+                  margin-left: -1px;
+                }
+
+                &:hover {
+                  background-color: @color-orange;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+
           #block-cf-core-download-module {
+            clear: left;
+
             .content {
               .item-list {
                 ul {

@@ -270,5 +270,39 @@ body {
       width: 54px;
     }
   }
+
+  .ui-dialog {
+    #border-radius > .simple(0);
+
+    border: 0;
+    overflow: visible;
+    padding: 0;
+    position: fixed;
+
+    .ui-dialog-titlebar {
+      #border-radius > .simple(0);
+
+      background: none;
+      border: none;
+
+      .ui-dialog-title {
+        /*#font > .rotation(90deg);*/
+
+        color: @color-white;
+        left: -6px;
+        font-size: 48px;
+        position: absolute;
+        text-transform: uppercase;
+        top: -66px;
+      }
+    }
+  }
+
+  .ui-widget-overlay {
+    .opacity(80);
+
+    background: none;
+    background-color: #000;
+  }
 }
 

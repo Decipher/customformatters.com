@@ -59,3 +59,21 @@ function cf_core_block_download_module_view() {
     ),
   );
 }
+
+/**
+ * Implements hook_cf_core_preprocess_block_alter() on behalf of
+ * panels_mini.module.
+ */
+function panels_mini_cf_core_preprocess_block_alter(&$vars) {
+  switch ($vars['block_html_id']) {
+    case 'block-panels-mini-cf-share':
+      drupal_add_library('system', 'ui.dialog');
+      drupal_add_js(drupal_get_path('module', 'cf_core') . '/js/cf_core.js');
+      break;
+
+    case 'block-panels-mini-cf-beta-signup':
+      drupal_add_library('system', 'ui.dialog');
+      drupal_add_js(drupal_get_path('module', 'cf_core') . '/js/cf_core.js');
+      break;
+  }
+}

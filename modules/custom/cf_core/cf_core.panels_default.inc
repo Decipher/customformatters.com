@@ -68,9 +68,9 @@ function cf_core_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
-  $mini->name = 'cf_feedback';
+  $mini->name = 'cf_beta_signup';
   $mini->category = 'Custom Formatters';
-  $mini->admin_title = 'Feedback';
+  $mini->admin_title = 'Beta signup';
   $mini->admin_description = '';
   $mini->requiredcontexts = array();
   $mini->contexts = array();
@@ -98,6 +98,61 @@ function cf_core_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
+      'body' => '<a href="#"><strong>Beta</strong> testers wanted</a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-2 omega',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['middle'][0] = 'new-6';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-6';
+  $mini->display = $display;
+  $export['cf_beta_signup'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'cf_feedback';
+  $mini->category = 'Custom Formatters';
+  $mini->admin_title = 'Feedback';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
       'body' => '<a href="https://github.com/Decipher/customformatters.com/issues">Feedback / Support</a>',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -110,10 +165,10 @@ function cf_core_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['middle'][0] = 'new-6';
+    $display->content['new-7'] = $pane;
+    $display->panels['middle'][0] = 'new-7';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-6';
+  $display->title_pane = 'new-7';
   $mini->display = $display;
   $export['cf_feedback'] = $mini;
 
@@ -141,7 +196,7 @@ function cf_core_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-8';
     $pane->panel = 'middle';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -164,10 +219,10 @@ function cf_core_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['middle'][0] = 'new-7';
+    $display->content['new-8'] = $pane;
+    $display->panels['middle'][0] = 'new-8';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-7';
+  $display->title_pane = 'new-8';
   $mini->display = $display;
   $export['cf_github'] = $mini;
 
@@ -195,7 +250,7 @@ function cf_core_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-8';
+    $pane->pid = 'new-9';
     $pane->panel = 'middle';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -248,12 +303,72 @@ echo $section;
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['middle'][0] = 'new-8';
+    $display->content['new-9'] = $pane;
+    $display->panels['middle'][0] = 'new-9';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-8';
+  $display->title_pane = 'new-9';
   $mini->display = $display;
   $export['cf_section'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'cf_share';
+  $mini->category = 'Custom Formatters';
+  $mini->admin_title = 'Share';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-10';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<a href="#" title="Share" id="share-handle"></a>
+<div id="share-dialog">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>">Facebook</a>
+  <a href="https://plus.google.com/share?url=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>">Twitter</a>
+</div>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-1 alpha',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-10'] = $pane;
+    $display->panels['middle'][0] = 'new-10';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-10';
+  $mini->display = $display;
+  $export['cf_share'] = $mini;
 
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
@@ -279,7 +394,7 @@ echo $section;
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-11';
     $pane->panel = 'middle';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -300,10 +415,10 @@ echo $section;
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['middle'][0] = 'new-9';
+    $display->content['new-11'] = $pane;
+    $display->panels['middle'][0] = 'new-11';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-9';
+  $display->title_pane = 'new-11';
   $mini->display = $display;
   $export['cf_sponsors'] = $mini;
 
