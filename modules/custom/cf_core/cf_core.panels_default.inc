@@ -98,7 +98,7 @@ function cf_core_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<a href="#"><strong>Beta</strong> testers wanted</a>',
+      'body' => '<a href="/beta-signup"><strong>Beta</strong> testers wanted</a>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
