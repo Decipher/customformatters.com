@@ -122,7 +122,22 @@ function cf_core_update_7104() {
 
   $node->uid = 1;
   $node->title = 'Beta testers wanted';
+  $node->body = array(
+    LANGUAGE_NONE => array(
+      array(
+        'value' => "<p>
+  CustomFormatters.com is continuously evolving, getting closer to the point where users can signup and post Formatters on their own, but to get to that point there will need to be a significant Beta testing phase, and that of course requires Beta testers.
+</p>
+<p>
+  If you've ever written a Custom Formatter that you are willing to contribute back to the community, or you just want to get help with this project, signup below and get involved.
+</p>",
+        'format' => 'full_html',
+      ),
+    ),
+  );
   $node->webform = array_merge($node->webform, array(
+    'confirmation' => 'Thank you for your interest in the upcoming CustomFormatters.com beta, someone will be in contact with more information ASAP.',
+    'confirmation_format' => 'full_html',
     'redirect_url' => '<front>',
     'submit_notice' => 0,
     'record_exists' => TRUE,
@@ -163,6 +178,17 @@ function cf_core_update_7104() {
         ),
         'mandatory' => 0,
         'weight' => 2,
+      ),
+      4 => array(
+        'pid' => 0,
+        'form_key' => 'thoughts',
+        'name' => 'Thoughts',
+        'type' => 'textarea',
+        'extra' => array(
+          'resizable' => 0,
+        ),
+        'mandatory' => 0,
+        'weight' => 3,
       ),
     ),
   ));

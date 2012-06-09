@@ -172,6 +172,45 @@ body {
           }
         }
 
+        .pager {
+          background: none;
+          border: none;
+          text-align: center;
+
+          li {
+            #border-radius > .simple(0);
+
+            border: none;
+            float: inherit;
+            margin: 0;
+            padding: 0;
+
+            a {
+              #border-radius > .simple(0);
+
+              background: none;
+              white-space: nowrap;
+              width: auto;
+            }
+
+            &.pager-first {
+              position: absolute;
+              left: 0;
+            }
+
+            &.pager-previous {
+              position: absolute;
+              left: 50px;
+            }
+
+            &.pager-current {
+              background: none;
+              background-color: @color-grey-dark;
+              padding: 4px 8px;
+            }
+          }
+        }
+
         .panel-2col-stacked {
           .panel-panel {
             margin-bottom: 50px;

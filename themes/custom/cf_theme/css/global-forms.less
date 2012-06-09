@@ -35,6 +35,20 @@ form {
       }
     }
 
+    .form-textarea-wrapper {
+      padding-top: 38px;
+
+      .form-textarea {
+        border: 2px solid @color-grey-dark;
+        padding: 10px;
+
+        &:focus {
+          -webkit-box-shadow: none;
+          outline: none;
+        }
+      }
+    }
+
     .form-checkboxes {
       .form-item {
         clear: both;
@@ -127,7 +141,8 @@ form {
         background-color: @color-grey-light;
       }
 
-      .form-text {
+      .form-text,
+      .form-textarea {
         border-color: @color-grey-light;
       }
 

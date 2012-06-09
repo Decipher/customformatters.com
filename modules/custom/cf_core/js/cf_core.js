@@ -1,6 +1,7 @@
 (function($) {
   Drupal.behaviors.cfCore = {
     attach: function(context) {
+      // Social sharing integration.
       if ($('#share-dialog').length > 0) {
         share_dialog = $('#share-dialog').dialog({
           'autoOpen': false,
@@ -19,6 +20,11 @@
           return false;
         })
         .parent().attr('id', 'share-dialog-wrapper');
+
+        // Google Analytics - Social Analytics.
+        $('#share-dialog a').bind('click', function() {
+          _gaq.push(['_trackSocial', $(this).text(), 'Share']);
+        });
       }
     }
   }

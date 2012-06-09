@@ -200,6 +200,21 @@ function cf_core_ds_field_settings_info() {
   );
   $export['node|page|default'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|webform|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'webform';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|webform|default'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -538,6 +553,32 @@ function cf_core_ds_layout_settings_info() {
     'classes' => array(),
   );
   $export['node|page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|webform|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'webform';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'body',
+        2 => 'webform',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+      'webform' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|webform|default'] = $ds_layout;
 
   return $export;
 }

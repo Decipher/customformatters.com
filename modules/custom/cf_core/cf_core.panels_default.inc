@@ -280,6 +280,11 @@ switch (arg(0)) {
             $section = $node->title;
             break;
 
+          case \'webform\':
+            // @TODO - Ability to override from Node.
+            $section = \'Signup\';
+            break;
+
           default:
             $section = $node->type;
         }
@@ -343,11 +348,12 @@ echo $section;
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<a href="#" title="Share" id="share-handle"></a>
+      'body' => '<?php $title = drupal_get_title() ? strip_tags(drupal_get_title()) . " | " . check_plain(variable_get("site_name", "Drupal")) : check_plain(variable_get("site_name", "Drupal")) . " | " . filter_xss_admin(variable_get("site_slogan", "")); ?>
+<a href="#" title="Share" id="share-handle"></a>
 <div id="share-dialog">
-  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>" class="facebook"><span>Facebook</span></a>
-  <a href="https://plus.google.com/share?url=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>" class="gplus"><span>Google+</span></a>
-  <a href="https://twitter.com/intent/tweet?text=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>" class="twitter"><span>Twitter</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>&t=<?php echo $title ?>" class="facebook"><span>Facebook</span></a>
+  <a href="https://plus.google.com/share?url=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>&title=<?php echo $title ?>" class="gplus"><span>Google+</span></a>
+  <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($title . " - " . url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) . " via @CustomFormatter") ?>" class="twitter"><span>Twitter</span></a>
 </div>',
       'format' => 'php_code',
       'substitute' => TRUE,
