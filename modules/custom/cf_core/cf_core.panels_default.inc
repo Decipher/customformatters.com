@@ -345,9 +345,9 @@ echo $section;
       'title' => '',
       'body' => '<a href="#" title="Share" id="share-handle"></a>
 <div id="share-dialog">
-  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>">Facebook</a>
-  <a href="https://plus.google.com/share?url=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>">Google+</a>
-  <a href="https://twitter.com/intent/tweet?text=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>">Twitter</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>" class="facebook"><span>Facebook</span></a>
+  <a href="https://plus.google.com/share?url=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>" class="gplus"><span>Google+</span></a>
+  <a href="https://twitter.com/intent/tweet?text=<?php echo url(ltrim(request_uri(), \'/\'), array(\'absolute\' => TRUE)) ?>" class="twitter"><span>Twitter</span></a>
 </div>',
       'format' => 'php_code',
       'substitute' => TRUE,

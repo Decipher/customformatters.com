@@ -8,7 +8,7 @@ includes[custom_formatters] = 'http://dl.dropbox.com/u/1804559/makefiles/custom_
 
 
 
-; Modules - Contrib
+; Modules
 projects[admin_menu][subdir] = 'contrib'
 projects[admin_menu][version] = '3.0-rc2'
 
@@ -157,7 +157,7 @@ projects[xmlsitemap][version] = '2.0-rc1'
 
 
 
-; Themes - Contrib
+; Themes
 projects[omega][subdir] = 'contrib'
 projects[omega][version] = '3.1'
 
