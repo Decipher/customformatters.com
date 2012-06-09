@@ -273,14 +273,14 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_description'
-  $fields['node-formatter-field_formatter_description'] = array(
+  // Exported field: 'node-formatter-field_formatter_dapi'
+  $fields['node-formatter-field_formatter_dapi'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_formatter_description',
+      'field_name' => 'field_formatter_dapi',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -309,6 +309,86 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'cf_core_overview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'custom_formatters',
+          'settings' => array(),
+          'type' => 'custom_formatters_jquery_snippet',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_formatter_dapi',
+      'label' => 'Drupal API',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '20',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-formatter-field_formatter_description'
+  $fields['node-formatter-field_formatter_description'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_formatter_description',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'formatter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '12',
         ),
         'cf_core_overview' => array(
@@ -322,7 +402,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => '15',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -356,9 +436,9 @@ function cf_core_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '5',
+          'size' => '60',
         ),
-        'type' => 'text_textarea',
+        'type' => 'text_textfield',
         'weight' => '11',
       ),
     ),
@@ -412,7 +492,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '13',
+          'weight' => '16',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -555,14 +635,14 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_image_after'
-  $fields['node-formatter-field_formatter_image_after'] = array(
+  // Exported field: 'node-formatter-field_formatter_image_input'
+  $fields['node-formatter-field_formatter_image_input'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_formatter_image_after',
+      'field_name' => 'field_formatter_image_input',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -602,14 +682,14 @@ function cf_core_field_default_fields() {
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => '',
+            'image_style' => 'formatter_example_preview_mobile',
           ),
           'type' => 'image',
-          'weight' => 15,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -619,105 +699,32 @@ function cf_core_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_formatter_image_after',
-      'label' => 'Example: After',
+      'field_name' => 'field_formatter_image_input',
+      'label' => 'Example: Input',
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize' => '',
-        'max_resolution' => '',
-        'min_resolution' => '',
-        'title_field' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'image',
-        'settings' => array(
-          'preview_image_style' => 'formatter_example_preview_mobile',
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'image_image',
-        'weight' => '4',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-formatter-field_formatter_image_before'
-  $fields['node-formatter-field_formatter_image_before'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_formatter_image_before',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
+        'filefield_paths' => array(
+          'active_updating' => 0,
+          'file_name' => array(
+            'options' => array(
+              'pathauto' => 0,
+              'transliterate' => 0,
+            ),
+            'value' => 'input.[file:ffp-extension-original]',
           ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'module' => 'image',
-      'settings' => array(
-        'default_image' => 0,
-        'uri_scheme' => 'public',
-      ),
-      'translatable' => '0',
-      'type' => 'image',
-    ),
-    'field_instance' => array(
-      'bundle' => 'formatter',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'cf_core_block' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'cf_core_overview' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'default' => array(
-          'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+          'file_path' => array(
+            'options' => array(
+              'pathauto' => 1,
+              'transliterate' => 0,
+            ),
+            'value' => 'formatters/[node:nid]/[node:field_formatter_name]',
           ),
-          'type' => 'image',
-          'weight' => 14,
+          'retroactive_update' => 1,
         ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_formatter_image_before',
-      'label' => 'Example: Before',
-      'required' => 0,
-      'settings' => array(
-        'alt_field' => 0,
-        'default_image' => 0,
-        'file_directory' => '',
-        'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -733,6 +740,115 @@ function cf_core_field_default_fields() {
         ),
         'type' => 'image_image',
         'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-formatter-field_formatter_image_output'
+  $fields['node-formatter-field_formatter_image_output'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_formatter_image_output',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'formatter',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'cf_core_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'cf_core_overview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'formatter_example_preview_mobile',
+          ),
+          'type' => 'image',
+          'weight' => '7',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_formatter_image_output',
+      'label' => 'Example: Output',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 0,
+        'default_image' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'png gif jpg jpeg',
+        'filefield_paths' => array(
+          'active_updating' => 0,
+          'file_name' => array(
+            'options' => array(
+              'pathauto' => 0,
+              'transliterate' => 0,
+            ),
+            'value' => 'output.[file:ffp-extension-original]',
+          ),
+          'file_path' => array(
+            'options' => array(
+              'pathauto' => 1,
+              'transliterate' => 0,
+            ),
+            'value' => 'formatters/[node:nid]/[node:field_formatter_name]',
+          ),
+          'retroactive_update' => 1,
+        ),
+        'max_filesize' => '',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'image',
+        'settings' => array(
+          'preview_image_style' => 'formatter_example_preview_mobile',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'image_image',
+        'weight' => '4',
       ),
     ),
   );
@@ -947,7 +1063,7 @@ function cf_core_field_default_fields() {
       ),
       'module' => 'text',
       'settings' => array(
-        'max_length' => '255',
+        'max_length' => '64',
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -1101,7 +1217,7 @@ function cf_core_field_default_fields() {
         'module' => 'radioactivity',
         'settings' => array(),
         'type' => 'radioactivity_basic_widget',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -1184,8 +1300,9 @@ function cf_core_field_default_fields() {
   t('Code');
   t('Description');
   t('Details');
-  t('Example: After');
-  t('Example: Before');
+  t('Drupal API');
+  t('Example: Input');
+  t('Example: Output');
   t('Field type(s)');
   t('Format');
   t('Formatter');

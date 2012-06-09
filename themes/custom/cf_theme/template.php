@@ -95,9 +95,9 @@ function cf_theme_link($variables) {
  */
 function cf_theme_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'formatter_node_form') {
-    $form['field_formatter_image_before']['#attributes']['class'][] = 'grid-4';
-    $form['field_formatter_image_before']['#attributes']['class'][] = 'alpha';
-    $form['field_formatter_image_after']['#attributes']['class'][] = 'grid-4';
-    $form['field_formatter_image_after']['#attributes']['class'][] = 'omega';
+    $form['field_formatter_image_input']['#attributes']['class'][] = 'grid-4';
+    $form['field_formatter_image_input']['#attributes']['class'][] = 'alpha';
+    $form['field_formatter_image_output']['#attributes']['class'][] = 'grid-4';
+    $form['field_formatter_image_output']['#attributes']['class'][] = 'omega';
   }
 }

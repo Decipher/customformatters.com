@@ -5,15 +5,14 @@
  */
 
 /**
- * Implements hook_node_insert().
+ * Implements hook_cf_core_form_formatter_node_form_alter() on behalf of
+ * node.module.
  */
-function cf_core_form_alter(&$form, $form_state, $form_id) {
-  if ('formatter_node_form' == $form_id) {
-    $form['title']['#required'] = FALSE;
+function node_cf_core_form_formatter_node_form_alter(&$form, $form_state) {
+  $form['title']['#required'] = FALSE;
 
-    $form['#submit'][] = 'cf_core_node_process_import_submit';
-    $form['#validate'][] = 'cf_core_node_process_import_validate';
-  }
+  $form['#submit'][] = 'cf_core_node_process_import_submit';
+  $form['#validate'][] = 'cf_core_node_process_import_validate';
 }
 
 /**
@@ -64,8 +63,11 @@ function cf_core_node_process_import_submit($form, &$form_state) {
       }
 
       // Formatter.
-      $form_state['values']['field_formatter_code'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->code);
-      $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = stripslashes($formatter->fapi);
+      $formatter->code = stripslashes($formatter->code);
+      $form_state['values']['field_formatter_code'][LANGUAGE_NONE][0]['value'] = $formatter->code;
+      $formatter->fapi = stripslashes($formatter->fapi);
+      $form_state['values']['field_formatter_fapi'][LANGUAGE_NONE][0]['value'] = $formatter->fapi;
+      $form_state['values']['field_formatter_dapi'][LANGUAGE_NONE][0]['value'] = theme("custom_formatters_{$formatter->mode}_export", array('item' => $formatter, 'module' => 'MYMODULE'));
 
       // Details.
       $form_state['values']['body'][LANGUAGE_NONE][0]['value'] = !isset($form_state['values']['body'][LANGUAGE_NONE][0]['value'])

@@ -35,6 +35,20 @@ form {
       }
     }
 
+    .form-textarea-wrapper {
+      padding-top: 38px;
+
+      .form-textarea {
+        border: 2px solid @color-grey-dark;
+        padding: 10px;
+
+        &:focus {
+          -webkit-box-shadow: none;
+          outline: none;
+        }
+      }
+    }
+
     .form-checkboxes {
       .form-item {
         clear: both;
@@ -87,14 +101,22 @@ form {
     }
 
     .form-managed-file {
+      position: relative;
+
+      .image-preview {
+        img {
+          border: 2px solid @color-grey-dark;
+        }
+      }
+
       .image-widget-data {
         width: 100%;
       }
 
       .customfile {
-        background-color: @color-grey-light;
-        height: 100px;
+        border: 2px solid @color-grey-dark;
         overflow: hidden;
+        margin: 0 0 10px;
         position: relative;
 
         .customfile-button {
@@ -119,8 +141,21 @@ form {
         background-color: @color-grey-light;
       }
 
-      .form-text {
+      .form-text,
+      .form-textarea {
         border-color: @color-grey-light;
+      }
+
+      .form-managed-file {
+        .image-preview {
+          img {
+            border: 2px solid @color-grey-light;
+          }
+        }
+
+        .customfile {
+          border: 2px solid @color-grey-light;
+        }
       }
     }
   }
@@ -144,5 +179,9 @@ form {
     &:hover {
       background-color: @color-grey-light;
     }
+  }
+
+  .vertical-tabs {
+    clear: both;
   }
 }

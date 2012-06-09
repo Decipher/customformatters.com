@@ -28,6 +28,16 @@
           : $(this).parents('.checkbox-wrapper').parent().removeClass('checked');
       });
 
+      // 'Has image' exposed filter.
+      if ($('#edit-has-image-wrapper').length > 0) {
+        $('#edit-has-image-wrapper > label:not(.processed)').addClass('processed').bind('click', function() {
+          $(this).parent().hasClass('checked')
+            ? $(this).parent().removeClass('checked').find('#edit-has-image-all').trigger('click')
+            : $(this).parent().addClass('checked').find('#edit-has-image-1').trigger('click');
+          $('#edit-submit-cf-formatters').trigger('click');
+        });
+      }
+
       // Replace file inputs with custom, themeable element.
       $('input[type="file"]:not(.processed)').each(function() {
         $(this).addClass('processed').customFileInput();

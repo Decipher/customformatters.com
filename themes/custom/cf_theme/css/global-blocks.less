@@ -78,26 +78,23 @@ body {
       }
     }
 
-    .ajax-progress {
-      .opacity(90);
+    &#edit-has-image-wrapper {
+      padding-top: 0;
 
-      background-color: @color-white;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      width: 100%;
+      label {
+        #node-formatter-elements > .taxonomy-terms > .field-item;
 
-      .throbber {
-        background-image: url('../images/ajax-loader.gif');
-        background-position: center;
-        height: 100%;
-        left: 50%;
-        margin-left: -30px;
-        margin-top: -3px;
-        position: absolute;
-        width: 54px;
+        font-weight: normal;
+      }
+
+      &.checked {
+        label {
+          background-color: @color-orange;
+        }
+      }
+
+      .views-widget {
+        display: none;
       }
     }
   }
@@ -105,4 +102,97 @@ body {
 
 #mini-panel-cf_sponsors {
   float: right;
+}
+
+#share-dialog-wrapper {
+  #border-radius > .simple(0);
+
+  background: transparent;
+  border: 0;
+  overflow: visible;
+  left: 0;
+  padding: 0;
+  position: fixed;
+
+  .ui-dialog-titlebar {
+    #border-radius > .simple(0);
+
+    background: none;
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 320px;
+
+    .ui-dialog-title {
+      color: @color-white;
+      font-size: 48px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .ui-dialog-titlebar-close {
+      bottom: -125px;
+      color: @color-white;
+      padding: 0;
+      right: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      top: inherit;
+      width: auto;
+
+      .ui-icon-closethick {
+        background-image: none;
+        display: inline;
+        margin: 0;
+        text-indent: 0;
+      }
+
+      &.ui-state-hover {
+        background: none;
+        border: none;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .ui-dialog-content {
+    margin: 0 auto;
+    padding: 0;
+    width: 320px !important;
+
+    a {
+      color: @color-white;
+      display: block;
+      float: left;
+      font-weight: bold;
+      height: 100px;
+      margin-right: 10px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 100px;
+
+      span {
+        #font > .rotation(90deg);
+
+        display: block;
+        left: 100px;
+        position: absolute;
+        top: 2px;
+      }
+
+      &.facebook {
+        background-color: #3B5998;
+      }
+
+      &.gplus {
+        background-color: #D5482C;
+      }
+
+      &.twitter {
+        background-color: #00B4F2;
+        margin-right: 0;
+      }
+    }
+  }
 }

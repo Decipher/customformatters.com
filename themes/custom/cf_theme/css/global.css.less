@@ -172,6 +172,45 @@ body {
           }
         }
 
+        .pager {
+          background: none;
+          border: none;
+          text-align: center;
+
+          li {
+            #border-radius > .simple(0);
+
+            border: none;
+            float: inherit;
+            margin: 0;
+            padding: 0;
+
+            a {
+              #border-radius > .simple(0);
+
+              background: none;
+              white-space: nowrap;
+              width: auto;
+            }
+
+            &.pager-first {
+              position: absolute;
+              left: 0;
+            }
+
+            &.pager-previous {
+              position: absolute;
+              left: 50px;
+            }
+
+            &.pager-current {
+              background: none;
+              background-color: @color-grey-dark;
+              padding: 4px 8px;
+            }
+          }
+        }
+
         .panel-2col-stacked {
           .panel-panel {
             margin-bottom: 50px;
@@ -246,6 +285,36 @@ body {
 
   #section-footer {
     padding: 10px 0;
+  }
+
+  .ajax-progress {
+    .opacity(90);
+
+    background-color: @color-white;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    .throbber {
+      background-image: url('../images/ajax-loader.gif');
+      background-position: center;
+      height: 100%;
+      left: 50%;
+      margin-left: -30px;
+      margin-top: -3px;
+      position: absolute;
+      width: 54px;
+    }
+  }
+
+  .ui-widget-overlay {
+    .opacity(80);
+
+    background: none;
+    background-color: #000;
   }
 }
 

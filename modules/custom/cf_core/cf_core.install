@@ -1,7 +1,16 @@
 <?php
 /**
  * @file
+ * Install, update and uninstall functions for the CustomFormatters core module.
  */
+
+/**
+ * Implements hook_install().
+ */
+function cf_core_install() {
+  // Create 'Beta signup' webform.
+  cf_core_update_7104();
+}
 
 /**
  * Flush cache and revert features.
@@ -11,7 +20,7 @@ function cf_core_update_7100() {
 }
 
 /**
- * Enable modules, flush cache and revert features and remove old Frontpage menu
+ * Enable modules, flush cache, revert features and remove old Frontpage menu
  * item.
  */
 function cf_core_update_7101() {
@@ -33,6 +42,164 @@ function cf_core_update_7101() {
  */
 function cf_core_update_7102() {
   _cf_core_flush_revert();
+}
+
+/**
+ * Update 'field_formatter_description' and 'field_formatter_name' field
+ * schemas, enable Image module, flush cache, revert features and pdate existing
+ * Formatter nodes.
+ */
+function cf_core_update_7103() {
+  // Update 'field_formatter_description' schema.
+  // We have to modify the database layer manually to circumvent the Field API
+  // measures to prevent schema schanges while data is present. Not to be
+  // repeated if possible.
+  $field = field_read_field('field_formatter_description');
+  $field['settings']['max_length'] = '255';
+  db_update('field_config')
+    ->condition('field_name', 'field_formatter_description')
+    ->fields(array(
+      'type' => 'text',
+      'data' => serialize($field),
+    ))
+    ->execute();
+  db_change_field('field_data_field_formatter_description', 'field_formatter_description_value', 'field_formatter_description_value', array(
+    'type' => 'varchar',
+    'length' => 255,
+  ));
+  db_change_field('field_revision_field_formatter_description', 'field_formatter_description_value', 'field_formatter_description_value', array(
+    'type' => 'varchar',
+    'length' => 255,
+  ));
+
+  // Update 'field_formatter_name' schema.
+  // We have to modify the database layer manually to circumvent the Field API
+  // measures to prevent schema schanges while data is present. Not to be
+  // repeated if possible.
+  $field = field_read_field('field_formatter_name');
+  $field['settings']['max_length'] = '64';
+  db_update('field_config')
+    ->condition('field_name', 'field_formatter_name')
+    ->fields(array(
+      'type' => 'text',
+      'data' => serialize($field),
+    ))
+    ->execute();
+  db_change_field('field_data_field_formatter_name', 'field_formatter_name_value', 'field_formatter_name_value', array(
+    'type' => 'varchar',
+    'length' => 64,
+  ));
+  db_change_field('field_revision_field_formatter_name', 'field_formatter_name_value', 'field_formatter_name_value', array(
+    'type' => 'varchar',
+    'length' => 64,
+  ));
+
+  // Enable Image module.
+  module_enable(array('image'));
+
+  // Flush cache and revert features.
+  _cf_core_flush_revert();
+
+  // Update existing Formatter nodes.
+  // This forces all Formatter nodes to be passed through the import submit
+  // handler to populate the new 'field_formatter_dapi' field.
+  $nodes = node_load_multiple(array(), array('type' => 'formatter'));
+  foreach ($nodes as $node) {
+    $form_state['values'] = (array) $node;
+    cf_core_node_process_import_submit(array(), $form_state);
+    $node->field_formatter_dapi[LANGUAGE_NONE][0]['value'] = $form_state['values']['field_formatter_dapi'][LANGUAGE_NONE][0]['value'];
+    node_save($node);
+  }
+}
+
+/**
+ * Create 'Beta signup' webform.
+ */
+function cf_core_update_7104() {
+  $node = new stdClass();
+  $node->type = 'webform';
+  node_object_prepare($node);
+
+  $node->uid = 1;
+  $node->title = 'Beta testers wanted';
+  $node->body = array(
+    LANGUAGE_NONE => array(
+      array(
+        'value' => "<p>
+  CustomFormatters.com is continuously evolving, getting closer to the point where users can signup and post Formatters on their own, but to get to that point there will need to be a significant Beta testing phase, and that of course requires Beta testers.
+</p>
+<p>
+  If you've ever written a Custom Formatter that you are willing to contribute back to the community, or you just want to get help with this project, signup below and get involved.
+</p>",
+        'format' => 'full_html',
+      ),
+    ),
+  );
+  $node->webform = array_merge($node->webform, array(
+    'confirmation' => 'Thank you for your interest in the upcoming CustomFormatters.com beta, someone will be in contact with more information ASAP.',
+    'confirmation_format' => 'full_html',
+    'redirect_url' => '<front>',
+    'submit_notice' => 0,
+    'record_exists' => TRUE,
+    'emails' => array(
+      1 => array(
+        'email' => 'info@customformatters.com',
+        'subject' => 'default',
+        'from_name' => 1,
+        'from_address' => 2,
+        'template' => 'default',
+        'excluded_components' => array(),
+      ),
+    ),
+    'components' => array(
+      1 => array(
+        'pid' => 0,
+        'form_key' => 'name',
+        'name' => 'Name',
+        'type' => 'textfield',
+        'mandatory' => 1,
+        'weight' => 0,
+      ),
+      2 => array(
+        'pid' => 0,
+        'form_key' => 'email',
+        'name' => 'Email',
+        'type' => 'email',
+        'mandatory' => 1,
+        'weight' => 1,
+      ),
+      3 => array(
+        'pid' => 0,
+        'form_key' => 'do_username',
+        'name' => 'D.o. username',
+        'type' => 'textfield',
+        'extra' => array(
+          'description' => 'Drupal.org username',
+        ),
+        'mandatory' => 0,
+        'weight' => 2,
+      ),
+      4 => array(
+        'pid' => 0,
+        'form_key' => 'thoughts',
+        'name' => 'Thoughts',
+        'type' => 'textarea',
+        'extra' => array(
+          'resizable' => 0,
+        ),
+        'mandatory' => 0,
+        'weight' => 3,
+      ),
+    ),
+  ));
+  node_save($node);
+
+  $path = array(
+    'alias' => 'beta-signup',
+    'source' => "node/{$node->nid}",
+    'language' => LANGUAGE_NONE,
+  );
+  path_save($path);
 }
 
 /**

@@ -76,6 +76,41 @@ body {
             }
           }
         }
+
+        .node-formatter {
+          &.view-mode-full {
+            .grid-4 {
+              .field-type-image {
+                .field-item {
+                  border: inherit;
+                  margin: 20px 0;
+
+                  img {
+                    border: 2px solid @color-grey-dark;
+                    height: auto;
+                    width: auto;
+                  }
+                }
+              }
+
+              &.group-left {
+                padding-right: 10px;
+
+                .field-type-image {
+                  padding-right: 0;
+                }
+              }
+
+              &.group-right {
+                padding-left: 10px;
+
+                .field-type-image {
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
       }
 
       aside {
@@ -151,7 +186,56 @@ body {
             }
           }
 
+          #block-panels-mini-cf-share {
+            float: left;
+
+            .pane-content {
+              a {
+                background-color: @color-grey-light;
+                background-image: url('../images/icon-share.svg');
+                background-position: 3px -5px;
+                background-repeat: no-repeat;
+                background-size: auto 35px;
+                display: block;
+                height: 35px;
+
+                &:hover {
+                  background-color: @color-orange;
+                }
+              }
+            }
+          }
+
+          #block-panels-mini-cf-beta-signup {
+            float: left;
+
+            .pane-content {
+              a {
+                background-color: @color-grey-dark;
+                color: @color-white;
+                display: block;
+                font-size: 9px;
+                line-height: 14px;
+                padding: 5px 7px 2px;
+                text-transform: uppercase;
+
+                strong {
+                  display: block;
+                  font-size: 17px;
+                  margin-left: -1px;
+                }
+
+                &:hover {
+                  background-color: @color-orange;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+
           #block-cf-core-download-module {
+            clear: left;
+
             .content {
               .item-list {
                 ul {
@@ -237,6 +321,12 @@ form {
     label {
       width: 100px;
     }
+
+    .form-managed-file {
+      .customfile {
+        height: 92px;
+      }
+    }
   }
 
   .form-submit {
@@ -251,6 +341,18 @@ form {
     #mini-panel-cf_section {
       .pane-content {
         margin-top: 3px;
+      }
+    }
+  }
+}
+
+.context-beta-signup {
+  #zone-content {
+    min-height: 66px;
+
+    #mini-panel-cf_section {
+      .pane-content {
+        margin-top: 2px;
       }
     }
   }

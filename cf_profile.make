@@ -8,12 +8,14 @@ includes[custom_formatters] = 'http://dl.dropbox.com/u/1804559/makefiles/custom_
 
 
 
-; Modules - Contrib
+; Modules
 projects[admin_menu][subdir] = 'contrib'
 projects[admin_menu][version] = '3.0-rc2'
 
 projects[better_exposed_filters][subdir] = 'contrib'
 projects[better_exposed_filters][version] = '3.0-beta1'
+; Add improved handling of exposed NULL/NOT NULL filters: http://drupal.org/node/950312#comment-6073974
+projects[better_exposed_filters][patch][] = 'http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-950312-4.patch'
 
 projects[coder][subdir] = 'contrib'
 projects[coder][version] = '1.0'
@@ -41,7 +43,9 @@ projects[devel_image_provider][download][type] = "git"
 projects[devel_image_provider][download][url] = "http://git.drupal.org/project/devel_image_provider.git"
 projects[devel_image_provider][download][revision] = "418a9d8b4ff9ff6434e416eaabbf1ad4ddeb9725"
 projects[devel_image_provider][subdir] = "contrib"
+; Fixed issue with Height parameter: http://drupal.org/node/1516854#comment-5889600
 projects[devel_image_provider][patch][] = "http://drupal.org/files/resolution-1516854-7.patch"
+; Fixed error if variable not set: http://drupal.org/node/1539208#comment-5890056
 projects[devel_image_provider][patch][] = "http://drupal.org/files/array_rand_error-1539208-2.patch"
 
 projects[diff][subdir] = 'contrib'
@@ -49,6 +53,7 @@ projects[diff][version] = '2.0'
 
 projects[ds][subdir] = 'contrib'
 projects[ds][version] = '1.5'
+; Hide Tokens wehn checkbox not checked: http://drupal.org/node/1462544#comment-5673994
 projects[ds][patch][] = 'http://drupal.org/files/hide_tokens-1462544-1.patch'
 
 projects[entity][subdir] = 'contrib'
@@ -62,6 +67,12 @@ projects[features][version] = '1.0-rc2'
 
 projects[field_group][subdir] = 'contrib'
 projects[field_group][version] = '1.1'
+
+projects[filefield_paths][type] = "module"
+projects[filefield_paths][download][type] = "git"
+projects[filefield_paths][download][url] = "http://git.drupal.org/project/filefield_paths.git"
+projects[filefield_paths][download][revision] = "84fb63726b5745d2775078f7e31fc72f50d9fb60"
+projects[filefield_paths][subdir] = "contrib"
 
 projects[globalredirect][subdir] = 'contrib'
 projects[globalredirect][version] = '1.4'
@@ -86,7 +97,8 @@ projects[nodeformcols][type] = 'module'
 projects[nodeformcols][download][type] = 'git'
 projects[nodeformcols][download][url] = 'http://git.drupal.org/project/nodeformcols.git'
 projects[nodeformcols][download][revision] = '0120682a82fa03d7387cc215ab0cce6d3ae96a45'
-projects[nodeformcols][pathces][] = 'http://drupal.org/files/context_admin_support-1411060-1.patch'
+; Added support for Contextual administration module: http://drupal.org/node/1411060#comment-5491668
+projects[nodeformcols][patch][] = 'http://drupal.org/files/context_admin_support-1411060-1.patch'
 
 projects[oauth][subdir] = 'contrib'
 projects[oauth][version] = '3.0'
@@ -99,9 +111,6 @@ projects[page_title][version] = '2.7'
 
 projects[panels][subdir] = 'contrib'
 projects[panels][version] = '3.2'
-
-projects[pathauto][subdir] = 'contrib'
-projects[pathauto][version] = '1.0'
 
 projects[pathauto][subdir] = 'contrib'
 projects[pathauto][version] = '1.0'
@@ -123,6 +132,7 @@ projects[site_verify][download][type] = "git"
 projects[site_verify][download][url] = "http://git.drupal.org/project/site_verify.git"
 projects[site_verify][download][revision] = "6b4662210b333561a23ca498df3f91c060eabbd7"
 projects[site_verify][subdir] = "contrib"
+; Added CTools exportables integration: http://drupal.org/node/1230956#comment-6068128
 projects[site_verify][patch][] = 'http://drupal.org/files/exportables-1230956-6.patch'
 
 projects[subpathauto][subdir] = 'contrib'
@@ -136,6 +146,8 @@ projects[twitter][version] = '3.0-beta4'
 
 projects[views][subdir] = 'contrib'
 projects[views][version] = '3.3'
+; Add improved handling of exposed NULL/NOT NULL filters: http://drupal.org/node/477984#comment-6073924
+projects[views][patch][] = 'http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-477984-60.patch'
 
 projects[wysiwyg][subdir] = 'contrib'
 projects[wysiwyg][version] = '2.1'
@@ -145,7 +157,7 @@ projects[xmlsitemap][version] = '2.0-rc1'
 
 
 
-; Themes - Contrib
+; Themes
 projects[omega][subdir] = 'contrib'
 projects[omega][version] = '3.1'
 
@@ -180,6 +192,7 @@ projects[profiler][type] = "library"
 projects[profiler][download][type] = "git"
 projects[profiler][download][url] = "http://git.drupal.org/project/profiler.git"
 projects[profiler][download][revision] = "d0137cb42bc7a4e9ce0a0431f875806285d09758"
+; Added support for Devel generate: http://drupal.org/node/1420344#comment-6015282
 projects[profiler][patch][] = "http://drupal.org/files/beta_and_devel-1420344-9.patch"
 
 projects[tinymce][type] = 'library'
