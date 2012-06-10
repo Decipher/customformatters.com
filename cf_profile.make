@@ -149,6 +149,9 @@ projects[views][version] = '3.3'
 ; Add improved handling of exposed NULL/NOT NULL filters: http://drupal.org/node/477984#comment-6073924
 projects[views][patch][] = 'http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-477984-60.patch'
 
+projects[webform][subdir] = 'contrib'
+projects[webform][version] = '3.18'
+
 projects[wysiwyg][subdir] = 'contrib'
 projects[wysiwyg][version] = '2.1'
 
