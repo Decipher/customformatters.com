@@ -1,0 +1,175 @@
+CustomFormatters.com 7.x-0.x-dev, xxxx-xx-xx (development release)
+--------------------------------------------------------------------------------
+
+- Added stub makefile to repository.
+- Added user roles to feature.
+- Added Delete all module.
+- Fixed pass-by-reference issues.
+- Fixed Devel Image Provider module patches.
+- Updated LESS to SCSS.
+- Updated README.txt.
+- Updated makefile syntax.
+- Updated Custom Formatters module.
+
+
+
+CustomFormatters.com 7.x-0.3, 2012-06-10
+--------------------------------------------------------------------------------
+
+- #4: Improved makefile patch documentation.
+- #4: Removed duplicate path auto entry from makefile.
+- Added Webform to makefile.
+- Added Random filter to Formatters view.
+- Added Display Suite settings for Webform.
+- Added Google Analytics Social Analytics.
+- Added 'Extras' label to Formatters exposed filters block.
+- Added beta signup webform.
+- Added Drupal API export field.
+- Added update hook code for Drupal API field.
+- Added update hook code to change field schemas.
+- Added File (Field) Paths module.
+- Added Patches for exposed IS NOT EMPTY views filter.
+- Added update hooks for image fields.
+- Added Responsive images and styles module.
+- Added jQuery custom file input library.
+- Added Formatter example image fields.
+- Added Image styles for Formatter example screenshot.
+- Added code to prevent XML site map being submitted to search engines in
+  production mode.
+- Updated Formatters display suite layout.
+- Updated Image fields.
+- Updated Image styles.
+- Updated Formatters view.
+- Updated styles.
+- Updated styles for Drupal API field.
+- Updated XML Sitemap settings.
+- Updated build instructions.
+- Updated Beta signup Node/Webform.
+- Updated Social sharing links.
+- Updated form styles.
+- Updated pager style.
+
+
+
+CustomFormatters.com 7.x-0.2.2, 2012-06-01
+--------------------------------------------------------------------------------
+
+- Added Site Verify and XML Sitemap.
+- Updated Google Analytics settings.
+- Updated Site Verify patch.
+- Updated XML Sitemap strongarm variables.
+
+
+
+CustomFormatters.com 7.x-0.2.1, 2012-05-30
+--------------------------------------------------------------------------------
+
+- Updated Strongarm variables.
+
+
+
+CustomFormatters.com 7.x-0.2, 2012-05-30
+--------------------------------------------------------------------------------
+
+- #1: Fixed issue with Code block in Firefox.
+- Added Twitter and OAuth module and settings.
+- Added Field bundle settings variables to feature.
+- Added Formatter node edit context.
+- Added Overview view mode and layout.
+- Added Development feature.
+- Added Environment Indicator module.
+- Added Feedback/Support block.
+- Added code to disable Analytics on dev sites.
+- Added sponsors block.
+- Added Checkbox replacement JS.
+- Added Better Exposed Filters module.
+- Added Taxonomy Term to View formatter.
+- Added Block view mode.
+- Added Ajax loader image.
+- Fixed issue with Formatters view exposed filter ajax state.
+- Improved Taxonomy/Devel Generate setup in profile.
+- Updated frontpage layout.
+- Updated site status check function.
+- Updated Formatter teaser view mode layout.
+- Updated documentation.
+- Updated styles.
+- Updated 7101 update hook.
+- Updated Formatters view.
+- Updated Blog block view mode styles.
+- Updated documentation for 0.2 release.
+- Removed Formatters view 'Remember' flag to fix issue with mobile layout.
+- Removed old Menu item.
+
+
+
+CustomFormatters.com 7.x-0.1.1, 2012-05-27
+--------------------------------------------------------------------------------
+
+- Added hook_update_N() to enabled Google Analytics.
+- Added missing Google Analytics dependency.
+- Added Favicon and source image.
+- Added Google Analytics.
+
+
+
+CustomFormatters.com 7.x-0.1, 2012-05-25
+--------------------------------------------------------------------------------
+
+- Added Mode taxonomy to frontage Views.
+- Added Panel title hover state style.
+- Added Formatters page view.
+- Added Formatters page context.
+- Added Taxonomy generation to profile.
+- Added jquery.snippet library to makefile.
+- Added Custom Formatters make include to the makefile.
+- Added Code formatting formatter and styles.
+- Added field_group and multistep modules to the makefile.
+- Added new profiler based devel generate code.
+- Added LESS library to makefile.
+- Added Profile/Devel related updates to makefile.
+- Added forms styles.
+- Added user form styles.
+- Added Node form customisations.
+- Added Tabs style.
+- Added About Panel.
+- Added dependencies to feature.
+- Added devel generate support to Install profile.
+- Added smart module download block.
+- Added Node tabs as Contextual links code.
+- Added Radioactivity for popularity gauging.
+- Added modules.
+- Added Github block.
+- Added About block.
+- Added Search block.
+- Added Search permissions.
+- Added Diff module.
+- Added Global Redirect module.
+- Added Frontpage context.
+- Added site slogan.
+- Fixed mobile title resizing.
+- Fixed issue with jQuery.Snippet formatter with HTML syntax.
+- Fixed issue with re-importing Formatters and duplicate Taxonomy terms.
+- Fixed issue with Formatter import.
+- Fixed issue with strongarm revert in install profile.
+- Fixed download block.
+- Fixed resizing of Field groups.
+- Fixed issue with import having escaped/slashed quotes.
+- Fixed minor syntax error in Drush makefile
+- Fixed radioactivity exportable.
+- Updated code formatting styles.
+- Updated about page and block.
+- Updated displays.
+- Updated styles.
+- Updated features.
+- Updated profiler patch.
+- Updated LESS syntax.
+- Updated module versions.
+- Updated Search block style.
+- Updated custom theme settings.
+- Updated theme.
+- Updated Omega theme to 3.1.
+- Updated frontpage view display.
+- Removed legacy multistep field groups.
+- Removed Multistep module.
+- Removed Boxes module.
+- Removed old devel generate code.

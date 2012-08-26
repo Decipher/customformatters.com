@@ -3,7 +3,7 @@ body {
     #zone-content {
       aside#region-sidebar-first {
         #block-panels-mini-cf-feedback {
-          background-color: @color-grey-dark;
+          background-color: $color-grey-dark;
           height: 124px;
           position: fixed;
           left: 0;
@@ -16,13 +16,13 @@ body {
             top: 0;
 
             a {
-              color: @color-white;
+              color: $color-white;
               padding: 2px 6px 10px;
             }
           }
 
           &:hover {
-            background-color: @color-orange;
+            background-color: $color-orange;
             width: 22px;
 
             .pane-content {
@@ -53,7 +53,7 @@ body {
     width: 100%;
 
     label {
-      color: @color-grey-dark;
+      color: $color-grey-dark;
       text-transform: uppercase;
     }
 
@@ -72,7 +72,7 @@ body {
 
         &.checked {
           label {
-            background-color: @color-orange;
+            background-color: $color-orange;
           }
         }
       }
@@ -89,7 +89,7 @@ body {
 
       &.checked {
         label {
-          background-color: @color-orange;
+          background-color: $color-orange;
         }
       }
 
@@ -105,7 +105,7 @@ body {
 }
 
 #share-dialog-wrapper {
-  #border-radius > .simple(0);
+  @include border-radius(0);
 
   background: transparent;
   border: 0;
@@ -115,7 +115,7 @@ body {
   position: fixed;
 
   .ui-dialog-titlebar {
-    #border-radius > .simple(0);
+    @include border-radius(0);
 
     background: none;
     border: none;
@@ -124,7 +124,7 @@ body {
     width: 320px;
 
     .ui-dialog-title {
-      color: @color-white;
+      color: $color-white;
       font-size: 48px;
       margin: 0;
       text-transform: uppercase;
@@ -132,7 +132,7 @@ body {
 
     .ui-dialog-titlebar-close {
       bottom: -125px;
-      color: @color-white;
+      color: $color-white;
       padding: 0;
       right: 0;
       text-decoration: none;
@@ -161,7 +161,7 @@ body {
     width: 320px !important;
 
     a {
-      color: @color-white;
+      color: $color-white;
       display: block;
       float: left;
       font-weight: bold;
@@ -173,7 +173,8 @@ body {
       width: 100px;
 
       span {
-        #font > .rotation(90deg);
+        @include apply-origin(0 0, false);
+        @include rotate(90deg);
 
         display: block;
         left: 100px;

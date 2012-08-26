@@ -1,8 +1,8 @@
 /* This file will hold styles that are loaded using the same media query as the wide grid. */
 
 // Varaibles, mixins and other LESS files.
-@import 'variables.less';
-@import 'mixins.less';
+@import 'includes/variables.scss';
+@import 'includes/mixins.scss';
 
 //
 body {

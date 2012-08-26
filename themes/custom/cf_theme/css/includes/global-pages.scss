@@ -11,8 +11,8 @@
             }
 
             .form-submit {
-              #font > .sans-serif(normal, 9px);
-              #border-radius > .simple(0);
+              @include border-radius(0);
+              @include font('sans-serif', normal, 9px);
 
               position: absolute;
               right: 0;
@@ -20,9 +20,9 @@
 
 
               background: none;
-              background-color: @color-grey-dark;
+              background-color: $color-grey-dark;
               border: 0;
-              color: @color-white;
+              color: $color-white;
               height: 40px;
               text-transform: uppercase;
               text-shadow: none;
@@ -33,11 +33,11 @@
 
             &:hover {
               .form-text {
-                border-color: @color-grey-light;
+                border-color: $color-grey-light;
               }
 
               .form-submit {
-                background-color: @color-grey-light;
+                background-color: $color-grey-light;
               }
             }
           }

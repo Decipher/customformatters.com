@@ -17,10 +17,11 @@
 
     .group-left {
       .field-name-post-date {
-        #font > .rotation(270deg);
-        #font > .shorthand(bold);
+        @include apply-origin(0 0, false);
+        @include font(null, bold);
+        @include rotate(270deg);
 
-        color: @color-grey-light;
+        color: $color-grey-light;
         position: absolute;
         top: 70px;
         text-transform: uppercase;
@@ -28,7 +29,7 @@
     }
 
     .group-right {
-      #font > .shorthand(normal, 11px);
+      @include font(null, normal, 11px);
 
       width: 100%;
 
@@ -45,13 +46,13 @@
       }
 
       .field-name-field-formatter-field-types {
-        #font > .shorthand(normal, 9px);
+        @include font(null, normal, 9px);
 
         clear: left;
         margin-top: 3px;
 
         a {
-          color: @color-orange;
+          color: $color-orange;
           text-decoration: none;
 
           &:hover {
@@ -68,9 +69,9 @@
         clear: left;
 
         a {
-          #font > .shorthand(normal, @font-size-small);
+          @include font(null, normal, $font-size-small);
 
-          color: @color-orange;
+          color: $color-orange;
           text-decoration: none;
           text-transform: uppercase;
 
