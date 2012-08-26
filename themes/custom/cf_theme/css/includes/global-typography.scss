@@ -1,0 +1,46 @@
+#section-content {
+  @include font('sans-serif');
+
+  color: $color-grey-dark;
+
+  a {
+    color: $color-orange;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    @include font('sans-serif', bold, $font-size-large);
+
+    color: $color-orange;
+    text-transform: uppercase;
+
+    a {
+      color: $color-orange;
+    }
+  }
+
+  h3 {
+    @include font('sans-serif', bold, 18px);
+  }
+
+  h4 {
+    @include font('sans-serif', bold, 14px);
+
+    color: $color-orange;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-left: 1em;
+    padding-left: .5em;
+  }
+
+  p {
+    @include font('sans-serif');
+  }
+}

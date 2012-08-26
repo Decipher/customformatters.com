@@ -5,14 +5,14 @@
     white-space: nowrap;
 
     a {
-      #font > .shorthand(bold, 14px);
+      @include font(null, bold, 14px);
 
-      color: @color-grey-dark;
+      color: $color-grey-dark;
       margin-right: 0.35em;
       text-decoration: none;
 
       &:hover {
-        color: @color-orange;
+        color: $color-orange;
       }
     }
   }
@@ -25,13 +25,13 @@
       clear: left;
 
       .field-item {
-        background-color: @color-grey-dark;
+        background-color: $color-grey-dark;
       }
     }
 
     .field-item {
-      background-color: @color-grey-light;
-      color: @color-white;
+      background-color: $color-grey-light;
+      color: $color-white;
       display: inline;
       font-size: 9px;
       margin-right: 0.5em;
@@ -39,11 +39,11 @@
       text-transform: uppercase;
 
       a {
-        color: @color-white !important;
+        color: $color-white !important;
       }
 
       &:hover {
-        background-color: @color-orange;
+        background-color: $color-orange;
 
         a {
           text-decoration: none !important;
@@ -67,7 +67,7 @@
       }
 
       &:hover {
-        border-left: 4px solid @color-orange;
+        border-left: 4px solid $color-orange;
         padding-left: 4px;
       }
     }
@@ -91,7 +91,7 @@
 
       .field-name-field-formatter-name {
         .field-item {
-          color: @color-grey-light;
+          color: $color-grey-light;
           font-style: italic;
           margin-top: 1px;
 
@@ -121,7 +121,7 @@
     }
 
     &.view-mode-teaser {
-      border-bottom: 1px dotted @color-grey-light;
+      border-bottom: 1px dotted $color-grey-light;
       margin-bottom: 20px;
       padding-bottom: 20px;
 
@@ -170,7 +170,7 @@
 
         .field-type-image {
           .field-item {
-            border: 2px solid @color-grey-dark;
+            border: 2px solid $color-grey-dark;
             margin: 20px 0;
 
             img {
@@ -207,14 +207,14 @@
               width: inherit;
 
               li {
-                background-color: @color-grey-light;
+                background-color: $color-grey-light;
                 border: none;
                 margin: 0 0 0 10px;
                 padding: 0;
                 text-transform: uppercase;
 
                 &.selected {
-                  background-color: @color-grey-dark;
+                  background-color: $color-grey-dark;
 
                   a:hover {
                     background-color: transparent;
@@ -223,11 +223,11 @@
                 }
 
                 a, strong {
-                  color: @color-white;
+                  color: $color-white;
                 }
 
                 a:hover {
-                  background-color: @color-grey-light;
+                  background-color: $color-grey-light;
                   text-decoration: none;
                 }
               }
@@ -238,10 +238,10 @@
               padding: 0;
 
               .field-item {
-                #font > .monospace;
+                @include font('monospace');
 
-                background-color: @color-grey-dark;
-                color: @color-white;
+                background-color: $color-grey-dark;
+                color: $color-white;
                 padding: 10px;
 
                 .snippet-container {
@@ -256,15 +256,15 @@
                       margin: 0 0 .2em 1.5em;
 
                       .sh_comment {
-                        color: lighten(@color-grey-dark, 25%);
+                        color: lighten($color-grey-dark, 25%);
                       }
 
                       .sh_keyword, .sh_symbol {
-                        color: @color-orange;
+                        color: $color-orange;
                       }
 
                       .sh_string {
-                        color: @color-grey-light;
+                        color: $color-grey-light;
                       }
                     }
                   }

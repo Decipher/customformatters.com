@@ -4,10 +4,10 @@ form {
     margin-bottom: 20px;
 
     label {
-      #font > .sans-serif(normal, 9px);
+      @include font('sans-serif', normal, 9px);
 
-      background-color: @color-grey-dark;
-      color: @color-white;
+      background-color: $color-grey-dark;
+      color: $color-white;
       line-height: 40px;
       position: absolute;
       right: 0px;
@@ -17,16 +17,16 @@ form {
     }
 
     .form-text {
-      #font > .sans-serif;
+      @include font('sans-serif');
 
-      border: 2px solid @color-grey-dark;
+      border: 2px solid $color-grey-dark;
       height: 40px;
       padding-left: 10px;
       padding-right: 60px;
       width: 100%;
 
       &.error {
-        border: 2px solid @color-orange;
+        border: 2px solid $color-orange;
       }
 
       &:focus {
@@ -36,16 +36,21 @@ form {
     }
 
     .form-textarea-wrapper {
+      margin-bottom: 20px;
       padding-top: 38px;
 
       .form-textarea {
-        border: 2px solid @color-grey-dark;
+        border: 2px solid $color-grey-dark;
         padding: 10px;
 
         &:focus {
           -webkit-box-shadow: none;
           outline: none;
         }
+      }
+
+      .grippie {
+        display: none;
       }
     }
 
@@ -54,13 +59,13 @@ form {
         clear: both;
 
         .checkbox-wrapper {
-          border: 2px solid @color-grey-dark;
+          border: 2px solid $color-grey-dark;
           display: inline-block;
           height: 10px;
           width: 10px;
 
           .inside {
-            border: 2px solid @color-white;
+            border: 2px solid $color-white;
             display: block;
             height: 6px;
             width: 6px;
@@ -73,7 +78,7 @@ form {
 
         label {
           background-color: inherit;
-          color: @color-grey-dark;
+          color: $color-grey-dark;
           font-size: 11px;
           /*font-weight: bold;*/
           line-height: normal;
@@ -83,18 +88,18 @@ form {
         &:hover {
           .checkbox-wrapper {
             .inside {
-              background-color: @color-grey-light;
+              background-color: $color-grey-light;
             }
           }
 
           label {
-            background-color: @color-white;
+            background-color: $color-white;
           }
         }
 
         &.checked {
           .inside {
-            background-color: @color-orange;
+            background-color: $color-orange;
           }
         }
       }
@@ -105,7 +110,7 @@ form {
 
       .image-preview {
         img {
-          border: 2px solid @color-grey-dark;
+          border: 2px solid $color-grey-dark;
         }
       }
 
@@ -114,7 +119,7 @@ form {
       }
 
       .customfile {
-        border: 2px solid @color-grey-dark;
+        border: 2px solid $color-grey-dark;
         overflow: hidden;
         margin: 0 0 10px;
         position: relative;
@@ -124,7 +129,7 @@ form {
         }
 
         input {
-          .opacity(0);
+          @include transparent;
 
           font-size: 100em;
           position: absolute;
@@ -138,36 +143,36 @@ form {
 
     &:hover {
       label {
-        background-color: @color-grey-light;
+        background-color: $color-grey-light;
       }
 
       .form-text,
       .form-textarea {
-        border-color: @color-grey-light;
+        border-color: $color-grey-light;
       }
 
       .form-managed-file {
         .image-preview {
           img {
-            border: 2px solid @color-grey-light;
+            border: 2px solid $color-grey-light;
           }
         }
 
         .customfile {
-          border: 2px solid @color-grey-light;
+          border: 2px solid $color-grey-light;
         }
       }
     }
   }
 
   .form-submit {
-    #font > .sans-serif(normal, 9px);
-    #border-radius > .simple(0);
+    @include border-radius(0);
+    @include font('sans-serif', normal, 9px);
 
     background: none;
-    background-color: @color-orange;
+    background-color: $color-orange;
     border: 0;
-    color: @color-white;
+    color: $color-white;
     float: right;
     height: 40px;
     text-transform: uppercase;
@@ -177,7 +182,7 @@ form {
     width: 100%;
 
     &:hover {
-      background-color: @color-grey-light;
+      background-color: $color-grey-light;
     }
   }
 

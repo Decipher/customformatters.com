@@ -1,24 +1,29 @@
 /* This file will hold the main styles for your website. */
 
-// Varaibles, mixins and other LESS files.
-@import 'variables.less';
-@import 'mixins.less';
+// Compass includes.
+@import "compass/css3/border-radius";
+@import "compass/css3/opacity";
+@import "compass/css3/transform";
+
+// Varaibles, mixins and other SCSS files.
+@import "includes/variables.scss";
+@import "includes/mixins.scss";
 
 //
-@import 'global-typography.less';
-@import 'global-blocks.less';
-@import 'global-forms.less';
-@import 'global-pages.less';
+@import "includes/global-typography.scss";
+@import "includes/global-blocks.scss";
+@import "includes/global-forms.scss";
+@import "includes/global-pages.scss";
 
 // Global Content Type styles.
-@import 'content_type-blog.less';
-@import 'content_type-formatter.less';
+@import "includes/content_type-blog.scss";
+@import "includes/content_type-formatter.scss";
 
 // Global layout styles.
 body {
-  #font > .sans-serif;
+  @include font('sans-serif');
 
-  background-color: @color-grey-dark;
+  background-color: $color-grey-dark;
 
   // Environment indicator styles.
   &.environment-indicator-left.environment-indicator-adjust {
@@ -30,7 +35,7 @@ body {
   }
 
   header {
-    background-color: @color-white;
+    background-color: $color-white;
 
     #zone-branding {
       #region-branding {
@@ -38,19 +43,19 @@ body {
           width: 100%;
 
           .site-name {
-            #font > .sans-serif(bold, @font-size-default);
+            @include font('sans-serif', bold);
 
             margin: 0;
 
             a {
-              color: @color-grey-dark;
+              color: $color-grey-dark;
               font-size: 0.93em;
               text-transform: uppercase;
               white-space: pre;
 
               span {
                 &.site_name-element-1 {
-                  color: @color-orange;
+                  color: $color-orange;
                   margin-left: -0.35em;
                 }
               }
@@ -58,9 +63,9 @@ body {
           }
 
           .site-slogan {
-            #font > .sans-serif;
+            @include font('sans-serif');
 
-            color: @color-grey-light;
+            color: $color-grey-light;
             float: right;
             text-transform: uppercase;
             white-space: pre;
@@ -84,10 +89,10 @@ body {
             }
 
             a {
-              #font > .shorthand(bold, @font-size-small, 16px);
+              @include font(null, bold, $font-size-small, 16px);
 
-              background-color: @color-grey-dark;
-              color: @color-white;
+              background-color: $color-grey-dark;
+              color: $color-white;
               display: block;
               height: 25px;
               padding-left: 5px;
@@ -96,18 +101,18 @@ body {
               width: 100%;
 
               &:hover {
-                background-color: @color-grey-light;
+                background-color: $color-grey-light;
               }
 
               &.active {
-                background-color: @color-orange;
+                background-color: $color-orange;
                 cursor: default;
               }
             }
 
             &.active {
               a {
-                background-color: @color-orange;
+                background-color: $color-orange;
                 cursor: default;
               }
             }
@@ -118,7 +123,7 @@ body {
   }
 
   #section-content {
-    background-color: @color-white;
+    background-color: $color-white;
     padding: 10px 0;
 
     #zone-content {
@@ -141,9 +146,9 @@ body {
               padding: 0;
 
               a {
-                background-color: @color-grey-dark;
+                background-color: $color-grey-dark;
                 border: 0;
-                color: @color-white;
+                color: $color-white;
                 display: block;
                 font-size: 6px;
                 height: 15px;
@@ -154,11 +159,11 @@ body {
                 width: 95px;
 
                 &:hover {
-                  background-color: @color-grey-light;
+                  background-color: $color-grey-light;
                 }
 
                 &.active {
-                  background-color: @color-orange;
+                  background-color: $color-orange;
                   cursor: default;
                 }
               }
@@ -178,7 +183,7 @@ body {
           text-align: center;
 
           li {
-            #border-radius > .simple(0);
+            @include border-radius(0);
 
             border: none;
             float: inherit;
@@ -186,7 +191,7 @@ body {
             padding: 0;
 
             a {
-              #border-radius > .simple(0);
+              @include border-radius(0);
 
               background: none;
               white-space: nowrap;
@@ -205,7 +210,7 @@ body {
 
             &.pager-current {
               background: none;
-              background-color: @color-grey-dark;
+              background-color: $color-grey-dark;
               padding: 4px 8px;
             }
           }
@@ -216,10 +221,10 @@ body {
             margin-bottom: 50px;
 
             .pane-title {
-              #font > .sans-serif(bold, 24px);
+              @include font('sans-serif', bold, 24px);
 
-              background-color: @color-grey-light;
-              color: @color-white;
+              background-color: $color-grey-light;
+              color: $color-white;
               display: block;
               height: 23px;
               overflow: hidden;
@@ -230,14 +235,14 @@ body {
             .pane-content {
               .more-link {
                 a {
-                  background-color: @color-grey-light;
-                  color: @color-white;
+                  background-color: $color-grey-light;
+                  color: $color-white;
                   display: block;
                   text-align: center;
                   width: 100%;
 
                   &:hover {
-                    background-color: @color-orange;
+                    background-color: $color-orange;
                     text-decoration: none;
                   }
                 }
@@ -246,7 +251,7 @@ body {
 
             &:hover {
               .pane-title {
-                background-color: @color-orange;
+                background-color: $color-orange;
               }
             }
           }
@@ -261,7 +266,7 @@ body {
 
                 .pane-content {
                   .views-row {
-                    border-bottom: 1px dotted @color-grey-light;
+                    border-bottom: 1px dotted $color-grey-light;
                     margin-bottom: 10px;
                     padding-bottom: 10px;
 
@@ -288,9 +293,9 @@ body {
   }
 
   .ajax-progress {
-    .opacity(90);
+    @include opacity(0.9);
 
-    background-color: @color-white;
+    background-color: $color-white;
     height: 100%;
     left: 0;
     position: absolute;
@@ -311,7 +316,7 @@ body {
   }
 
   .ui-widget-overlay {
-    .opacity(80);
+    @include opacity(0.8);
 
     background: none;
     background-color: #000;

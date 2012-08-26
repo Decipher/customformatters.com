@@ -1,8 +1,12 @@
 /* This file will hold styles that are loaded using the same media query as the narrow grid. */
 
-// Varaibles, mixins and other LESS files.
-@import 'variables.less';
-@import 'mixins.less';
+// Compass includes.
+@import "compass/css3/border-radius";
+@import "compass/css3/transform";
+
+// Variables, mixins and other SCSS files.
+@import "includes/variables.scss";
+@import "includes/mixins.scss";
 
 //
 body {
@@ -45,7 +49,8 @@ body {
             }
 
             a {
-              #font > .rotation(270deg);
+              @include apply-origin(0 0, false);
+              @include rotate(270deg);
 
               height: 100%;
               position: absolute;
@@ -86,7 +91,7 @@ body {
                   margin: 20px 0;
 
                   img {
-                    border: 2px solid @color-grey-dark;
+                    border: 2px solid $color-grey-dark;
                     height: auto;
                     width: auto;
                   }
@@ -120,9 +125,10 @@ body {
           height: 20px;
 
           .pane-content {
-            #font > .rotation(90deg);
+            @include apply-origin(0 0, false);
+            @include rotate(90deg);
 
-            color: @color-grey-light;
+            color: $color-grey-light;
             font-size: 53px;
             font-weight: bold;
             left: 54px;
@@ -139,7 +145,7 @@ body {
             margin-bottom: 20px;
 
             h2 {
-              #font > .sans-serif(bold, @font-size-default);
+              @include font('sans-serif', bold, $font-size-default);
 
               text-transform: uppercase;
             }
@@ -147,7 +153,7 @@ body {
 
           #mini-panel-cf_about {
             h2 {
-              color: @color-orange;
+              color: $color-orange;
             }
 
             a.more {
@@ -165,10 +171,10 @@ body {
             }
 
             .form-submit {
-              #font > .sans-serif(normal, 9px);
-              #border-radius > .simple(0);
+              @include border-radius(0);
+              @include font('sans-serif', normal, 9px);
 
-              background-color: @color-grey-dark;
+              background-color: $color-grey-dark;
               position: absolute;
               right: 0;
               top: 0;
@@ -177,11 +183,11 @@ body {
 
             &:hover {
               .form-text {
-                border-color: @color-grey-light;
+                border-color: $color-grey-light;
               }
 
               .form-submit {
-                background-color: @color-grey-light;
+                background-color: $color-grey-light;
               }
             }
           }
@@ -191,7 +197,7 @@ body {
 
             .pane-content {
               a {
-                background-color: @color-grey-light;
+                background-color: $color-grey-light;
                 background-image: url('../images/icon-share.svg');
                 background-position: 3px -5px;
                 background-repeat: no-repeat;
@@ -200,7 +206,7 @@ body {
                 height: 35px;
 
                 &:hover {
-                  background-color: @color-orange;
+                  background-color: $color-orange;
                 }
               }
             }
@@ -211,8 +217,8 @@ body {
 
             .pane-content {
               a {
-                background-color: @color-grey-dark;
-                color: @color-white;
+                background-color: $color-grey-dark;
+                color: $color-white;
                 display: block;
                 font-size: 9px;
                 line-height: 14px;
@@ -226,7 +232,7 @@ body {
                 }
 
                 &:hover {
-                  background-color: @color-orange;
+                  background-color: $color-orange;
                   text-decoration: none;
                 }
               }
@@ -247,8 +253,8 @@ body {
                     text-align: center;
 
                     a {
-                      background-color: @color-orange;
-                      color: @color-white;
+                      background-color: $color-orange;
+                      color: $color-white;
                       display: block;
                       float: left;
                       font-size: 10px;
@@ -261,7 +267,7 @@ body {
                       width: 70px;
 
                       &:hover {
-                        background-color: @color-grey-light;
+                        background-color: $color-grey-light;
                       }
                     }
 
@@ -273,11 +279,11 @@ body {
 
                     &.last {
                       a {
-                        background-color: @color-grey-light;
+                        background-color: $color-grey-light;
                         margin-right: 0;
 
                         &:hover {
-                          background-color: @color-grey-dark;
+                          background-color: $color-grey-dark;
                         }
                       }
                     }
@@ -288,12 +294,14 @@ body {
           }
 
           #mini-panel-cf_github {
+            clear: both;
+
             .pane-content {
               a {
-                #font > .shorthand(bold);
+                @include font(null, bold);
 
-                background-color: @color-grey-dark;
-                color: @color-white;
+                background-color: $color-grey-dark;
+                color: $color-white;
                 display: block;
                 font-size: 16px;
                 padding: 10px;
@@ -301,11 +309,11 @@ body {
                 text-transform: uppercase;
 
                 strong {
-                  color: @color-orange;
+                  color: $color-orange;
                 }
 
                 &:hover {
-                  background-color: @color-grey-light;
+                  background-color: $color-grey-light;
                 }
               }
             }

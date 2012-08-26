@@ -1,0 +1,9 @@
+// Font mixin.
+@mixin font($variant: null, $weight: normal, $size: $font-size-default, $lineHeight: normal) {
+  @if $variant != null {
+    font-family: $font-family-#{$variant};
+  }
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}

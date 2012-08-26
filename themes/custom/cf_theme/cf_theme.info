@@ -50,9 +50,9 @@ zones[footer] = Footer
 
 ; OPTIONAL STYLESHEETS
 
-css[global.css.less][name] = Your custom global styles
-css[global.css.less][description] = This file holds all the globally active custom CSS of your theme.
-css[global.css.less][options][weight] = 10
+css[global.scss][name] = Custom Formatters global styles.
+css[global.scss][description] = This file holds all the globally active custom CSS of your theme.
+css[global.scss][options][weight] = 10
 
 ; JAVASCRIPT
 scripts[] = 'js/global.js'
