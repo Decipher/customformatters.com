@@ -203,6 +203,15 @@ function cf_core_update_7104() {
 }
 
 /**
+ * Enable 'cf_theme', disable 'bartik' and flush cache and revert features.
+ */
+function cf_core_update_7105() {
+  theme_enable(array('cf_theme'));
+  theme_disable(array('bartik'));
+  _cf_core_flush_revert();
+}
+
+/**
  * Helper function; Flush caches and revert features.
  */
 function _cf_core_flush_revert() {

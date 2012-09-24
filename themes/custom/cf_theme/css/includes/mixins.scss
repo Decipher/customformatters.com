@@ -7,3 +7,84 @@
   font-weight: $weight;
   line-height: $lineHeight;
 }
+
+// Elements mixin.
+// @TODO - This could probably be done in a better fashion.
+@mixin elements($primary: null, $secondary: null) {
+  @if $primary == 'node-formatter-elements' {
+    @if $secondary == 'title' {
+      overflow: hidden;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      a {
+        @include font(null, bold, 14px);
+
+        color: $color-grey-dark;
+        margin-right: 0.35em;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-orange;
+        }
+      }
+    }
+
+    @if $secondary == 'taxonomy-terms' {
+      display: inline;
+      float: left;
+
+      &.field-name-field-formatter-mode {
+        clear: left;
+
+        .field-item {
+          background-color: $color-grey-dark;
+        }
+      }
+
+      .field-item {
+        background-color: $color-grey-light;
+        color: $color-white;
+        display: inline;
+        font-size: 9px;
+        margin-right: 0.5em;
+        padding: 0 2px;
+        text-transform: uppercase;
+
+        a {
+          color: $color-white !important;
+        }
+
+        &:hover {
+          background-color: $color-orange;
+
+          a {
+            text-decoration: none !important;
+          }
+        }
+      }
+    }
+
+    @if $secondary == 'taxonomy-terms-field-item' {
+      background-color: $color-grey-light;
+      color: $color-white;
+      display: inline;
+      font-size: 9px;
+      margin-right: 0.5em;
+      padding: 0 2px;
+      text-transform: uppercase;
+
+      a {
+        color: $color-white !important;
+      }
+
+      &:hover {
+        background-color: $color-orange;
+
+        a {
+          text-decoration: none !important;
+        }
+      }
+    }
+  }
+}

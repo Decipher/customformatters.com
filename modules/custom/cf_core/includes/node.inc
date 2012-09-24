@@ -10,9 +10,17 @@
  */
 function node_cf_core_form_formatter_node_form_alter(&$form, $form_state) {
   $form['title']['#required'] = FALSE;
-
+  $form['body']['und']['#after_build'][] = '_cf_core_formatter_body_after_build';
   $form['#submit'][] = 'cf_core_node_process_import_submit';
   $form['#validate'][] = 'cf_core_node_process_import_validate';
+}
+
+/**
+ * After build callback for Formatter body field.
+ */
+function _cf_core_formatter_body_after_build(&$element) {
+  unset($element[0]['format']);
+  return $element;
 }
 
 /**

@@ -70,7 +70,7 @@ function cf_core_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '0',
       'label' => 'hidden',
-      'format' => 'ds_post_date_cf_stub',
+      'format' => 'ds_post_date_long',
     ),
   );
   $export['node|blog|teaser'] = $ds_fieldsetting;
@@ -232,6 +232,7 @@ function cf_core_ds_custom_fields_info() {
   $ds_field->entities = array(
     'node' => 'node',
   );
+  $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<?php
@@ -261,8 +262,6 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'cf_core_block';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
@@ -276,6 +275,12 @@ function cf_core_ds_layout_settings_info() {
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|blog|cf_core_block'] = $ds_layout;
 
@@ -287,8 +292,6 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
@@ -300,6 +303,12 @@ function cf_core_ds_layout_settings_info() {
       'body' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|blog|default'] = $ds_layout;
 
@@ -311,15 +320,13 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'teaser';
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'left' => array(
         0 => 'post_date',
       ),
       'right' => array(
-        0 => 'title',
-        1 => 'body',
+        1 => 'title',
+        2 => 'body',
       ),
     ),
     'fields' => array(
@@ -328,6 +335,13 @@ function cf_core_ds_layout_settings_info() {
       'body' => 'right',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|blog|teaser'] = $ds_layout;
 
@@ -339,8 +353,6 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'cf_core_block';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
@@ -354,6 +366,12 @@ function cf_core_ds_layout_settings_info() {
       'field_formatter_field_types' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|formatter|cf_core_block'] = $ds_layout;
 
@@ -365,8 +383,6 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'cf_core_overview';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
@@ -386,6 +402,12 @@ function cf_core_ds_layout_settings_info() {
       'field_formatter_description' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|formatter|cf_core_overview'] = $ds_layout;
 
@@ -397,31 +419,29 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_2col_stacked';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'header' => array(
         0 => 'field_formatter_radioactivity',
         1 => 'title',
         2 => 'field_formatter_name',
         3 => 'field_formatter_mode',
-        4 => 'field_formatter_field_types',
-        5 => 'body',
+        5 => 'field_formatter_field_types',
+        6 => 'body',
       ),
       'footer' => array(
-        0 => 'field_formatter_import',
-        1 => 'field_formatter_dapi',
-        2 => 'group_formatter_code',
-        3 => 'group_formatter_group',
-        4 => 'group_formatter_object',
-        5 => 'field_formatter_code',
-        6 => 'group_formatter_dapi',
+        4 => 'field_formatter_import',
+        7 => 'field_formatter_dapi',
+        10 => 'group_formatter_group',
+        11 => 'group_formatter_code',
+        12 => 'group_formatter_object',
+        13 => 'field_formatter_code',
+        14 => 'group_formatter_dapi',
       ),
       'left' => array(
-        0 => 'field_formatter_image_input',
+        8 => 'field_formatter_image_input',
       ),
       'right' => array(
-        0 => 'field_formatter_image_output',
+        9 => 'field_formatter_image_output',
       ),
     ),
     'fields' => array(
@@ -435,22 +455,22 @@ function cf_core_ds_layout_settings_info() {
       'field_formatter_dapi' => 'footer',
       'field_formatter_image_input' => 'left',
       'field_formatter_image_output' => 'right',
-      'group_formatter_code' => 'footer',
       'group_formatter_group' => 'footer',
+      'group_formatter_code' => 'footer',
       'group_formatter_object' => 'footer',
       'field_formatter_code' => 'footer',
       'group_formatter_dapi' => 'footer',
     ),
-    'classes' => array(
-      'left' => array(
-        'grid-4' => 'grid-4',
-        'alpha' => 'alpha',
-      ),
-      'right' => array(
-        'grid-4' => 'grid-4',
-        'omega' => 'omega',
-      ),
+    'classes' => array(),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
     ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|formatter|default'] = $ds_layout;
 
@@ -510,8 +530,6 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'teaser';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
@@ -527,6 +545,12 @@ function cf_core_ds_layout_settings_info() {
       'field_formatter_description' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|formatter|teaser'] = $ds_layout;
 
@@ -538,8 +562,6 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
@@ -551,6 +573,12 @@ function cf_core_ds_layout_settings_info() {
       'body' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|page|default'] = $ds_layout;
 
@@ -562,21 +590,25 @@ function cf_core_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'body',
+        0 => 'body',
+        1 => 'title',
         2 => 'webform',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
       'body' => 'ds_content',
+      'title' => 'ds_content',
       'webform' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
   );
   $export['node|webform|default'] = $ds_layout;
 

@@ -182,6 +182,12 @@ omega';
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'cf_core_overview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -219,6 +225,9 @@ omega';
       ),
       'cf_core_overview' => array(
         'custom_settings' => TRUE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -623,7 +632,7 @@ user/*/*';
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_formatter';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_formatter'] = $strongarm;
@@ -717,6 +726,32 @@ user/*/*';
   $strongarm->name = 'pathauto_node_formatter_pattern';
   $strongarm->value = 'formatters/[node:nid]/[node:field_formatter_name]';
   $export['pathauto_node_formatter_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prepro';
+  $strongarm->value = array(
+    'additional' => array(
+      'sassy' => array(
+        'errors' => 'silent',
+        'style' => 'nested',
+      ),
+    ),
+    'filetypes' => array(
+      'sass' => array(
+        'preprocessor' => 'sassy',
+        'cache' => 'cache',
+        'cache_location' => 'public://prepro/',
+      ),
+      'scss' => array(
+        'preprocessor' => 'sassy',
+        'cache' => 'cache',
+        'cache_location' => 'public://prepro/',
+      ),
+    ),
+  );
+  $export['prepro'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -836,9 +871,10 @@ user/*/*';
       'omega-menu.css' => 'omega-menu.css',
       'omega-forms.css' => 'omega-forms.css',
       'omega-visuals.css' => 'omega-visuals.css',
-      'global.css.less' => 'global.css.less',
+      'global.scss' => 'global.scss',
     ),
     'alpha_exclude' => array(
+      'profiles/cf_profile/modules/custom/cf_core/styles/cf_core.blocks.css' => 0,
       'modules/field/theme/field.css' => 0,
       'modules/node/node.css' => 0,
       'modules/search/search.css' => 0,
@@ -876,6 +912,8 @@ user/*/*';
     'alpha_debug_grid_roles' => array(
       1 => '1',
       2 => '2',
+      4 => 0,
+      3 => 0,
     ),
     'alpha_toggle_messages' => 1,
     'alpha_toggle_action_links' => 1,
@@ -1042,6 +1080,20 @@ user/*/*';
     0 => 'info@customformatters.com',
   );
   $export['update_notify_emails'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_admin_role';
+  $strongarm->value = '4';
+  $export['user_admin_role'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_register';
+  $strongarm->value = '0';
+  $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -10,7 +10,7 @@
 function cf_core_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-blog-body'
+  // Exported field: 'node-blog-body'.
   $fields['node-blog-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -89,7 +90,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-body'
+  // Exported field: 'node-formatter-body'.
   $fields['node-formatter-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -112,6 +113,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -183,7 +185,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_code'
+  // Exported field: 'node-formatter-field_formatter_code'.
   $fields['node-formatter-field_formatter_code'] = array(
     'field_config' => array(
       'active' => '1',
@@ -204,6 +206,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -273,7 +276,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_dapi'
+  // Exported field: 'node-formatter-field_formatter_dapi'.
   $fields['node-formatter-field_formatter_dapi'] = array(
     'field_config' => array(
       'active' => '1',
@@ -294,6 +297,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -351,7 +355,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_description'
+  // Exported field: 'node-formatter-field_formatter_description'.
   $fields['node-formatter-field_formatter_description'] = array(
     'field_config' => array(
       'active' => '1',
@@ -372,6 +376,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -444,7 +449,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_fapi'
+  // Exported field: 'node-formatter-field_formatter_fapi'.
   $fields['node-formatter-field_formatter_fapi'] = array(
     'field_config' => array(
       'active' => '1',
@@ -465,6 +470,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -533,7 +539,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_field_types'
+  // Exported field: 'node-formatter-field_formatter_field_types'.
   $fields['node-formatter-field_formatter_field_types'] = array(
     'field_config' => array(
       'active' => '1',
@@ -554,6 +560,7 @@ function cf_core_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -635,7 +642,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_image_input'
+  // Exported field: 'node-formatter-field_formatter_image_input'.
   $fields['node-formatter-field_formatter_image_input'] = array(
     'field_config' => array(
       'active' => '1',
@@ -656,6 +663,7 @@ function cf_core_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -744,7 +752,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_image_output'
+  // Exported field: 'node-formatter-field_formatter_image_output'.
   $fields['node-formatter-field_formatter_image_output'] = array(
     'field_config' => array(
       'active' => '1',
@@ -765,6 +773,7 @@ function cf_core_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -853,7 +862,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_import'
+  // Exported field: 'node-formatter-field_formatter_import'.
   $fields['node-formatter-field_formatter_import'] = array(
     'field_config' => array(
       'active' => '1',
@@ -874,6 +883,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -943,7 +953,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_mode'
+  // Exported field: 'node-formatter-field_formatter_mode'.
   $fields['node-formatter-field_formatter_mode'] = array(
     'field_config' => array(
       'active' => '1',
@@ -964,6 +974,7 @@ function cf_core_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -1040,7 +1051,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_name'
+  // Exported field: 'node-formatter-field_formatter_name'.
   $fields['node-formatter-field_formatter_name'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1061,6 +1072,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '64',
@@ -1133,7 +1145,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-formatter-field_formatter_radioactivity'
+  // Exported field: 'node-formatter-field_formatter_radioactivity'.
   $fields['node-formatter-field_formatter_radioactivity'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1147,6 +1159,7 @@ function cf_core_field_default_fields() {
           0 => 'radioactivity_energy',
         ),
       ),
+      'locked' => '0',
       'module' => 'radioactivity',
       'settings' => array(),
       'translatable' => '0',
@@ -1222,7 +1235,7 @@ function cf_core_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-page-body'
+  // Exported field: 'node-page-body'.
   $fields['node-page-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1245,6 +1258,7 @@ function cf_core_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',

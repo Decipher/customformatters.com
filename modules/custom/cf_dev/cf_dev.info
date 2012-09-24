@@ -9,6 +9,7 @@ dependencies[] = devel
 dependencies[] = features
 dependencies[] = field_ui
 dependencies[] = module_filter
+dependencies[] = omega_tools
 dependencies[] = overlay
 dependencies[] = views_ui
 features[features_api][] = api:1

@@ -67,7 +67,7 @@ body {
         }
 
         label {
-          #node-formatter-elements > .taxonomy-terms > .field-item;
+          @include elements('node-formatter-elements', 'taxonomy-terms-field-item');
         }
 
         &.checked {
@@ -82,7 +82,7 @@ body {
       padding-top: 0;
 
       label {
-        #node-formatter-elements > .taxonomy-terms > .field-item;
+        @include elements('node-formatter-elements', 'taxonomy-terms-field-item');
 
         font-weight: normal;
       }
