@@ -28,9 +28,9 @@ function cf_core_is_state($state) {
     return $state == 'prod';
   }
 
-  // Testing state.
-  if (preg_match('/test.*?\.customformatters\.com/', $GLOBALS['base_url'])) {
-    return $state == 'test';
+  // Staging state.
+  if (preg_match('/stage.*?\.customformatters\.com/', $GLOBALS['base_url'])) {
+    return $state == 'stage';
   }
 
   // Development state.

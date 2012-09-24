@@ -85,13 +85,18 @@ function cf_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'layout-front-all';
+  $context->name = 'layout-front-anonymous';
   $context->description = '';
   $context->tag = 'Custom Formatters';
   $context->conditions = array(
     'path' => array(
       'values' => array(
         '<front>' => '<front>',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'anonymous user' => 'anonymous user',
       ),
     ),
   );
@@ -107,12 +112,12 @@ function cf_core_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Custom Formatters');
-  $export['layout-front-all'] = $context;
+  $export['layout-front-anonymous'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -136,16 +141,28 @@ function cf_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'panels_mini-cf_section' => array(
+          'module' => 'panels_mini',
+          'delta' => 'cf_section',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
         'panels_mini-cf_feedback' => array(
           'module' => 'panels_mini',
           'delta' => 'cf_feedback',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'panels_mini-cf_section' => array(
-          'module' => 'panels_mini',
-          'delta' => 'cf_section',
-          'region' => 'sidebar_first',
+        'system-user-menu' => array(
+          'module' => 'system',
+          'delta' => 'user-menu',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'sidebar_second',
           'weight' => '-10',
         ),
         'panels_mini-cf_share' => array(

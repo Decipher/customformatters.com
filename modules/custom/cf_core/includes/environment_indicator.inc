@@ -13,8 +13,8 @@ function environment_indicator_cf_core_init() {
       $GLOBALS['conf']['environment_indicator_color'] = '#D95929';
       break;
 
-    case cf_core_is_state('test'):
-      $GLOBALS['conf']['environment_indicator_text'] = drupal_strtoupper(t('CustomFormatters.com - Testing mode'));
+    case cf_core_is_state('stage'):
+      $GLOBALS['conf']['environment_indicator_text'] = drupal_strtoupper(t('CustomFormatters.com - Staging mode'));
       $GLOBALS['conf']['environment_indicator_color'] = '#C4C7B6';
       break;
 

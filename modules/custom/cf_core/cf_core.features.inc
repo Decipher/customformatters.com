@@ -63,7 +63,7 @@ function cf_core_views_api() {
 function cf_core_image_default_styles() {
   $styles = array();
 
-  // Exported image style: formatter_example_preview_mobile
+  // Exported image style: formatter_example_preview_mobile.
   $styles['formatter_example_preview_mobile'] = array(
     'name' => 'formatter_example_preview_mobile',
     'effects' => array(
@@ -85,7 +85,7 @@ function cf_core_image_default_styles() {
     ),
   );
 
-  // Exported image style: formatter_example_preview_narrow
+  // Exported image style: formatter_example_preview_narrow.
   $styles['formatter_example_preview_narrow'] = array(
     'name' => 'formatter_example_preview_narrow',
     'effects' => array(
@@ -107,7 +107,7 @@ function cf_core_image_default_styles() {
     ),
   );
 
-  // Exported image style: formatter_example_preview_normal
+  // Exported image style: formatter_example_preview_normal.
   $styles['formatter_example_preview_normal'] = array(
     'name' => 'formatter_example_preview_normal',
     'effects' => array(
@@ -129,7 +129,7 @@ function cf_core_image_default_styles() {
     ),
   );
 
-  // Exported image style: formatter_example_preview_wide
+  // Exported image style: formatter_example_preview_wide.
   $styles['formatter_example_preview_wide'] = array(
     'name' => 'formatter_example_preview_wide',
     'effects' => array(

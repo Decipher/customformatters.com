@@ -5,12 +5,14 @@ api = 2
 
 ; Modules
 projects[admin_menu][subdir] = contrib
-projects[admin_menu][version] = 3.0-rc2
+projects[admin_menu][version] = 3.0-rc3
 
 projects[better_exposed_filters][subdir] = contrib
 projects[better_exposed_filters][version] = 3.0-beta1
 ; Add improved handling of exposed NULL/NOT NULL filters: http://drupal.org/node/950312#comment-6073974
 projects[better_exposed_filters][patch][] = http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-950312-4.patch
+; Fix pass by reference issue: http://drupal.org/node/1757578#comment-6397864
+projects[better_exposed_filters][patch][] = http://drupal.org/files/pass_by_ref-1757578-1.patch
 
 projects[coder][subdir] = contrib
 projects[coder][version] = 1.0
@@ -19,30 +21,29 @@ projects[coffee][subdir] = contrib
 projects[coffee][version] = 1.0
 
 projects[context][subdir] = contrib
-projects[context][version] = 3.0-beta2
+projects[context][version] = 3.0-beta4
 
 projects[context_admin][subdir] = contrib
 projects[context_admin][version] = 1.1
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = 1.0
+projects[ctools][version] = 1.2
+; Fixes Block dependency issue: http://drupal.org/node/1754770#comment-6395412
+projects[ctools][patch][] = http://drupal.org/files/blocks_dependency_issue-1754770-1.patch
 
 projects[custom_formatters][subdir] = contrib
 projects[custom_formatters][version] = 2.2
+; Remove Custom Formatters makefile to prevent duplicate downloads: http://drupal.org/node/1721294#comment-6395368
+projects[custom_formatters][patch][] = http://drupal.org/files/no_makefile-1721294-1.patch
 
 projects[delete_all][type] = module
 projects[delete_all][download][type] = git
 projects[delete_all][download][url] = http://git.drupal.org/project/delete_all.git
-projects[delete_all][download][revision] = b1aeafdb828238533e77fe3fa9edd586e4226926
+projects[delete_all][download][revision] = 4986843e4569dc9b78cf99fd2c7cc6db96e3053e
 projects[delete_all][subdir] = contrib
-; Add ability to reset node count: http://drupal.org/node/1671842#comment-6198094
-projects[delete_all][patch][] = http://drupal.org/files/reset-counters-on-delete-all-1671842-6.patch
 
-projects[devel][type] = module
-projects[devel][download][type] = git
-projects[devel][download][url] = http://git.drupal.org/project/devel.git
-projects[devel][download][revision] = 17527131583b1870392d18a59741d4a2b0e07dde
 projects[devel][subdir] = contrib
+projects[devel][version] = 1.3
 
 projects[devel_image_provider][type] = module
 projects[devel_image_provider][download][type] = git
@@ -55,20 +56,20 @@ projects[devel_image_provider][patch][] = https://gist.github.com/raw/3473587/e2
 projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
 
-projects[ds][type] = module
-projects[ds][download][type] = git
-projects[ds][download][url] = http://git.drupal.org/project/ds.git
-projects[ds][download][revision] = 090aa9aa3b742364414585378625d6db06ae152c
 projects[ds][subdir] = contrib
+projects[ds][version] = 2.0-beta2
 
 projects[entity][subdir] = contrib
-projects[entity][version] = 1.0-rc2
+projects[entity][version] = 1.0-rc3
 
 projects[environment_indicator][subdir] = contrib
 projects[environment_indicator][version] = 1.1
 
 projects[features][subdir] = contrib
-projects[features][version] = 1.0-rc2
+projects[features][version] = 1.0
+
+projects[form_builder][subdir] = contrib
+projects[form_builder][version] = 1.2
 
 projects[field_group][subdir] = contrib
 projects[field_group][version] = 1.1
@@ -80,7 +81,7 @@ projects[filefield_paths][download][revision] = 84fb63726b5745d2775078f7e31fc72f
 projects[filefield_paths][subdir] = contrib
 
 projects[globalredirect][subdir] = contrib
-projects[globalredirect][version] = 1.4
+projects[globalredirect][version] = 1.5
 
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.2
@@ -89,10 +90,10 @@ projects[grammar_parser][subdir] = contrib
 projects[grammar_parser][version] = 1.2
 
 projects[libraries][subdir] = contrib
-projects[libraries][version] = 2.0-alpha2
+projects[libraries][version] = 2.0
 
 projects[module_filter][subdir] = contrib
-projects[module_filter][version] = 1.6
+projects[module_filter][version] = 1.7
 
 projects[nodeformcols][subdir] = contrib
 projects[nodeformcols][type] = module
@@ -108,20 +109,26 @@ projects[oauth][version] = 3.0
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][version] = 3.0-rc4
 
+projects[options_element][subdir] = contrib
+projects[options_element][version] = 1.7
+
 projects[page_title][subdir] = contrib
 projects[page_title][version] = 2.7
 
 projects[panels][subdir] = contrib
-projects[panels][version] = 3.2
+projects[panels][version] = 3.3
 
 projects[pathauto][subdir] = contrib
-projects[pathauto][version] = 1.0
+projects[pathauto][version] = 1.2
 
 projects[prepro][subdir] = contrib
-projects[prepro][version] = 0.5
+projects[prepro][type] = module
+projects[prepro][download][type] = git
+projects[prepro][download][url] = http://git.drupal.org/project/prepro.git
+projects[prepro][download][revision] = 5d16561487756ccec5fe14bb09ee0ffa1455a8d5
 
 projects[radioactivity][subdir] = contrib
-projects[radioactivity][version] = 2.5
+projects[radioactivity][version] = 2.7
 
 ; projects[rel][type] = module
 ; projects[rel][download][type] = git
@@ -130,21 +137,16 @@ projects[radioactivity][version] = 2.5
 ; projects[rel][subdir] = contrib
 
 projects[resp_img][subdir] = contrib
-projects[resp_img][version] = 1.2
+projects[resp_img][version] = 1.3
 
 projects[rules][subdir] = contrib
-projects[rules][version] = 2.1
+projects[rules][version] = 2.2
 
-projects[sassy][type] = module
-projects[sassy][download][type] = git
-projects[sassy][download][url] = http://git.drupal.org/project/sassy.git
-projects[sassy][download][revision] = daf8fd8f43e9f041b7d51bf5921c69f802a63a9b
 projects[sassy][subdir] = contrib
-; Fix undefined variable 'list' - http://drupal.org/node/1754704#comment-6395230
-projects[sassy][patch][] = http://drupal.org/files/undefined_list-1754704-1.patch
+projects[sassy][version] = 2.13
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-rc1
+projects[strongarm][version] = 2.0
 
 projects[site_verify][type] = module
 projects[site_verify][download][type] = git
@@ -158,13 +160,13 @@ projects[subpathauto][subdir] = contrib
 projects[subpathauto][version] = 1.2
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0
+projects[token][version] = 1.3
 
 projects[twitter][subdir] = contrib
-projects[twitter][version] = 3.0-beta4
+projects[twitter][version] = 3.2
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.3
+projects[views][version] = 3.5
 ; Add improved handling of exposed NULL/NOT NULL filters: http://drupal.org/node/477984#comment-6073924
 projects[views][patch][] = http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-477984-60.patch
 
@@ -184,7 +186,7 @@ projects[omega][subdir] = contrib
 projects[omega][version] = 3.1
 
 projects[rubik][subdir] = contrib
-projects[rubik][version] = 4.0-beta7
+projects[rubik][version] = 4.0-beta8
 
 projects[tao][subdir] = contrib
 projects[tao][version] = 3.0-beta4
@@ -192,6 +194,9 @@ projects[tao][version] = 3.0-beta4
 
 
 ; Libraries
+libraries[editarea][download][type] = get
+libraries[editarea][download][url] = http://downloads.sourceforge.net/project/editarea/EditArea/EditArea%200.8.2/editarea_0_8_2.zip?r=&ts=1334742944&use_mirror=internode
+
 libraries[fittext.js][download][type] = git
 libraries[fittext.js][download][url] = https://github.com/davatron5000/FitText.js.git
 libraries[fittext.js][download][revision] = 6e86634ea751a575bf4631495ba8b19fdc9a6273

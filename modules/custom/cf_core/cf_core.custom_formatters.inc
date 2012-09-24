@@ -107,7 +107,6 @@ foreach($variables[\'#items\'] as $delta => $item) {
         \'class\' => array(\'item\'),
       ),
     ),
-    \'#suffix\' => $delta < count($variables[\'#items\']) - 1 ? \'</div><div class="field-item">\' : \'\',
   );
 }
 

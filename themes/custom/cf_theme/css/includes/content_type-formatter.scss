@@ -1,69 +1,14 @@
-#node-formatter-elements {
-  .title {
-    overflow: hidden;
-    text-transform: uppercase;
-    white-space: nowrap;
-
-    a {
-      @include font(null, bold, 14px);
-
-      color: $color-grey-dark;
-      margin-right: 0.35em;
-      text-decoration: none;
-
-      &:hover {
-        color: $color-orange;
-      }
-    }
-  }
-
-  .taxonomy-terms {
-    display: inline;
-    float: left;
-
-    &.field-name-field-formatter-mode {
-      clear: left;
-
-      .field-item {
-        background-color: $color-grey-dark;
-      }
-    }
-
-    .field-item {
-      background-color: $color-grey-light;
-      color: $color-white;
-      display: inline;
-      font-size: 9px;
-      margin-right: 0.5em;
-      padding: 0 2px;
-      text-transform: uppercase;
-
-      a {
-        color: $color-white !important;
-      }
-
-      &:hover {
-        background-color: $color-orange;
-
-        a {
-          text-decoration: none !important;
-        }
-      }
-    }
-  }
-}
-
 #section-content {
   .node-formatter {
     &.view-mode-cf_core_block {
       position: relative;
 
       .field-name-title {
-        #node-formatter-elements > .title;
+        @include elements('node-formatter-elements', 'title');
       }
 
       .field-type-taxonomy-term-reference {
-        #node-formatter-elements > .taxonomy-terms;
+        @include elements('node-formatter-elements', 'taxonomy-terms');
       }
 
       &:hover {
@@ -126,11 +71,11 @@
       padding-bottom: 20px;
 
       .field-name-title {
-        #node-formatter-elements > .title;
+        @include elements('node-formatter-elements', 'title');
       }
 
       .field-type-taxonomy-term-reference {
-        #node-formatter-elements > .taxonomy-terms;
+        @include elements('node-formatter-elements', 'taxonomy-terms');
       }
 
       .field-name-field-formatter-description {
@@ -156,7 +101,7 @@
         }
 
         .field-type-taxonomy-term-reference {
-          #node-formatter-elements > .taxonomy-terms;
+          @include elements('node-formatter-elements', 'taxonomy-terms');
         }
 
         .field-name-body {
