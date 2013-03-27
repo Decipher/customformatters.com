@@ -219,6 +219,6 @@ libraries[profiler][download][revision] = d0137cb42bc7a4e9ce0a0431f875806285d097
 libraries[profiler][patch][] = http://drupal.org/files/beta_and_devel-1420344-9.patch
 
 libraries[tinymce][download][type] = file
-libraries[tinymce][download][url] = http://www.tinymce.com/track.php?url=http%3A%2F%2Fgithub.com%2Fdownloads%2Ftinymce%2Ftinymce%2Ftinymce_3.4.9.zip
+libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.4.9.zip
 
 
