@@ -9,4 +9,4 @@ projects[drupal][version] = 7.15
 projects[cf_profile][type] = profile
 projects[cf_profile][download][type] = git
 projects[cf_profile][download][url] = git://github.com/Decipher/customformatters.com.git
-projects[cf_profile][download][branch] = 0.4
+projects[cf_profile][download][branch] = master
