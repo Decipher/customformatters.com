@@ -70,7 +70,7 @@ function cf_core_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '0',
       'label' => 'hidden',
-      'format' => 'ds_post_date_long',
+      'format' => 'ds_post_date_cf_stub',
     ),
   );
   $export['node|blog|teaser'] = $ds_fieldsetting;
