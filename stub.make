@@ -3,7 +3,7 @@ api = 2
 
 ; Drupal core
 projects[drupal][type] = core
-projects[drupal][version] = 7.15
+projects[drupal][version] = 7.38
 
 ; Install profile
 projects[cf_profile][type] = profile
