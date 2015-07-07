@@ -33,7 +33,7 @@ function cf_core_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-formatter-basic field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -59,7 +59,7 @@ function cf_core_field_group_info() {
     'format_settings' => array(
       'label' => 'Code',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-formatter-code field-group-htab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -87,7 +87,7 @@ function cf_core_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-formatter-dapi field-group-htab',
       ),
     ),
   );
@@ -114,7 +114,7 @@ function cf_core_field_group_info() {
     'format_settings' => array(
       'label' => 'Details',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-formatter-details field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
@@ -146,7 +146,7 @@ function cf_core_field_group_info() {
       'label' => 'Formatter',
       'instance_settings' => array(
         'required_fields' => 0,
-        'classes' => '',
+        'classes' => ' group-formatter-formatter field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
@@ -175,7 +175,7 @@ function cf_core_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-formatter-group field-group-htabs',
       ),
     ),
   );
@@ -200,7 +200,7 @@ function cf_core_field_group_info() {
     'format_settings' => array(
       'label' => 'Exportable',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-formatter-object field-group-htab',
         'description' => '',
       ),
       'formatter' => 'closed',

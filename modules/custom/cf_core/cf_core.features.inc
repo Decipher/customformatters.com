@@ -83,6 +83,7 @@ function cf_core_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'formatter_example_preview_mobile',
   );
 
   // Exported image style: formatter_example_preview_narrow.
@@ -105,6 +106,7 @@ function cf_core_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'formatter_example_preview_narrow',
   );
 
   // Exported image style: formatter_example_preview_normal.
@@ -127,6 +129,7 @@ function cf_core_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'formatter_example_preview_normal',
   );
 
   // Exported image style: formatter_example_preview_wide.
@@ -149,6 +152,7 @@ function cf_core_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'formatter_example_preview_wide',
   );
 
   return $styles;

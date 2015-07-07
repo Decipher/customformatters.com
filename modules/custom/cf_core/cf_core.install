@@ -13,6 +13,17 @@ function cf_core_install() {
 }
 
 /**
+ * Implements hook_update_dependencies().
+ */
+function cf_core_update_dependencies() {
+  $dependencies['field_group'][7007] = array(
+    'cf_core' => 7106,
+  );
+
+  return $dependencies;
+}
+
+/**
  * Flush cache and revert features.
  */
 function cf_core_update_7100() {
@@ -208,6 +219,14 @@ function cf_core_update_7104() {
 function cf_core_update_7105() {
   theme_enable(array('cf_theme'));
   theme_disable(array('bartik'));
+  _cf_core_flush_revert();
+}
+
+/**
+ * Ensure Field Group update runs successfully.
+ */
+function cf_core_update_7106() {
+  field_group_group_export_delete('group_formatter_basic|node|formatter|form');
   _cf_core_flush_revert();
 }
 

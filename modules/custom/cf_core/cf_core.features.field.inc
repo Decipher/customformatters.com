@@ -1192,6 +1192,7 @@ function cf_core_field_default_fields() {
           'label' => 'above',
           'module' => 'radioactivity',
           'settings' => array(
+            'accuracy' => '100',
             'energy' => 10,
             'type' => 'none',
           ),
@@ -1222,6 +1223,8 @@ function cf_core_field_default_fields() {
       'label' => 'Radioactivity',
       'required' => 0,
       'settings' => array(
+        'history' => 0,
+        'history_limit' => 8,
         'profile' => 'default',
         'user_register_form' => FALSE,
       ),

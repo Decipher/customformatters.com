@@ -10,7 +10,7 @@
 function cf_core_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'cf_blog';
   $view->description = '';
   $view->tag = 'default';
@@ -23,6 +23,7 @@ function cf_core_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Blog';
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -37,17 +38,8 @@ function cf_core_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -102,12 +94,10 @@ function cf_core_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'cf_core_block';
-  $handler->display->display_options['row_options']['links'] = 1;
-  $handler->display->display_options['row_options']['comments'] = 0;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['cf_blog'] = $view;
 
-  $view = new view;
+  $view = new view();
   $view->name = 'cf_formatter';
   $view->description = '';
   $view->tag = 'default';
@@ -120,6 +110,7 @@ function cf_core_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Edit formatter';
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -130,24 +121,13 @@ function cf_core_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'cf_core_overview';
-  $handler->display->display_options['row_options']['links'] = 1;
-  $handler->display->display_options['row_options']['comments'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -159,12 +139,9 @@ function cf_core_views_default_views() {
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['nid']['not'] = 0;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -184,7 +161,7 @@ function cf_core_views_default_views() {
   $handler = $view->new_display('block', 'Block: Edit formatter overview', 'block');
   $export['cf_formatter'] = $view;
 
-  $view = new view;
+  $view = new view();
   $view->name = 'cf_formatters';
   $view->description = '';
   $view->tag = 'default';
@@ -205,8 +182,7 @@ function cf_core_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 1;
-  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = 1;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'tid_1' => array(
       'bef_format' => 'bef',
@@ -214,7 +190,15 @@ function cf_core_views_default_views() {
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'bef_filter_description' => '',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
     ),
     'tid' => array(
       'bef_format' => 'bef',
@@ -222,7 +206,15 @@ function cf_core_views_default_views() {
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'bef_filter_description' => '',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
     ),
     'field_formatter_image_output_fid' => array(
       'bef_format' => 'bef',
@@ -230,14 +222,25 @@ function cf_core_views_default_views() {
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'bef_filter_description' => '',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['alternating'] = 0;
@@ -249,26 +252,15 @@ function cf_core_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = FALSE;
   $handler->display->display_options['empty']['area']['content'] = 'Unfortunately no results matched your chosen criteria, more Formatters are being added all the time so please try again later.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  $handler->display->display_options['empty']['area']['tokenize'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
@@ -292,8 +284,8 @@ function cf_core_views_default_views() {
   /* Display: Page: Formatters */
   $handler = $view->new_display('page', 'Page: Formatters', 'page_1');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -324,12 +316,10 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Format';
   $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['identifier'] = 'format';
-  $handler->display->display_options['filters']['tid_1']['expose']['multiple'] = 1;
-  $handler->display->display_options['filters']['tid_1']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = 1;
+  $handler->display->display_options['filters']['tid_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'format';
-  $handler->display->display_options['filters']['tid_1']['error_message'] = 1;
   /* Filter criterion: Fields */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -341,13 +331,11 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['tid']['expose']['label'] = 'Fields';
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'field';
-  $handler->display->display_options['filters']['tid']['expose']['multiple'] = 1;
-  $handler->display->display_options['filters']['tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 1;
+  $handler->display->display_options['filters']['tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'cf_d7fields';
   $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
-  $handler->display->display_options['filters']['tid']['error_message'] = 1;
   /* Filter criterion: Content: Example: Output (field_formatter_image_output:fid) */
   $handler->display->display_options['filters']['field_formatter_image_output_fid']['id'] = 'field_formatter_image_output_fid';
   $handler->display->display_options['filters']['field_formatter_image_output_fid']['table'] = 'field_data_field_formatter_image_output';
@@ -358,7 +346,6 @@ function cf_core_views_default_views() {
   $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['label'] = 'Has image';
   $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['operator'] = 'field_formatter_image_output_fid_op';
   $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['identifier'] = 'has_image';
-  $handler->display->display_options['filters']['field_formatter_image_output_fid']['expose']['multiple'] = FALSE;
   $handler->display->display_options['path'] = 'formatters';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Formatters';
