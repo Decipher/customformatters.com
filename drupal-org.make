@@ -15,8 +15,6 @@ defaults[projects][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc5
 
 projects[better_exposed_filters][version] = 3.2
-; Add improved handling of exposed NULL/NOT NULL filters: https://www.drupal.org/node/950312#comment-6073974
-; clear;projects[better_exposed_filters][patch][] = https://www.drupal.org/files/exposed_EMPTY_NOT_EMPTY-950312-4_0.patch
 
 projects[coder][version] = 2.5
 
@@ -27,8 +25,8 @@ projects[context][version] = 3.6
 projects[context_admin][version] = 1.2
 
 projects[ctools][version] = 1.7
-; Fixes Block dependency issue: http://drupal.org/node/1754770#comment-6395412
-projects[ctools][patch][] = http://drupal.org/files/blocks_dependency_issue-1754770-1.patch
+; Fixes Block dependency issue: https://www.drupal.org/node/1754770#comment-10092172
+projects[ctools][patch][] = https://www.drupal.org/files/issues/blocks_dependency_issue-1754770-17.patch
 
 projects[custom_formatters][version] = 2.3-beta1
 
@@ -107,8 +105,8 @@ projects[token][version] = 1.6
 projects[twitter][version] = 3.2
 
 projects[views][version] = 3.11
-; Add improved handling of exposed NULL/NOT NULL filters: http://drupal.org/node/477984#comment-6073924
-projects[views][patch][] = http://drupal.org/files/exposed_EMPTY_NOT_EMPTY-477984-60.patch
+; Add improved handling of exposed NULL/NOT NULL filters: https://www.drupal.org/node/477984#comment-8861095
+projects[views][patch][] = https://www.drupal.org/files/issues/exposed_EMPTY_NOT_EMPTY-477984-80.patch
 
 projects[webform][version] = 3.24
 
@@ -122,6 +120,8 @@ projects[xmlsitemap][version] = 2.2
 
 projects[omega][type] = theme
 projects[omega][version] = 3.1
+; Fixed Undefined index: quantity in omega_views_mini_pager(): https://www.drupal.org/node/1828552#comment-8009149
+projects[omega][patch][] = https://www.drupal.org/files/omega-mini-pager-1828552-49.patch
 
 projects[rubik][type] = theme
 projects[rubik][version] = 4.0-beta8
