@@ -46,7 +46,9 @@ projects[entity][version] = 1.6
 
 projects[environment_indicator][version] = 1.1
 
-projects[features][version] = 1.0
+projects[features][version] = 2.6
+; Cleaner .info file format - https://drupal.org/comment/8270327#comment-8270327
+projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
 
 projects[form_builder][version] = 1.6
 

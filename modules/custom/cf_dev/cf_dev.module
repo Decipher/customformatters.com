@@ -5,11 +5,6 @@
  */
 
 /**
- * Features include.
- */
-include_once('cf_dev.features.inc');
-
-/**
  * Include additional files.
  */
 foreach (module_list() as $module) {

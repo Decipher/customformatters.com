@@ -2,7 +2,11 @@ name = CustomFormatters dev
 description = Dev feature for CustomFormatters.com
 core = 7.x
 package = " CustomFormatters.com"
-php = 5.2.4
+
+
+
+; Dependencies
+
 dependencies[] = context_ui
 dependencies[] = dblog
 dependencies[] = devel
@@ -12,5 +16,11 @@ dependencies[] = module_filter
 dependencies[] = omega_tools
 dependencies[] = overlay
 dependencies[] = views_ui
-features[features_api][] = api:1
+
+
+
+; Features
+
+features[features_api][] = api:2
+
 features[user_permission][] = access devel information

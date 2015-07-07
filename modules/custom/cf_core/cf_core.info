@@ -2,7 +2,11 @@ name = CustomFormatters core
 description = Core feature for CustomFormatters.com
 core = 7.x
 package = " CustomFormatters.com"
-php = 5.2.4
+
+
+
+; Dependencies
+
 dependencies[] = admin_menu
 dependencies[] = better_exposed_filters
 dependencies[] = coffee
@@ -18,11 +22,13 @@ dependencies[] = environment_indicator
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = filefield_paths
+dependencies[] = filter
 dependencies[] = googleanalytics
 dependencies[] = grammar_parser
 dependencies[] = image
 dependencies[] = libraries
 dependencies[] = menu
+dependencies[] = node
 dependencies[] = nodeformcols
 dependencies[] = number
 dependencies[] = oauth_common
@@ -45,17 +51,27 @@ dependencies[] = twitter
 dependencies[] = twitter_post
 dependencies[] = views
 dependencies[] = webform
-; dependencies[] = workbench
-; dependencies[] = workbench_moderation
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_engines
 dependencies[] = xmlsitemap_menu
 dependencies[] = xmlsitemap_node
+
+
+
+; Stylesheets
+
+stylesheets[all][] = styles/cf_core.blocks.css
+
+
+
+; Features
+
 features[context][] = layout-formatters-all
 features[context][] = layout-formatters-node-edit
 features[context][] = layout-front-anonymous
 features[context][] = layout-global-all
 features[context][] = layout-not_search-all
+
 features[ctools][] = context:context:3
 features[ctools][] = custom_formatters:custom_formatters:2
 features[ctools][] = ds:ds:1
@@ -67,6 +83,7 @@ features[ctools][] = resp_img:default_resp_img_suffixs:1
 features[ctools][] = site_verify:site_verify:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+
 features[ds_field_settings][] = node|blog|cf_core_block
 features[ds_field_settings][] = node|blog|default
 features[ds_field_settings][] = node|blog|teaser
@@ -78,7 +95,9 @@ features[ds_field_settings][] = node|formatter|search_result
 features[ds_field_settings][] = node|formatter|teaser
 features[ds_field_settings][] = node|page|default
 features[ds_field_settings][] = node|webform|default
+
 features[ds_fields][] = cf_byauthor
+
 features[ds_layout_settings][] = node|blog|cf_core_block
 features[ds_layout_settings][] = node|blog|default
 features[ds_layout_settings][] = node|blog|teaser
@@ -90,23 +109,25 @@ features[ds_layout_settings][] = node|formatter|search_result
 features[ds_layout_settings][] = node|formatter|teaser
 features[ds_layout_settings][] = node|page|default
 features[ds_layout_settings][] = node|webform|default
+
 features[ds_view_modes][] = cf_core_block
 features[ds_view_modes][] = cf_core_overview
-features[features_api][] = api:1
-features[field][] = node-blog-body
-features[field][] = node-formatter-body
-features[field][] = node-formatter-field_formatter_code
-features[field][] = node-formatter-field_formatter_dapi
-features[field][] = node-formatter-field_formatter_description
-features[field][] = node-formatter-field_formatter_fapi
-features[field][] = node-formatter-field_formatter_field_types
-features[field][] = node-formatter-field_formatter_image_input
-features[field][] = node-formatter-field_formatter_image_output
-features[field][] = node-formatter-field_formatter_import
-features[field][] = node-formatter-field_formatter_mode
-features[field][] = node-formatter-field_formatter_name
-features[field][] = node-formatter-field_formatter_radioactivity
-features[field][] = node-page-body
+
+features[features_api][] = api:2
+
+features[field_base][] = body
+features[field_base][] = field_formatter_code
+features[field_base][] = field_formatter_dapi
+features[field_base][] = field_formatter_description
+features[field_base][] = field_formatter_fapi
+features[field_base][] = field_formatter_field_types
+features[field_base][] = field_formatter_image_input
+features[field_base][] = field_formatter_image_output
+features[field_base][] = field_formatter_import
+features[field_base][] = field_formatter_mode
+features[field_base][] = field_formatter_name
+features[field_base][] = field_formatter_radioactivity
+
 features[field_group][] = group_formatter_basic|node|formatter|form
 features[field_group][] = group_formatter_code|node|formatter|default
 features[field_group][] = group_formatter_dapi|node|formatter|default
@@ -114,22 +135,41 @@ features[field_group][] = group_formatter_details|node|formatter|cf_core_overvie
 features[field_group][] = group_formatter_formatter|node|formatter|form
 features[field_group][] = group_formatter_group|node|formatter|default
 features[field_group][] = group_formatter_object|node|formatter|default
+
+features[field_instance][] = node-blog-body
+features[field_instance][] = node-formatter-body
+features[field_instance][] = node-formatter-field_formatter_code
+features[field_instance][] = node-formatter-field_formatter_dapi
+features[field_instance][] = node-formatter-field_formatter_description
+features[field_instance][] = node-formatter-field_formatter_fapi
+features[field_instance][] = node-formatter-field_formatter_field_types
+features[field_instance][] = node-formatter-field_formatter_image_input
+features[field_instance][] = node-formatter-field_formatter_image_output
+features[field_instance][] = node-formatter-field_formatter_import
+features[field_instance][] = node-formatter-field_formatter_mode
+features[field_instance][] = node-formatter-field_formatter_name
+features[field_instance][] = node-formatter-field_formatter_radioactivity
+features[field_instance][] = node-page-body
+
 features[filter][] = full_html
+
 features[formatters][] = jquery_snippet
 features[formatters][] = term_view_filter
+
 features[image][] = formatter_example_preview_mobile
 features[image][] = formatter_example_preview_narrow
 features[image][] = formatter_example_preview_normal
 features[image][] = formatter_example_preview_wide
+
 features[menu_custom][] = main-menu
-features[menu_links][] = main-menu:about
-features[menu_links][] = main-menu:blog
-features[menu_links][] = main-menu:formatters
+
 features[node][] = blog
 features[node][] = formatter
 features[node][] = page
+
 features[page_manager_pages][] = cf_about
 features[page_manager_pages][] = cf_frontpage
+
 features[panels_mini][] = cf_about
 features[panels_mini][] = cf_beta_signup
 features[panels_mini][] = cf_feedback
@@ -137,25 +177,29 @@ features[panels_mini][] = cf_github
 features[panels_mini][] = cf_section
 features[panels_mini][] = cf_share
 features[panels_mini][] = cf_sponsors
+
 features[radioactivity_decay_profile][] = default
+
 features[resp_img_suffix][] = narrow
 features[resp_img_suffix][] = normal
 features[resp_img_suffix][] = wide
+
 features[site_verify][] = cf_google
+
 features[taxonomy][] = cf_d7fields
 features[taxonomy][] = format
+
 features[user_permission][] = access content
 features[user_permission][] = access environment indicator
-; features[user_permission][] = access workbench
 features[user_permission][] = create formatter content
 features[user_permission][] = edit own formatter content
 features[user_permission][] = search content
-; features[user_permission][] = use workbench_moderation my drafts tab
-; features[user_permission][] = view moderation messages
 features[user_permission][] = view own unpublished content
 features[user_permission][] = view revisions
+
 features[user_role][] = administrator
 features[user_role][] = contributor
+
 features[variable][] = admin_theme
 features[variable][] = custom_formatters_settings
 features[variable][] = date_format_cf_stub
@@ -246,7 +290,7 @@ features[variable][] = xmlsitemap_settings_menu_link_main-menu
 features[variable][] = xmlsitemap_settings_node_blog
 features[variable][] = xmlsitemap_settings_node_formatter
 features[variable][] = xmlsitemap_settings_node_webform
+
 features[views_view][] = cf_blog
 features[views_view][] = cf_formatter
 features[views_view][] = cf_formatters
-stylesheets[all][] = styles/cf_core.blocks.css
