@@ -49,6 +49,8 @@ projects[environment_indicator][version] = 1.1
 projects[features][version] = 2.6
 ; Cleaner .info file format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
+; Fixed issue with missing 'cache_features' - https://www.drupal.org/node/2511858#comment-10058710
+projects[features][patch][] = https://www.drupal.org/files/issues/2511858-features-table-missing-13.patch
 
 projects[form_builder][version] = 1.6
 
