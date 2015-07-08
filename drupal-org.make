@@ -28,15 +28,13 @@ projects[ctools][version] = 1.7
 ; Fixes Block dependency issue: https://www.drupal.org/node/1754770#comment-10092172
 projects[ctools][patch][] = https://www.drupal.org/files/issues/blocks_dependency_issue-1754770-17.patch
 
-projects[custom_formatters][version] = 2.3-beta1
+projects[custom_formatters][version] = 2.4
 
-projects[delete_all][download][revision] = 4986843
+projects[delete_all][download][revision] = c5da791
 
 projects[devel][version] = 1.5
 
-projects[devel_image_provider][download][revision] = 418a9d8
-; Fix multiple issues: http://drupal.org/node/1539208#comment-5890056 + http://drupal.org/node/1516854#comment-5889600
-projects[devel_image_provider][patch][] = https://gist.github.com/raw/3473587/e2194e70015bdd7b51b8cdd078b6deaeae99caff/devel_image_provider-1516854+1539208.patch
+projects[devel_image_provider][download][revision] = 790ea95
 
 projects[diff][version] = 3.2
 
@@ -56,9 +54,7 @@ projects[form_builder][version] = 1.6
 
 projects[field_group][version] = 1.4
 
-projects[filefield_paths][download][revision] = 84fb637
-
-projects[globalredirect][version] = 1.5
+projects[filefield_paths][download][revision] = 8b39e73
 
 projects[google_analytics][version] = 2.1
 
@@ -68,27 +64,19 @@ projects[libraries][version] = 2.2
 
 projects[module_filter][version] = 2.0
 
-projects[nodeformcols][download][revision] = 0120682
-; Added support for Contextual administration module: http://drupal.org/node/1411060#comment-5491668
-projects[nodeformcols][patch][] = http://drupal.org/files/context_admin_support-1411060-1.patch
-
 projects[oauth][version] = 3.2
 
 projects[omega_tools][version] = 3.0-rc4
 
 projects[options_element][version] = 1.12
 
-projects[page_title][version] = 2.7
-
 projects[panels][version] = 3.5
 
 projects[pathauto][version] = 1.2
 
-projects[prepro][download][revision] = 5d16561
+projects[prepro][version] = 1.4
 
 projects[radioactivity][version] = 2.10
-
-; projects[rel][download][revision] = 8e1b012
 
 projects[resp_img][version] = 1.3
 
@@ -98,9 +86,7 @@ projects[sassy][version] = 2.13
 
 projects[strongarm][version] = 2.0
 
-projects[site_verify][download][revision] = 6b46622
-; Added CTools exportables integration: http://drupal.org/node/1230956#comment-6068128
-projects[site_verify][patch][] = http://drupal.org/files/exportables-1230956-6.patch
+projects[site_verify][version] = 1.1
 
 projects[subpathauto][version] = 1.3
 
@@ -113,8 +99,6 @@ projects[views][version] = 3.11
 projects[views][patch][] = https://www.drupal.org/files/issues/exposed_EMPTY_NOT_EMPTY-477984-80.patch
 
 projects[webform][version] = 3.24
-
-projects[wysiwyg][version] = 2.2
 
 projects[xmlsitemap][version] = 2.2
 
@@ -161,7 +145,10 @@ libraries[profiler][download][revision] = d0137cb
 ; Added support for Devel generate: http://drupal.org/node/1420344#comment-6015282
 libraries[profiler][patch][] = http://drupal.org/files/beta_and_devel-1420344-9.patch
 
-libraries[tinymce][download][type] = file
-libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.4.9.zip
 
 
+; Deprecated
+
+projects[nodeformcols][download][revision] = 0120682
+; Added support for Contextual administration module: http://drupal.org/node/1411060#comment-5491668
+projects[nodeformcols][patch][] = http://drupal.org/files/context_admin_support-1411060-1.patch
