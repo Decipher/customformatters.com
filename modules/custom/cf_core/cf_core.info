@@ -29,7 +29,6 @@ dependencies[] = image
 dependencies[] = libraries
 dependencies[] = menu
 dependencies[] = node
-dependencies[] = nodeformcols
 dependencies[] = number
 dependencies[] = oauth_common
 dependencies[] = page_manager

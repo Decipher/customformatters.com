@@ -231,6 +231,14 @@ function cf_core_update_7106() {
 }
 
 /**
+ * Disable and uninstall deprecated modules.
+ */
+function cf_core_update_7107() {
+  module_disable(array('nodeformcols'));
+  drupal_uninstall_modules(array('nodeformcols'));
+}
+
+/**
  * Helper function; Flush caches and revert features.
  */
 function _cf_core_flush_revert() {
