@@ -14,8 +14,22 @@ function cf_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme';
-  $strongarm->value = 'rubik';
+  $strongarm->value = 'seven';
   $export['admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cache';
+  $strongarm->value = 1;
+  $export['cache'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cache_lifetime';
+  $strongarm->value = '900';
+  $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -716,6 +730,13 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_cache_maximum_age';
+  $strongarm->value = '3600';
+  $export['page_cache_maximum_age'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_blog_pattern';
   $strongarm->value = 'blog/[node:created:custom:ymd]/[node:title]';
   $export['pathauto_node_blog_pattern'] = $strongarm;
@@ -732,24 +753,27 @@ user/*/*';
   $strongarm->api_version = 1;
   $strongarm->name = 'prepro';
   $strongarm->value = array(
-    'additional' => array(
-      'sassy' => array(
-        'errors' => 'silent',
-        'style' => 'nested',
-      ),
-    ),
     'filetypes' => array(
       'sass' => array(
-        'preprocessor' => 'sassy',
-        'cache' => 'cache',
-        'cache_location' => 'public://prepro/',
+        'compile_handler' => 'sassy/sassy',
+        'cache_handler' => 'prepro/manual',
+        'cache_path' => 'public://prepro',
       ),
       'scss' => array(
-        'preprocessor' => 'sassy',
-        'cache' => 'cache',
-        'cache_location' => 'public://prepro/',
+        'compile_handler' => 'sassy/sassy',
+        'cache_handler' => 'prepro/manual',
+        'cache_path' => 'public://prepro',
       ),
     ),
+    'additional' => array(
+      'sassy' => array(
+        'watchdog' => 0,
+        'debug' => 0,
+        'errors' => 'watchdog',
+        'style' => 'compressed',
+      ),
+    ),
+    'show_warnings' => 0,
   );
   $export['prepro'] = $strongarm;
 

@@ -24,6 +24,12 @@ projects[context][version] = 3.6
 
 projects[context_admin][version] = 1.2
 
+projects[context_module][download][revision] = c575ac3
+
+projects[context_server_vars][download][revision] = 1d61d97
+
+projects[context_variable][download][revision] = b6e3219
+
 projects[ctools][version] = 1.7
 ; Fixes Block dependency issue: https://www.drupal.org/node/1754770#comment-10092172
 projects[ctools][patch][] = https://www.drupal.org/files/issues/blocks_dependency_issue-1754770-17.patch
@@ -42,7 +48,7 @@ projects[ds][version] = 2.10
 
 projects[entity][version] = 1.6
 
-projects[environment_indicator][version] = 1.1
+projects[environment_indicator][version] = 2.7
 
 projects[features][version] = 2.6
 ; Cleaner .info file format - https://drupal.org/comment/8270327#comment-8270327
@@ -57,6 +63,8 @@ projects[field_group][version] = 1.4
 projects[filefield_paths][download][revision] = 8b39e73
 
 projects[google_analytics][version] = 2.1
+; Allow empty Web Property ID variable - https://www.drupal.org/node/1964052#comment-9422385
+projects[google_analytics][patch][] = https://www.drupal.org/files/issues/variable_empty_id-1964052-15.patch
 
 projects[grammar_parser][version] = 2.2
 
@@ -94,6 +102,8 @@ projects[token][version] = 1.6
 
 projects[twitter][version] = 3.2
 
+projects[variable][version] = 2.5
+
 projects[views][version] = 3.11
 ; Add improved handling of exposed NULL/NOT NULL filters: https://www.drupal.org/node/477984#comment-8861095
 projects[views][patch][] = https://www.drupal.org/files/issues/exposed_EMPTY_NOT_EMPTY-477984-80.patch
@@ -101,6 +111,8 @@ projects[views][patch][] = https://www.drupal.org/files/issues/exposed_EMPTY_NOT
 projects[webform][version] = 3.24
 
 projects[xmlsitemap][version] = 2.2
+; Variable module integration - http://drupal.org/node/1989862#comment-7389678
+projects[xmlsitemap][patch][] = http://drupal.org/files/variable_integration-1989862-1.patch
 
 
 

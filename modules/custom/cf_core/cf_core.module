@@ -19,25 +19,6 @@ foreach (module_list() as $module) {
 }
 
 /**
- * Check the site status and return a Boolean value based on the comparison
- * state provided.
- */
-function cf_core_is_state($state) {
-  // Production state.
-  if ($GLOBALS['base_url'] == 'http://customformatters.com') {
-    return $state == 'prod';
-  }
-
-  // Staging state.
-  if (preg_match('/stage.*?\.customformatters\.com/', $GLOBALS['base_url'])) {
-    return $state == 'stage';
-  }
-
-  // Development state.
-  return $state == 'dev';
-}
-
-/**
  *
  */
 function _cf_core_get_releases($versions, $type = 'latest') {
