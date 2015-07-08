@@ -10,7 +10,7 @@ Quickstart with Drush Make
 
 To setup a local copy of [CustomFormatters.com](http://customformatters.com), run the following [Drush Make](https://drupal.org/project/drush_make) command:
 
-    $ drush make https://raw.github.com/Decipher/customformatters.com/0.4/stub.make
+    $ drush make https://raw.github.com/Decipher/customformatters.com/development/stub.make
 
 
 Alternatively, you can clone the github repo
@@ -33,15 +33,6 @@ You can install the site in your browser, or via drush
 **Note:** you may need to manually create sites/default/settings.php with your database
 credentials to complete the installation process, whichever method you use.
 
-
-
-
-Roadmap
---------------------------------------------------------------------------------
-
-0.4
-- User roles: Contributor & Administrator
-- Workflow/Moderation
 
 
 

@@ -1,4 +1,4 @@
-CustomFormatters.com 7.x-0.x-dev, xxxx-xx-xx (development release)
+CustomFormatters.com 7.x-0.4, 2015-07-07
 --------------------------------------------------------------------------------
 
 - Added stub makefile to repository.
