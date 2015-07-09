@@ -123,12 +123,6 @@ projects[omega][version] = 3.1
 ; Fixed Undefined index: quantity in omega_views_mini_pager(): https://www.drupal.org/node/1828552#comment-8009149
 projects[omega][patch][] = https://www.drupal.org/files/omega-mini-pager-1828552-49.patch
 
-projects[rubik][type] = theme
-projects[rubik][version] = 4.0-beta8
-
-projects[tao][type] = theme
-projects[tao][version] = 3.0-beta4
-
 
 
 ; Libraries
